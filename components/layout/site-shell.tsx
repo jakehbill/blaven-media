@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
+import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
 
 type SiteShellProps = {
   children: ReactNode;
@@ -16,7 +16,7 @@ export function SiteShell({ children }: SiteShellProps) {
       >
         Skip to main content
       </a>
-      <Header />
+      <Navbar />
       {children}
       <Footer />
     </>
