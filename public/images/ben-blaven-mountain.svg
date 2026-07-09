@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" fill="none" aria-hidden="true">
+  <path
+    d="M0 600V420L120 380L240 340L360 280L480 220L600 180L720 120L840 160L960 200L1080 260L1200 300L1320 360L1440 400V600H0Z"
+    fill="white"
+    fill-opacity="0.9"
+  />
+  <path
+    d="M0 600V460L160 430L320 390L480 350L640 300L800 260L960 240L1120 280L1280 340L1440 380V600H0Z"
+    fill="white"
+    fill-opacity="0.6"
+  />
+  <path
+    d="M0 600V500L200 480L400 450L600 420L800 390L1000 370L1200 400L1440 430V600H0Z"
+    fill="white"
+    fill-opacity="0.35"
+  />
+</svg>
