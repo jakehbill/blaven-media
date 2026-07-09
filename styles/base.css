@@ -11,6 +11,10 @@
     }
   }
 
+  html {
+    scroll-padding-top: 4rem;
+  }
+
   ::selection {
     background-color: var(--stone-subtle);
     color: var(--foreground);

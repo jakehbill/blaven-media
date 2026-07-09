@@ -6,41 +6,45 @@ import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/utils";
 
 const navLinkVariants = cva(
-  "relative text-sm font-medium transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+  "font-medium transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
   {
     variants: {
       active: {
         true: "text-foreground",
         false: "text-muted-foreground hover:text-foreground",
       },
+      layout: {
+        horizontal: "relative text-sm py-1",
+        vertical: "text-lg tracking-tight py-2",
+      },
     },
     defaultVariants: {
       active: false,
+      layout: "horizontal",
     },
   },
 );
 
 type NavLinkProps = ComponentPropsWithoutRef<"a"> &
-  VariantProps<typeof navLinkVariants> & {
-    sectionId?: string;
-  };
+  VariantProps<typeof navLinkVariants>;
 
 function NavLink({
   active,
+  layout,
   className,
   children,
-  href,
+  onClick,
   ...props
 }: NavLinkProps) {
   return (
     <a
-      href={href}
-      className={cn(navLinkVariants({ active }), "py-1", className)}
-      aria-current={active ? "page" : undefined}
+      className={cn(navLinkVariants({ active, layout }), className)}
+      aria-current={active ? "true" : undefined}
+      onClick={onClick}
       {...props}
     >
       {children}
-      {active ? (
+      {active && layout === "horizontal" ? (
         <span
           className="absolute -bottom-px left-0 h-px w-full bg-stone"
           aria-hidden
