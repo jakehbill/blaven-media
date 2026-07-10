@@ -1,5 +1,10 @@
 import { SiteShell } from "@/components/layout";
-import { Capabilities, Hero, WhyThisMatters } from "@/components/sections";
+import {
+  Capabilities,
+  CaseStudies,
+  Hero,
+  WhyThisMatters,
+} from "@/components/sections";
 
 export default function HomePage() {
   return (
@@ -8,6 +13,7 @@ export default function HomePage() {
         <Hero />
         <WhyThisMatters />
         <Capabilities />
+        <CaseStudies />
       </main>
     </SiteShell>
   );
