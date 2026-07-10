@@ -22,7 +22,7 @@ function Testimonials() {
           introduction={testimonialsContent.introduction}
         />
 
-        <div className="mt-12 border-t border-border/60 pt-10 md:mt-14 md:pt-12">
+        <div className="mt-14 border-t border-border/60 pt-12 md:mt-16 md:pt-14">
           <TestimonialCarousel items={testimonialsContent.items} />
         </div>
       </Container>

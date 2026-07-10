@@ -28,7 +28,7 @@ function Hero() {
     >
       <HeroBackground />
 
-      <Container className="relative z-10 py-20 md:py-28">
+      <Container className="relative z-10 py-16 md:py-24">
         <motion.div
           className="max-w-3xl"
           initial="hidden"
@@ -88,7 +88,7 @@ function Hero() {
           </motion.div>
 
           <motion.div
-            className="mt-14 md:mt-16"
+            className="mt-12 md:mt-14"
             variants={revealVariant}
             transition={transition}
           >

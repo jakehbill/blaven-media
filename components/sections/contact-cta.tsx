@@ -13,7 +13,7 @@ function ContactCta() {
   return (
     <Section
       id="contact-cta"
-      spacing="md"
+      spacing="sm"
       surface="light"
       aria-labelledby="contact-cta-heading"
     >

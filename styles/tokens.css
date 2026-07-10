@@ -65,9 +65,9 @@
   /* Layout */
   --container-max: 77.5rem;
   --container-padding: clamp(1.25rem, 4vw, 2.5rem);
-  --section-gap-sm: clamp(2.5rem, 6vw, 3.5rem);
-  --section-gap-md: clamp(3.5rem, 8vw, 5rem);
-  --section-gap-lg: clamp(4.5rem, 10vw, 6.5rem);
+  --section-gap-sm: clamp(2rem, 4.8vw, 2.8rem);
+  --section-gap-md: clamp(2.8rem, 6.4vw, 4rem);
+  --section-gap-lg: clamp(3.6rem, 8vw, 5.2rem);
   --prose-width: 42rem;
   --prose-width-narrow: 36rem;
 

@@ -4,7 +4,6 @@ import {
   AboutPreview,
   Capabilities,
   ContactCta,
-  FeaturedCaseStudies,
   Hero,
   Testimonials,
   WhyThisMatters,
@@ -18,7 +17,6 @@ export default function HomePage() {
         <Hero />
         <WhyThisMatters />
         <Capabilities />
-        <FeaturedCaseStudies />
         <Testimonials />
         <AboutPreview />
         <ContactCta />

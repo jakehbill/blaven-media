@@ -23,7 +23,7 @@ function Capabilities() {
           introduction={capabilitiesContent.introduction}
         />
 
-        <Stagger className="mt-12 border-t border-border/60 md:mt-14">
+        <Stagger className="mt-10 border-t border-border/60 md:mt-12">
           {capabilitiesContent.items.map((capability) => (
             <StaggerItem key={capability.number}>
               <CapabilityBlock capability={capability} />

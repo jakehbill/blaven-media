@@ -53,7 +53,7 @@ function WhyThisMatters() {
           heading={whyThisMattersContent.heading}
         />
 
-        <div className="mt-10 max-w-prose space-y-6">
+        <div className="mt-8 max-w-prose space-y-5">
           {whyThisMattersContent.paragraphs.map((paragraph, index) => (
             <MotionReveal key={paragraph} delay={0.1 + index * 0.05}>
               <Text variant="body-lg" className="text-foreground/85">
@@ -63,7 +63,7 @@ function WhyThisMatters() {
           ))}
         </div>
 
-        <Stagger className="mt-12 grid gap-10 border-t border-border/60 pt-12 md:mt-14 md:grid-cols-3 md:gap-10 md:pt-14 lg:gap-14">
+        <Stagger className="mt-10 grid gap-8 border-t border-border/60 pt-10 md:mt-12 md:grid-cols-3 md:gap-10 md:pt-12 lg:gap-12">
           {whyThisMattersContent.features.map((feature) => (
             <StaggerItem key={feature.title}>
               <FeatureBlock
