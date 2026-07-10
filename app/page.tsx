@@ -1,5 +1,6 @@
 import { SiteShell } from "@/components/layout";
 import {
+  About,
   Capabilities,
   CaseStudies,
   Hero,
@@ -16,6 +17,7 @@ export default function HomePage() {
         <Capabilities />
         <CaseStudies />
         <Testimonials />
+        <About />
       </main>
     </SiteShell>
   );

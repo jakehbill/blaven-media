@@ -1,3 +1,4 @@
+export { About } from "@/components/sections/about";
 export { Capabilities } from "@/components/sections/capabilities";
 export { CaseStudies } from "@/components/sections/case-studies";
 export { CaseStudyItem } from "@/components/sections/case-study-item";

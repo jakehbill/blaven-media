@@ -1,0 +1,54 @@
+{
+  "label": "About",
+  "heading": "[Placeholder Heading]",
+  "portrait": {
+    "src": "/images/portrait-placeholder.svg",
+    "alt": "[Placeholder Portrait]",
+    "caption": "[Placeholder Caption]"
+  },
+  "paragraphs": [
+    "[Placeholder paragraph — why Blaven Media exists. A short, confident statement on the purpose of the studio.]",
+    "[Placeholder paragraph — the philosophy behind the work. How authority, trust and craft guide every engagement.]",
+    "[Placeholder paragraph — the founder's approach to partnering with clients. Measured, collaborative, and built for lasting reputation.]"
+  ],
+  "experience": {
+    "label": "Selected Experience",
+    "items": [
+      "Thought Leadership",
+      "Strategic Communications",
+      "Brand & Digital",
+      "Executive Positioning",
+      "Content Systems"
+    ]
+  },
+  "clients": {
+    "label": "Selected Clients",
+    "logos": [
+      {
+        "name": "[Placeholder Client 1]",
+        "src": "/images/logos/placeholder-01.svg"
+      },
+      {
+        "name": "[Placeholder Client 2]",
+        "src": "/images/logos/placeholder-02.svg"
+      },
+      {
+        "name": "[Placeholder Client 3]",
+        "src": "/images/logos/placeholder-03.svg"
+      },
+      {
+        "name": "[Placeholder Client 4]",
+        "src": "/images/logos/placeholder-04.svg"
+      },
+      {
+        "name": "[Placeholder Client 5]",
+        "src": "/images/logos/placeholder-05.svg"
+      }
+    ]
+  },
+  "personalStatement": "[Placeholder personal statement — a brief closing line that feels human, considered and quietly confident.]",
+  "cta": {
+    "label": "Let's Talk",
+    "href": "#contact"
+  }
+}
