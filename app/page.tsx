@@ -3,6 +3,7 @@ import {
   Capabilities,
   CaseStudies,
   Hero,
+  Testimonials,
   WhyThisMatters,
 } from "@/components/sections";
 
@@ -14,6 +15,7 @@ export default function HomePage() {
         <WhyThisMatters />
         <Capabilities />
         <CaseStudies />
+        <Testimonials />
       </main>
     </SiteShell>
   );

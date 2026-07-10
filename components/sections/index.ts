@@ -4,4 +4,6 @@ export { CaseStudyItem } from "@/components/sections/case-study-item";
 export { Hero } from "@/components/sections/hero";
 export { HeroBackground } from "@/components/sections/hero-background";
 export { HeroTrustedBy } from "@/components/sections/hero-trusted-by";
+export { Testimonials } from "@/components/sections/testimonials";
+export { TestimonialItem } from "@/components/sections/testimonial-item";
 export { WhyThisMatters } from "@/components/sections/why-this-matters";
