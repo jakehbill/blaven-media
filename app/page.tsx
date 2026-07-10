@@ -1,5 +1,5 @@
 import { SiteShell } from "@/components/layout";
-import { Hero, WhyThisMatters } from "@/components/sections";
+import { Capabilities, Hero, WhyThisMatters } from "@/components/sections";
 
 export default function HomePage() {
   return (
@@ -7,6 +7,7 @@ export default function HomePage() {
       <main id="main-content" className="flex flex-1 flex-col">
         <Hero />
         <WhyThisMatters />
+        <Capabilities />
       </main>
     </SiteShell>
   );
