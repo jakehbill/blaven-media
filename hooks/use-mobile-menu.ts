@@ -9,6 +9,10 @@ function useMobileMenu() {
 
   const close = useCallback(() => {
     setOpen(false);
+    // Restore focus after the panel unmounts.
+    requestAnimationFrame(() => {
+      triggerRef.current?.focus();
+    });
   }, []);
 
   const toggle = useCallback(() => {
@@ -34,7 +38,6 @@ function useMobileMenu() {
       if (event.key === "Escape") {
         event.preventDefault();
         close();
-        triggerRef.current?.focus();
         return;
       }
 

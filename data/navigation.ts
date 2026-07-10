@@ -1,23 +1,19 @@
 export type NavItem = {
   label: string;
   href: string;
-  sectionId: string;
+  /** In-page section id used for homepage scroll highlighting. */
+  sectionId?: string;
 };
 
 export const primaryNavigation: NavItem[] = [
-  { label: "Home", href: "#home", sectionId: "home" },
-  { label: "Services", href: "#services", sectionId: "services" },
-  {
-    label: "Case Studies",
-    href: "#case-studies",
-    sectionId: "case-studies",
-  },
-  { label: "About", href: "#about", sectionId: "about" },
-  { label: "Contact", href: "#contact", sectionId: "contact" },
+  { label: "Home", href: "/" },
+  { label: "Capabilities", href: "/#services", sectionId: "services" },
+  { label: "About", href: "/about" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const navigationCta = {
   label: "Let's Talk",
-  href: "#contact",
-  sectionId: "contact",
+  href: "/contact",
 } as const;

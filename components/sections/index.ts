@@ -1,11 +1,10 @@
 export { About } from "@/components/sections/about";
+export { AboutPreview } from "@/components/sections/about-preview";
 export { Capabilities } from "@/components/sections/capabilities";
 export { CaseStudies } from "@/components/sections/case-studies";
-export { CaseStudyItem } from "@/components/sections/case-study-item";
 export { Contact } from "@/components/sections/contact";
+export { ContactCta } from "@/components/sections/contact-cta";
+export { FeaturedCaseStudies } from "@/components/sections/featured-case-studies";
 export { Hero } from "@/components/sections/hero";
-export { HeroBackground } from "@/components/sections/hero-background";
-export { HeroTrustedBy } from "@/components/sections/hero-trusted-by";
 export { Testimonials } from "@/components/sections/testimonials";
-export { TestimonialItem } from "@/components/sections/testimonial-item";
 export { WhyThisMatters } from "@/components/sections/why-this-matters";

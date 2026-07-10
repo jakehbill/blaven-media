@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
-import { Providers } from "@/components/providers";
+import { JsonLd } from "@/components/seo/json-ld";
 import { fontVariables } from "@/lib/fonts";
 import { defaultMetadata, defaultViewport } from "@/lib/metadata";
 
@@ -15,9 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${fontVariables} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">
-        <Providers>{children}</Providers>
+    <html
+      lang="en-GB"
+      data-scroll-behavior="smooth"
+      className={`dark ${fontVariables} h-full antialiased`}
+    >
+      <body className="surface-dark flex min-h-full flex-col bg-background text-foreground">
+        <JsonLd />
+        {children}
       </body>
     </html>
   );

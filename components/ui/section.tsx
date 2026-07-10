@@ -15,20 +15,33 @@ const sectionVariants = cva("", {
       top: "border-t border-border",
       bottom: "border-b border-border",
     },
+    surface: {
+      none: "",
+      dark: "surface-dark",
+      light: "surface-light",
+      stone: "surface-stone",
+    },
   },
   defaultVariants: {
     spacing: "md",
     border: "none",
+    surface: "none",
   },
 });
 
 type SectionProps = ComponentPropsWithoutRef<"section"> &
   VariantProps<typeof sectionVariants>;
 
-function Section({ spacing, border, className, ...props }: SectionProps) {
+function Section({
+  spacing,
+  border,
+  surface,
+  className,
+  ...props
+}: SectionProps) {
   return (
     <section
-      className={cn(sectionVariants({ spacing, border }), className)}
+      className={cn(sectionVariants({ spacing, border, surface }), className)}
       {...props}
     />
   );

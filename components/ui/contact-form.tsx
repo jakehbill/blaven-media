@@ -32,20 +32,19 @@ function validate(values: ContactFormValues): ContactFormErrors {
   const errors: ContactFormErrors = {};
 
   if (!values.name.trim()) {
-    errors.name = "[Placeholder validation — name is required.]";
+    errors.name = "Please enter your name.";
   }
 
   if (!values.email.trim()) {
-    errors.email = "[Placeholder validation — email is required.]";
+    errors.email = "Please enter your email address.";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
-    errors.email = "[Placeholder validation — enter a valid email address.]";
+    errors.email = "Please enter a valid email address.";
   }
 
   if (!values.message.trim()) {
-    errors.message = "[Placeholder validation — message is required.]";
+    errors.message = "Please enter a short message.";
   } else if (values.message.trim().length < 10) {
-    errors.message =
-      "[Placeholder validation — please share a little more detail.]";
+    errors.message = "Please share a little more detail.";
   }
 
   return errors;
@@ -119,6 +118,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
           value={values.name}
           onChange={(event) => updateField("name", event.target.value)}
           invalid={Boolean(errors.name)}
+          aria-required
           aria-describedby={errors.name ? `${formId}-name-error` : undefined}
           disabled={status === "submitting"}
         />
@@ -138,6 +138,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
           value={values.email}
           onChange={(event) => updateField("email", event.target.value)}
           invalid={Boolean(errors.email)}
+          aria-required
           aria-describedby={errors.email ? `${formId}-email-error` : undefined}
           disabled={status === "submitting"}
         />
@@ -171,6 +172,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
           value={values.message}
           onChange={(event) => updateField("message", event.target.value)}
           invalid={Boolean(errors.message)}
+          aria-required
           aria-describedby={
             errors.message ? `${formId}-message-error` : undefined
           }
@@ -187,7 +189,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
           disabled={status === "submitting"}
         >
           {status === "submitting"
-            ? "[Sending…]"
+            ? "Sending…"
             : contactContent.form.submitLabel}
         </Button>
 

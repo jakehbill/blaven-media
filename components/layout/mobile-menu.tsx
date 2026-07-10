@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useMemo } from "react";
 
@@ -7,10 +8,12 @@ import { NavLink } from "@/components/layout/nav-link";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { navigationCta, primaryNavigation } from "@/data/navigation";
+import { isNavItemActive } from "@/lib/navigation";
 import { transitionFast } from "@/lib/motion";
 
 type MobileMenuProps = {
   open: boolean;
+  pathname: string;
   activeSection: string | null;
   onClose: () => void;
   panelRef: React.RefObject<HTMLDivElement | null>;
@@ -18,6 +21,7 @@ type MobileMenuProps = {
 
 function MobileMenu({
   open,
+  pathname,
   activeSection,
   onClose,
   panelRef,
@@ -38,10 +42,6 @@ function MobileMenu({
     }),
     [prefersReducedMotion],
   );
-
-  const handleNavClick = () => {
-    onClose();
-  };
 
   return (
     <AnimatePresence>
@@ -64,7 +64,7 @@ function MobileMenu({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="fixed inset-x-0 top-16 z-50 border-b border-border/60 bg-background/95 backdrop-blur-md md:hidden"
+            className="surface-dark fixed inset-x-0 top-16 z-50 border-b border-border/60 bg-background/95 backdrop-blur-md md:hidden"
             initial={{ opacity: 0, y: prefersReducedMotion ? 0 : -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: prefersReducedMotion ? 0 : -8 }}
@@ -75,7 +75,7 @@ function MobileMenu({
                 <ul className="flex flex-col py-8">
                   {primaryNavigation.map((item, index) => (
                     <motion.li
-                      key={item.sectionId}
+                      key={item.href}
                       custom={index}
                       initial="hidden"
                       animate="visible"
@@ -84,9 +84,9 @@ function MobileMenu({
                       <NavLink
                         href={item.href}
                         layout="vertical"
-                        active={activeSection === item.sectionId}
+                        active={isNavItemActive(item, pathname, activeSection)}
                         className="block"
-                        onClick={handleNavClick}
+                        onNavigate={onClose}
                       >
                         {item.label}
                       </NavLink>
@@ -105,12 +105,7 @@ function MobileMenu({
                     variant="primary"
                     size="default"
                     className="w-full"
-                    render={
-                      <a
-                        href={navigationCta.href}
-                        onClick={handleNavClick}
-                      />
-                    }
+                    render={<Link href={navigationCta.href} onClick={onClose} />}
                   >
                     {navigationCta.label}
                   </Button>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentPropsWithoutRef } from "react";
 
@@ -10,8 +11,7 @@ const textLinkVariants = cva(
       variant: {
         default: "text-foreground/75 hover:text-foreground hover:underline",
         stone: "text-stone hover:text-foreground hover:underline",
-        muted:
-          "text-muted-foreground hover:text-foreground hover:underline",
+        muted: "text-muted-foreground hover:text-foreground hover:underline",
       },
     },
     defaultVariants: {
@@ -20,19 +20,34 @@ const textLinkVariants = cva(
   },
 );
 
-type TextLinkProps = ComponentPropsWithoutRef<"a"> &
-  VariantProps<typeof textLinkVariants>;
+type TextLinkProps = Omit<ComponentPropsWithoutRef<"a">, "href"> &
+  VariantProps<typeof textLinkVariants> & {
+    href: string;
+  };
 
 function TextLink({
   variant,
   className,
   children,
+  href,
   ...props
 }: TextLinkProps) {
+  const classes = cn(textLinkVariants({ variant }), className);
+  const isExternal = href.startsWith("http") || href.startsWith("mailto:");
+  const isHash = href.startsWith("#");
+
+  if (isExternal || isHash) {
+    return (
+      <a className={classes} href={href} {...props}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <a className={cn(textLinkVariants({ variant }), className)} {...props}>
+    <Link className={classes} href={href} {...props}>
       {children}
-    </a>
+    </Link>
   );
 }
 

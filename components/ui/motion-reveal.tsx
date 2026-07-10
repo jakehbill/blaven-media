@@ -10,7 +10,6 @@ import type { ReactNode } from "react";
 
 import {
   fadeIn,
-  fadeInLeft,
   fadeInUp,
   staticReveal,
   transition,
@@ -20,7 +19,6 @@ import { cn } from "@/lib/utils";
 const variantMap = {
   fadeIn,
   fadeInUp,
-  fadeInLeft,
 } as const;
 
 type MotionRevealProps = {

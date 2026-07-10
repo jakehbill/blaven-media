@@ -1,5 +1,6 @@
 export type CaseStudy = {
   id: string;
+  /** Reserved for future `/work/[slug]` detail pages. */
   slug: string;
   client: string;
   industry: string;
@@ -15,6 +16,7 @@ export type CaseStudy = {
     author: string;
     role: string;
   };
+  /** Links to the case studies index until detail routes exist. */
   href: string;
 };
 
@@ -48,7 +50,7 @@ export const caseStudiesContent = {
         author: "[Placeholder Author]",
         role: "[Placeholder Role]",
       },
-      href: "/work/placeholder-client-one",
+      href: "/case-studies",
     },
     {
       id: "02",
@@ -73,7 +75,7 @@ export const caseStudiesContent = {
         author: "[Placeholder Author]",
         role: "[Placeholder Role]",
       },
-      href: "/work/placeholder-client-two",
+      href: "/case-studies",
     },
     {
       id: "03",
@@ -98,7 +100,7 @@ export const caseStudiesContent = {
         author: "[Placeholder Author]",
         role: "[Placeholder Role]",
       },
-      href: "/work/placeholder-client-three",
+      href: "/case-studies",
     },
     {
       id: "04",
@@ -124,7 +126,7 @@ export const caseStudiesContent = {
         author: "[Placeholder Author]",
         role: "[Placeholder Role]",
       },
-      href: "/work/placeholder-client-four",
+      href: "/case-studies",
     },
   ] as const satisfies readonly CaseStudy[],
 } as const;

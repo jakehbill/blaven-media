@@ -15,6 +15,9 @@ export const defaultMetadata: Metadata = {
   authors: [{ name: siteConfig.name, url: SITE_URL }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
+  alternates: {
+    canonical: SITE_URL,
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -51,6 +54,7 @@ export const defaultViewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "#0e0e0e" },
     { media: "(prefers-color-scheme: dark)", color: "#0e0e0e" },
   ],
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
 };

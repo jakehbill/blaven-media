@@ -12,6 +12,7 @@ export type Testimonial = {
   quote: string;
   services: string[];
   rating: number | null;
+  caseStudyHref: string | null;
 };
 
 export type TestimonialsContent = {

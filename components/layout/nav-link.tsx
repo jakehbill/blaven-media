@@ -1,8 +1,14 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { cva, type VariantProps } from "class-variance-authority";
-import type { ComponentPropsWithoutRef } from "react";
+import type { MouseEvent } from "react";
 
+import {
+  getHashFromHref,
+  scrollToHash,
+} from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 const navLinkVariants = cva(
@@ -25,23 +31,54 @@ const navLinkVariants = cva(
   },
 );
 
-type NavLinkProps = ComponentPropsWithoutRef<"a"> &
-  VariantProps<typeof navLinkVariants>;
+type NavLinkProps = VariantProps<typeof navLinkVariants> & {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  onNavigate?: () => void;
+};
 
 function NavLink({
   active,
   layout,
   className,
   children,
-  onClick,
-  ...props
+  href,
+  onNavigate,
 }: NavLinkProps) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const hash = getHashFromHref(href);
+  const classes = cn(navLinkVariants({ active, layout }), className);
+
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!hash) {
+      onNavigate?.();
+      return;
+    }
+
+    // Already on the homepage: scroll in place.
+    if (pathname === "/") {
+      event.preventDefault();
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      scrollToHash(hash, reduced ? "auto" : "smooth");
+      window.history.pushState(null, "", `/#${hash}`);
+      onNavigate?.();
+      return;
+    }
+
+    // Other pages: navigate home with hash, then HashScroll finishes the job.
+    event.preventDefault();
+    router.push(`/#${hash}`);
+    onNavigate?.();
+  };
+
   return (
-    <a
-      className={cn(navLinkVariants({ active, layout }), className)}
-      aria-current={active ? "true" : undefined}
-      onClick={onClick}
-      {...props}
+    <Link
+      href={href}
+      className={classes}
+      aria-current={active ? (hash ? "location" : "page") : undefined}
+      onClick={handleClick}
     >
       {children}
       {active && layout === "horizontal" ? (
@@ -50,7 +87,7 @@ function NavLink({
           aria-hidden
         />
       ) : null}
-    </a>
+    </Link>
   );
 }
 

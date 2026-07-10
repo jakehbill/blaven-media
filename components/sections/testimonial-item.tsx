@@ -39,65 +39,59 @@ function Rating({ value }: { value: number }) {
 
 function TestimonialItem({ testimonial, className }: TestimonialItemProps) {
   return (
-    <figure className={cn("h-full", className)}>
-      <Card
-        padding="lg"
-        interactive
-        className={cn(
-          "flex h-full flex-col gap-8 bg-transparent",
-          "transition-[transform,border-color,background-color] duration-300 ease-out",
-          "hover:-translate-y-0.5 hover:bg-card/60",
-          "motion-reduce:hover:translate-y-0",
-        )}
-      >
-        <div className="flex items-start justify-between gap-4">
-          <div className="text-muted-foreground/55">
-            <Image
-              src={testimonial.logo.src}
-              alt={testimonial.logo.alt}
-              width={120}
-              height={32}
-              className="h-6 w-auto opacity-70"
-            />
-          </div>
+    <Card
+      padding="lg"
+      interactive
+      className={cn(
+        "flex h-full flex-col gap-8 bg-transparent",
+        "transition-[transform,border-color,background-color] duration-300 ease-out",
+        "hover:-translate-y-0.5 hover:bg-card/60",
+        "motion-reduce:hover:translate-y-0",
+        className,
+      )}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <Image
+          src={testimonial.logo.src}
+          alt={testimonial.logo.alt}
+          width={120}
+          height={32}
+          className="h-6 w-auto opacity-55"
+        />
 
-          {typeof testimonial.rating === "number" ? (
-            <Rating value={testimonial.rating} />
-          ) : null}
+        {typeof testimonial.rating === "number" ? (
+          <Rating value={testimonial.rating} />
+        ) : null}
+      </div>
+
+      <blockquote className="flex-1 text-sm leading-relaxed text-foreground/85 md:text-[0.9375rem]">
+        <p>{testimonial.quote}</p>
+      </blockquote>
+
+      <div className="space-y-5 border-t border-border/60 pt-6">
+        <div className="space-y-1">
+          <p className="text-sm font-medium text-foreground">
+            {testimonial.clientName}
+          </p>
+          <Text variant="caption">
+            {testimonial.jobTitle}, {testimonial.companyName}
+          </Text>
         </div>
 
-        <blockquote className="flex-1 text-[0.9375rem] leading-relaxed text-foreground/85">
-          {testimonial.quote}
-        </blockquote>
-
-        <figcaption className="space-y-5 border-t border-border/60 pt-6">
-          <div className="space-y-1">
-            <p className="text-sm font-medium text-foreground">
-              {testimonial.clientName}
-            </p>
-            <Text variant="caption">
-              {testimonial.jobTitle}, {testimonial.companyName}
-            </Text>
-          </div>
-
-          <div className="space-y-2">
-            <p className="text-eyebrow uppercase text-muted-foreground">
-              Services Provided
-            </p>
-            <ul className="flex flex-wrap gap-x-3 gap-y-1">
-              {testimonial.services.map((service) => (
-                <li
-                  key={service}
-                  className="text-xs text-foreground/60"
-                >
-                  {service}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </figcaption>
-      </Card>
-    </figure>
+        <div className="space-y-2">
+          <p className="text-eyebrow uppercase text-muted-foreground">
+            Services Provided
+          </p>
+          <ul className="flex flex-wrap gap-x-3 gap-y-1">
+            {testimonial.services.map((service) => (
+              <li key={service} className="text-xs text-foreground/60">
+                {service}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Card>
   );
 }
 

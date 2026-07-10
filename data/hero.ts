@@ -4,11 +4,11 @@ export const heroContent = {
   supportingCopy: "[Placeholder Supporting Copy]",
   primaryCta: {
     label: "View Our Work",
-    href: "#case-studies",
+    href: "/case-studies",
   },
   secondaryCta: {
     label: "Let's Talk",
-    href: "#contact",
+    href: "/contact",
   },
   trustedBy: {
     label: "Trusted by",

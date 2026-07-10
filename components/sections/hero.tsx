@@ -1,14 +1,20 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
 import { HeroBackground } from "@/components/sections/hero-background";
-import { HeroTrustedBy } from "@/components/sections/hero-trusted-by";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { LogoCloud } from "@/components/ui/logo-cloud";
 import { Heading, Text } from "@/components/ui/typography";
 import { heroContent } from "@/data/hero";
-import { fadeInUp, staticReveal, transition } from "@/lib/motion";
+import {
+  fadeInUp,
+  staticReveal,
+  staggerContainer,
+  transition,
+} from "@/lib/motion";
 
 function Hero() {
   const prefersReducedMotion = useReducedMotion();
@@ -17,25 +23,21 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-svh items-center overflow-hidden"
+      className="surface-dark relative flex min-h-[88svh] items-center overflow-hidden md:min-h-svh"
       aria-labelledby="hero-headline"
     >
       <HeroBackground />
 
-      <Container className="relative z-10 py-24 md:py-32">
+      <Container className="relative z-10 py-20 md:py-28">
         <motion.div
           className="max-w-3xl"
           initial="hidden"
           animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: prefersReducedMotion ? 0 : 0.08,
-                delayChildren: prefersReducedMotion ? 0 : 0.12,
-              },
-            },
-          }}
+          variants={
+            prefersReducedMotion
+              ? { hidden: {}, visible: {} }
+              : staggerContainer
+          }
         >
           <motion.div variants={revealVariant} transition={transition}>
             <Text variant="eyebrow">{heroContent.eyebrow}</Text>
@@ -62,14 +64,15 @@ function Hero() {
           </motion.div>
 
           <motion.div
-            className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center"
             variants={revealVariant}
             transition={transition}
           >
             <Button
               variant="primary"
               size="default"
-              render={<a href={heroContent.primaryCta.href} />}
+              className="w-full sm:w-auto"
+              render={<Link href={heroContent.primaryCta.href} />}
             >
               {heroContent.primaryCta.label}
             </Button>
@@ -77,15 +80,23 @@ function Hero() {
             <Button
               variant="secondary"
               size="default"
-              render={<a href={heroContent.secondaryCta.href} />}
+              className="w-full sm:w-auto"
+              render={<Link href={heroContent.secondaryCta.href} />}
             >
               {heroContent.secondaryCta.label}
             </Button>
           </motion.div>
 
-          <div className="mt-16 md:mt-20">
-            <HeroTrustedBy />
-          </div>
+          <motion.div
+            className="mt-14 md:mt-16"
+            variants={revealVariant}
+            transition={transition}
+          >
+            <LogoCloud
+              label={heroContent.trustedBy.label}
+              logos={heroContent.trustedBy.logos}
+            />
+          </motion.div>
         </motion.div>
       </Container>
     </section>

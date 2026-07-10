@@ -1,0 +1,105 @@
+/**
+ * Section surface themes.
+ * Override both semantic tokens and Tailwind --color-* aliases so utilities
+ * like text-foreground / bg-muted / border-border adapt inside each surface.
+ */
+
+.surface-dark,
+.surface-light,
+.surface-stone {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-stone: var(--stone);
+  --color-stone-muted: var(--stone-muted);
+  --color-stone-subtle: var(--stone-subtle);
+  --color-destructive: var(--destructive);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.surface-dark {
+  --background: oklch(0.055 0 0);
+  --foreground: oklch(0.95 0.004 95);
+  --card: oklch(0.1 0 0);
+  --card-foreground: oklch(0.95 0.004 95);
+  --popover: oklch(0.1 0 0);
+  --popover-foreground: oklch(0.95 0.004 95);
+  --primary: oklch(0.95 0.004 95);
+  --primary-foreground: oklch(0.055 0 0);
+  --secondary: oklch(0.14 0 0);
+  --secondary-foreground: oklch(0.9 0 0);
+  --muted: oklch(0.14 0 0);
+  --muted-foreground: oklch(0.62 0 0);
+  --accent: oklch(0.16 0 0);
+  --accent-foreground: oklch(0.95 0.004 95);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.62 0.018 245);
+  --stone: oklch(0.68 0.016 245);
+  --stone-muted: oklch(0.52 0.012 245);
+  --stone-subtle: oklch(0.68 0.016 245 / 14%);
+  --destructive: oklch(0.65 0 0);
+}
+
+.surface-light {
+  --background: oklch(0.985 0.002 95);
+  --foreground: oklch(0.12 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0 0);
+  --primary: oklch(0.12 0 0);
+  --primary-foreground: oklch(0.985 0.002 95);
+  --secondary: oklch(0.94 0.004 95);
+  --secondary-foreground: oklch(0.16 0 0);
+  --muted: oklch(0.94 0.004 95);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.94 0.004 95);
+  --accent-foreground: oklch(0.12 0 0);
+  --border: oklch(0.12 0 0 / 12%);
+  --input: oklch(0.12 0 0 / 14%);
+  --ring: oklch(0.45 0.014 245);
+  --stone: oklch(0.45 0.014 245);
+  --stone-muted: oklch(0.4 0.01 245);
+  --stone-subtle: oklch(0.45 0.014 245 / 14%);
+  --destructive: oklch(0.45 0 0);
+}
+
+.surface-stone {
+  --background: oklch(0.93 0.008 245);
+  --foreground: oklch(0.14 0 0);
+  --card: oklch(0.96 0.006 245);
+  --card-foreground: oklch(0.14 0 0);
+  --popover: oklch(0.96 0.006 245);
+  --popover-foreground: oklch(0.14 0 0);
+  --primary: oklch(0.14 0 0);
+  --primary-foreground: oklch(0.96 0.006 245);
+  --secondary: oklch(0.88 0.01 245);
+  --secondary-foreground: oklch(0.16 0 0);
+  --muted: oklch(0.88 0.01 245);
+  --muted-foreground: oklch(0.38 0.01 245);
+  --accent: oklch(0.88 0.01 245);
+  --accent-foreground: oklch(0.14 0 0);
+  --border: oklch(0.14 0 0 / 12%);
+  --input: oklch(0.14 0 0 / 14%);
+  --ring: oklch(0.42 0.014 245);
+  --stone: oklch(0.42 0.014 245);
+  --stone-muted: oklch(0.36 0.012 245);
+  --stone-subtle: oklch(0.42 0.014 245 / 16%);
+  --destructive: oklch(0.45 0 0);
+}

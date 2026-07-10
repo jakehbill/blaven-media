@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 
 import { MobileMenu } from "@/components/layout/mobile-menu";
@@ -12,6 +14,7 @@ import { siteConfig } from "@/data/site";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { useMobileMenu } from "@/hooks/use-mobile-menu";
 import { useScrolled } from "@/hooks/use-scrolled";
+import { isNavItemActive } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 type NavbarProps = {
@@ -19,45 +22,49 @@ type NavbarProps = {
 };
 
 function Navbar({ className }: NavbarProps) {
+  const pathname = usePathname();
   const scrolled = useScrolled();
   const { open, close, toggle, triggerRef, panelRef } = useMobileMenu();
 
   const sectionIds = useMemo(
-    () => primaryNavigation.map((item) => item.sectionId),
+    () =>
+      primaryNavigation
+        .map((item) => item.sectionId)
+        .filter((id): id is string => Boolean(id)),
     [],
   );
-  const activeSection = useActiveSection(sectionIds);
-
-  const currentSection = !scrolled ? "home" : activeSection;
+  const activeSection = useActiveSection(
+    pathname === "/" ? ["home", ...sectionIds] : [],
+  );
 
   return (
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ease-out",
+          "sticky top-0 z-50 surface-dark transition-[background-color,border-color,backdrop-filter] duration-500 ease-out",
           scrolled
-            ? "border-b border-border/60 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/70"
-            : "border-b border-transparent bg-transparent",
+            ? "border-b border-border/60 bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/75"
+            : "border-b border-transparent bg-background/0",
           className,
         )}
       >
         <Container>
           <div className="flex h-16 items-center justify-between gap-6">
-            <a
-              href="#home"
+            <Link
+              href="/"
               className="text-sm font-medium tracking-tight text-foreground transition-opacity duration-300 hover:opacity-75"
             >
               {siteConfig.name}
-            </a>
+            </Link>
 
             <div className="flex items-center gap-6">
               <nav aria-label="Primary" className="hidden md:block">
                 <ul className="flex items-center gap-8">
                   {primaryNavigation.map((item) => (
-                    <li key={item.sectionId}>
+                    <li key={item.href}>
                       <NavLink
                         href={item.href}
-                        active={currentSection === item.sectionId}
+                        active={isNavItemActive(item, pathname, activeSection)}
                       >
                         {item.label}
                       </NavLink>
@@ -70,7 +77,7 @@ function Navbar({ className }: NavbarProps) {
                 variant="primary"
                 size="sm"
                 className="hidden md:inline-flex"
-                render={<a href={navigationCta.href} />}
+                render={<Link href={navigationCta.href} />}
               >
                 {navigationCta.label}
               </Button>
@@ -97,7 +104,8 @@ function Navbar({ className }: NavbarProps) {
 
       <MobileMenu
         open={open}
-        activeSection={currentSection}
+        pathname={pathname}
+        activeSection={activeSection}
         onClose={close}
         panelRef={panelRef}
       />

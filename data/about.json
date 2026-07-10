@@ -49,6 +49,6 @@
   "personalStatement": "[Placeholder personal statement — a brief closing line that feels human, considered and quietly confident.]",
   "cta": {
     "label": "Let's Talk",
-    "href": "#contact"
+    "href": "/contact"
   }
 }

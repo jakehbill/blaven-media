@@ -12,25 +12,20 @@ type CaseStudyItemProps = {
   className?: string;
 };
 
-function CaseStudyItem({ study, reverse = false, className }: CaseStudyItemProps) {
+function CaseStudyItem({
+  study,
+  reverse = false,
+  className,
+}: CaseStudyItemProps) {
   return (
     <article
       className={cn(
-        "group border-b border-border/60 py-16 last:border-b-0 md:py-20",
+        "group border-b border-border/60 py-10 last:border-b-0 md:py-14",
         className,
       )}
     >
-      <div
-        className={cn(
-          "grid items-start gap-10 md:grid-cols-2 md:gap-16 lg:gap-24",
-        )}
-      >
-        <div
-          className={cn(
-            "space-y-8",
-            reverse && "md:order-2",
-          )}
-        >
+      <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16 lg:gap-24">
+        <div className={cn("space-y-8", reverse && "md:order-2")}>
           <div className="space-y-5">
             <div className="text-muted-foreground/55">
               <Image
@@ -38,13 +33,15 @@ function CaseStudyItem({ study, reverse = false, className }: CaseStudyItemProps
                 alt={study.logo.alt}
                 width={120}
                 height={32}
-                className="h-7 w-auto opacity-70"
+                className="h-6 w-auto opacity-55"
               />
             </div>
 
             <div className="space-y-2">
               <h3 className="text-h3 text-foreground">{study.client}</h3>
-              <p className="text-eyebrow uppercase text-stone">{study.industry}</p>
+              <p className="text-eyebrow uppercase text-muted-foreground">
+                {study.industry}
+              </p>
             </div>
           </div>
 
@@ -56,10 +53,7 @@ function CaseStudyItem({ study, reverse = false, className }: CaseStudyItemProps
               <dd>
                 <ul className="flex flex-wrap gap-x-4 gap-y-1">
                   {study.services.map((service) => (
-                    <li
-                      key={service}
-                      className="text-sm text-foreground/75"
-                    >
+                    <li key={service} className="text-sm text-foreground/75">
                       {service}
                     </li>
                   ))}
@@ -72,7 +66,10 @@ function CaseStudyItem({ study, reverse = false, className }: CaseStudyItemProps
                 Outcome
               </dt>
               <dd>
-                <Text variant="muted" className="text-[0.9375rem] leading-relaxed">
+                <Text
+                  variant="muted"
+                  className="text-sm leading-relaxed md:text-[0.9375rem]"
+                >
                   {study.outcome}
                 </Text>
               </dd>
@@ -87,15 +84,12 @@ function CaseStudyItem({ study, reverse = false, className }: CaseStudyItemProps
           )}
         >
           <div className="space-y-8">
-            <Text
-              variant="body-lg"
-              className="max-w-prose text-foreground/85"
-            >
+            <Text variant="body-lg" className="max-w-prose text-foreground/85">
               {study.summary}
             </Text>
 
             <blockquote className="space-y-4 border-l border-stone/40 pl-5">
-              <p className="text-[0.9375rem] leading-relaxed text-foreground/80">
+              <p className="text-sm leading-relaxed text-foreground/80 md:text-[0.9375rem]">
                 <span className="text-stone" aria-hidden>
                   &ldquo;
                 </span>
@@ -115,11 +109,7 @@ function CaseStudyItem({ study, reverse = false, className }: CaseStudyItemProps
             </blockquote>
           </div>
 
-          <TextLink
-            href={study.href}
-            variant="default"
-            className="w-fit"
-          >
+          <TextLink href={study.href} variant="default" className="w-fit">
             View Case Study
             <ArrowUpRight
               className="size-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0"

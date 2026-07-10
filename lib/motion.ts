@@ -32,20 +32,11 @@ export const fadeIn: Variants = {
   },
 };
 
-export const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: -12 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition,
-  },
-};
-
 export const staggerContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.06,
+      staggerChildren: 0.08,
       delayChildren: 0.05,
     },
   },
