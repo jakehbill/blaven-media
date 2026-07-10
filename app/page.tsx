@@ -3,6 +3,7 @@ import {
   About,
   Capabilities,
   CaseStudies,
+  Contact,
   Hero,
   Testimonials,
   WhyThisMatters,
@@ -18,6 +19,7 @@ export default function HomePage() {
         <CaseStudies />
         <Testimonials />
         <About />
+        <Contact />
       </main>
     </SiteShell>
   );

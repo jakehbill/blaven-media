@@ -2,6 +2,7 @@ export { About } from "@/components/sections/about";
 export { Capabilities } from "@/components/sections/capabilities";
 export { CaseStudies } from "@/components/sections/case-studies";
 export { CaseStudyItem } from "@/components/sections/case-study-item";
+export { Contact } from "@/components/sections/contact";
 export { Hero } from "@/components/sections/hero";
 export { HeroBackground } from "@/components/sections/hero-background";
 export { HeroTrustedBy } from "@/components/sections/hero-trusted-by";
