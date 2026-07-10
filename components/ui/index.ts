@@ -1,3 +1,4 @@
+export { Accordion } from "@/components/ui/accordion";
 export { Button, buttonVariants } from "@/components/ui/button";
 export { Card, cardVariants } from "@/components/ui/card";
 export { ContactForm } from "@/components/ui/contact-form";

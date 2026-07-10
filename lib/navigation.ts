@@ -6,7 +6,7 @@ export function isNavItemActive(
   activeSection: string | null,
 ) {
   if (item.href === "/") {
-    return pathname === "/" && activeSection !== "services";
+    return pathname === "/";
   }
 
   if (item.sectionId && item.href.includes("#")) {
