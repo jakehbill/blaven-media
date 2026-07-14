@@ -50,9 +50,6 @@ export type ContactPageContent = {
     copyLabel: string;
     copiedLabel: string;
   };
-  footer: {
-    tagline: string;
-  };
 };
 
 /** Homepage Contact CTA — kept separate from the Contact page hero. */
@@ -118,8 +115,5 @@ export const contactPageContent: ContactPageContent = {
     revealLabel: "Reveal email",
     copyLabel: "Copy",
     copiedLabel: "Copied",
-  },
-  footer: {
-    tagline: "Built with care in London.",
   },
 };
