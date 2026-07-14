@@ -18,7 +18,7 @@ export type Testimonial = {
 export type TestimonialsContent = {
   label: string;
   heading: string;
-  introduction: string;
+  introduction: string | string[];
   items: Testimonial[];
 };
 

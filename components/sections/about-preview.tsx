@@ -18,16 +18,16 @@ function AboutPreview() {
       aria-labelledby="about-preview-heading"
     >
       <Container>
-        <MotionReveal className="max-w-prose">
+        <MotionReveal className="max-w-3xl">
           <Text variant="eyebrow">{aboutContent.label}</Text>
 
-          <Heading id="about-preview-heading" level="h2" className="mt-5">
+          <Heading id="about-preview-heading" level="h2" className="mt-5 max-w-2xl">
             {aboutContent.heading}
           </Heading>
 
           <Text
             variant="body-lg"
-            className="mt-5 text-foreground/85"
+            className="mt-5 max-w-prose text-foreground/85"
           >
             {aboutContent.paragraphs[0]}
           </Text>

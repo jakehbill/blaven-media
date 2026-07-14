@@ -21,6 +21,7 @@ function Capabilities() {
           label={capabilitiesContent.label}
           heading={capabilitiesContent.heading}
           introduction={capabilitiesContent.introduction}
+          className="max-w-3xl"
         />
 
         <Stagger className="mt-10 border-t border-border/60 md:mt-12">

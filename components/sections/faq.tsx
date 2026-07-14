@@ -21,7 +21,6 @@ function Faq() {
             id="faq-heading"
             label={faqContent.label}
             heading={faqContent.heading}
-            introduction={faqContent.introduction}
           />
 
           <MotionReveal delay={0.08}>

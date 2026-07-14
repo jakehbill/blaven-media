@@ -18,9 +18,13 @@ function ContactCta() {
       aria-labelledby="contact-cta-heading"
     >
       <Container>
-        <MotionReveal className="mx-auto max-w-2xl text-center">
+        <MotionReveal className="mx-auto max-w-3xl text-center">
           <Text variant="eyebrow">{contactContent.label}</Text>
-          <Heading id="contact-cta-heading" level="h2" className="mt-6">
+          <Heading
+            id="contact-cta-heading"
+            level="h2"
+            className="mx-auto mt-6 max-w-2xl"
+          >
             {contactContent.heading}
           </Heading>
           <Text

@@ -40,27 +40,21 @@ function Hero() {
           }
         >
           <motion.div variants={revealVariant} transition={transition}>
-            <Text variant="eyebrow">{heroContent.eyebrow}</Text>
-          </motion.div>
-
-          <motion.div
-            className="mt-6"
-            variants={revealVariant}
-            transition={transition}
-          >
-            <Heading id="hero-headline" level="h1" className="max-w-2xl">
+            <Heading id="hero-headline" level="h1" className="max-w-3xl">
               {heroContent.headline}
             </Heading>
           </motion.div>
 
           <motion.div
-            className="mt-6"
+            className="mt-6 space-y-5"
             variants={revealVariant}
             transition={transition}
           >
-            <Text variant="body-lg" width="prose">
-              {heroContent.supportingCopy}
-            </Text>
+            {heroContent.supportingCopy.map((paragraph) => (
+              <Text key={paragraph} variant="body-lg" width="prose">
+                {paragraph}
+              </Text>
+            ))}
           </motion.div>
 
           <motion.div

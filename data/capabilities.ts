@@ -7,33 +7,33 @@ export type Capability = {
 
 export const capabilitiesContent = {
   label: "Capabilities",
-  heading: "[Placeholder Heading]",
+  heading: "Building authority isn't one service. It's a system.",
   introduction:
-    "[Placeholder introduction — a short editorial lead explaining how Blaven Media helps founders, experts and organisations build lasting authority.]",
+    "Every touchpoint shapes how people perceive your organisation. We bring strategy, storytelling, and execution together to ensure every piece of communication reinforces the same idea: why your work matters.",
   items: [
     {
       number: "01",
       title: "Thought Leadership",
       description:
-        "[Placeholder description — how we position founders and experts as credible voices in their field.]",
+        "Position founders and leadership teams as trusted voices through articles, LinkedIn, newsletters, speaking profiles, and strategic content.",
       services: [
-        "Executive positioning",
+        "Articles",
         "LinkedIn",
         "Newsletters",
-        "Articles",
         "Speaking profiles",
+        "Strategic content",
       ],
     },
     {
       number: "02",
       title: "Content Systems",
       description:
-        "[Placeholder description — how we build repeatable systems that turn expertise into consistent, high-quality content.]",
+        "Turn expertise into high-quality video, podcasts, articles, email newsletters, and social content that keeps working long after it's published.",
       services: [
         "Video",
         "Podcasts",
-        "Content repurposing",
-        "Email",
+        "Articles",
+        "Email newsletters",
         "Social",
       ],
     },
@@ -41,24 +41,19 @@ export const capabilitiesContent = {
       number: "03",
       title: "Brand & Digital",
       description:
-        "[Placeholder description — how we shape identity, messaging and digital presence with clarity and restraint.]",
-      services: [
-        "Websites",
-        "Visual identity",
-        "Messaging",
-        "Design systems",
-      ],
+        "Build brands and websites that earn trust from the very first interaction, combining clear messaging with thoughtful design.",
+      services: ["Websites", "Brand", "Messaging", "Design"],
     },
     {
       number: "04",
       title: "Communications Strategy",
       description:
-        "[Placeholder description — how we advise on campaigns, launches and the communications that build reputation.]",
+        "Develop campaigns, positioning, launches, and messaging that help organisations communicate with confidence in a rapidly changing world.",
       services: [
         "Campaigns",
-        "Launches",
         "Positioning",
-        "Communications advisory",
+        "Launches",
+        "Messaging",
       ],
     },
   ] as const satisfies readonly Capability[],

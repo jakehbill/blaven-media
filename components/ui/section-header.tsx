@@ -8,7 +8,7 @@ type SectionHeaderProps = {
   id: string;
   label: string;
   heading: string;
-  introduction?: string;
+  introduction?: string | readonly string[];
   className?: string;
 };
 
@@ -19,6 +19,12 @@ function SectionHeader({
   introduction,
   className,
 }: SectionHeaderProps) {
+  const introductionParagraphs = introduction
+    ? Array.isArray(introduction)
+      ? introduction
+      : [introduction]
+    : [];
+
   return (
     <div className={cn("max-w-prose", className)}>
       <MotionReveal>
@@ -31,11 +37,17 @@ function SectionHeader({
         </Heading>
       </MotionReveal>
 
-      {introduction ? (
-        <MotionReveal className="mt-6" delay={0.1}>
-          <Text variant="body-lg" className="text-foreground/85">
-            {introduction}
-          </Text>
+      {introductionParagraphs.length > 0 ? (
+        <MotionReveal className="mt-6 space-y-4" delay={0.1}>
+          {introductionParagraphs.map((paragraph) => (
+            <Text
+              key={paragraph}
+              variant="body-lg"
+              className="text-foreground/85"
+            >
+              {paragraph}
+            </Text>
+          ))}
         </MotionReveal>
       ) : null}
     </div>

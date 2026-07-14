@@ -5,9 +5,7 @@ export type FaqItem = {
 
 export const faqContent = {
   label: "FAQ",
-  heading: "[Placeholder FAQ Heading]",
-  introduction:
-    "[Placeholder introduction — concise answers to common questions before starting a conversation.]",
+  heading: "A few questions we often hear.",
   items: [
     {
       question: "How do projects typically begin?",
