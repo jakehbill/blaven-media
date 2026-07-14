@@ -4,28 +4,35 @@ import { useId, useState, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
 import { FieldError, Input, Label, Textarea } from "@/components/ui/field";
-import { contactContent } from "@/data/contact";
+import { contactPageContent } from "@/data/contact";
 import { cn } from "@/lib/utils";
 
 type ContactFormValues = {
   name: string;
   email: string;
-  company: string;
+  organisation: string;
   message: string;
+  /** Honeypot: leave empty. */
+  website: string;
 };
 
-type ContactFormErrors = Partial<Record<keyof ContactFormValues, string>>;
+type ContactFormErrors = Partial<
+  Record<Exclude<keyof ContactFormValues, "website">, string>
+>;
 
 type ContactFormProps = {
   className?: string;
-  onSubmitPlaceholder?: (values: ContactFormValues) => Promise<void> | void;
+  onSubmitPlaceholder?: (
+    values: Omit<ContactFormValues, "website">,
+  ) => Promise<void> | void;
 };
 
 const initialValues: ContactFormValues = {
   name: "",
   email: "",
-  company: "",
+  organisation: "",
   message: "",
+  website: "",
 };
 
 function validate(values: ContactFormValues): ContactFormErrors {
@@ -42,7 +49,7 @@ function validate(values: ContactFormValues): ContactFormErrors {
   }
 
   if (!values.message.trim()) {
-    errors.message = "Please enter a short message.";
+    errors.message = "Please tell us what you're working on.";
   } else if (values.message.trim().length < 10) {
     errors.message = "Please share a little more detail.";
   }
@@ -54,18 +61,21 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
   const formId = useId();
   const [values, setValues] = useState<ContactFormValues>(initialValues);
   const [errors, setErrors] = useState<ContactFormErrors>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
-    "idle",
-  );
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
 
-  const fields = contactContent.form.fields;
+  const fields = contactPageContent.form.fields;
 
-  const updateField = (field: keyof ContactFormValues, value: string) => {
+  const updateField = <K extends keyof ContactFormValues>(
+    field: K,
+    value: ContactFormValues[K],
+  ) => {
     setValues((current) => ({ ...current, [field]: value }));
-    if (errors[field]) {
+    if (field !== "website" && errors[field as keyof ContactFormErrors]) {
       setErrors((current) => {
         const next = { ...current };
-        delete next[field];
+        delete next[field as keyof ContactFormErrors];
         return next;
       });
     }
@@ -73,6 +83,13 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Honeypot: pretend success for bots without processing.
+    if (values.website.trim()) {
+      setStatus("success");
+      setValues(initialValues);
+      return;
+    }
 
     const nextErrors = validate(values);
     setErrors(nextErrors);
@@ -85,8 +102,12 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
     setStatus("submitting");
 
     try {
-      // Placeholder submission: replace with API / form service later.
-      await (onSubmitPlaceholder?.(values) ??
+      await (onSubmitPlaceholder?.({
+        name: values.name,
+        email: values.email,
+        organisation: values.organisation,
+        message: values.message,
+      }) ??
         new Promise((resolve) => {
           setTimeout(resolve, 600);
         }));
@@ -100,11 +121,24 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
 
   return (
     <form
-      className={cn("space-y-6", className)}
+      className={cn("relative space-y-5", className)}
       onSubmit={handleSubmit}
       noValidate
-      aria-describedby={`${formId}-privacy`}
     >
+      {/* Honeypot: hidden from users and assistive tech */}
+      <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden>
+        <label htmlFor={`${formId}-website`}>Website</label>
+        <input
+          id={`${formId}-website`}
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={values.website}
+          onChange={(event) => updateField("website", event.target.value)}
+        />
+      </div>
+
       <div className="space-y-2">
         <Label htmlFor={`${formId}-name`} required>
           {fields.name.label}
@@ -146,17 +180,17 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor={`${formId}-company`}>
-          {fields.company.label}
+        <Label htmlFor={`${formId}-organisation`}>
+          {fields.organisation.label}
         </Label>
         <Input
-          id={`${formId}-company`}
-          name="company"
+          id={`${formId}-organisation`}
+          name="organisation"
           type="text"
           autoComplete="organization"
-          placeholder={fields.company.placeholder}
-          value={values.company}
-          onChange={(event) => updateField("company", event.target.value)}
+          placeholder={fields.organisation.placeholder}
+          value={values.organisation}
+          onChange={(event) => updateField("organisation", event.target.value)}
           disabled={status === "submitting"}
         />
       </div>
@@ -189,28 +223,21 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
           disabled={status === "submitting"}
         >
           {status === "submitting"
-            ? "Sending…"
-            : contactContent.form.submitLabel}
+            ? contactPageContent.form.submittingLabel
+            : contactPageContent.form.submitLabel}
         </Button>
 
         {status === "success" ? (
           <p className="text-sm text-foreground/80" role="status">
-            {contactContent.form.successMessage}
+            {contactPageContent.form.successMessage}
           </p>
         ) : null}
 
         {status === "error" ? (
           <p className="text-sm text-destructive" role="alert">
-            {contactContent.form.errorMessage}
+            {contactPageContent.form.errorMessage}
           </p>
         ) : null}
-
-        <p
-          id={`${formId}-privacy`}
-          className="text-caption text-muted-foreground"
-        >
-          {contactContent.form.privacyNote}
-        </p>
       </div>
     </form>
   );

@@ -6,7 +6,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { HeroBackground } from "@/components/sections/hero-background";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { LogoCloud } from "@/components/ui/logo-cloud";
 import { Heading, Text } from "@/components/ui/typography";
 import { heroContent } from "@/data/hero";
 import {
@@ -79,17 +78,6 @@ function Hero() {
             >
               {heroContent.secondaryCta.label}
             </Button>
-          </motion.div>
-
-          <motion.div
-            className="mt-12 md:mt-14"
-            variants={revealVariant}
-            transition={transition}
-          >
-            <LogoCloud
-              label={heroContent.trustedBy.label}
-              logos={heroContent.trustedBy.logos}
-            />
           </motion.div>
         </motion.div>
       </Container>

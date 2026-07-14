@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 import { MotionReveal } from "@/components/ui/motion-reveal";
 import { Section } from "@/components/ui/section";
 import { Heading, Text } from "@/components/ui/typography";
-import { contactContent } from "@/data/contact";
+import { contactCtaContent } from "@/data/contact";
 
 function ContactCta() {
   return (
@@ -19,27 +19,27 @@ function ContactCta() {
     >
       <Container>
         <MotionReveal className="mx-auto max-w-3xl text-center">
-          <Text variant="eyebrow">{contactContent.label}</Text>
+          <Text variant="eyebrow">{contactCtaContent.label}</Text>
           <Heading
             id="contact-cta-heading"
             level="h2"
             className="mx-auto mt-6 max-w-2xl"
           >
-            {contactContent.heading}
+            {contactCtaContent.heading}
           </Heading>
           <Text
             variant="body-lg"
             className="mx-auto mt-6 max-w-prose text-foreground/85"
           >
-            {contactContent.introduction}
+            {contactCtaContent.body}
           </Text>
           <div className="mt-8 flex justify-center">
             <Button
               variant="primary"
               size="default"
-              render={<Link href="/contact" />}
+              render={<Link href={contactCtaContent.cta.href} />}
             >
-              Let&apos;s Talk
+              {contactCtaContent.cta.label}
             </Button>
           </div>
         </MotionReveal>
