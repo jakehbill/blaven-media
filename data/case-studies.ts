@@ -14,7 +14,7 @@ export type CaseStudy = {
   approach: string;
   outcomes: readonly CaseStudyOutcome[];
   services: readonly string[];
-  testimonial: {
+  testimonial?: {
     quote: string;
     author: string;
     role: string;
@@ -78,9 +78,9 @@ export const caseStudiesContent = {
       ],
       testimonial: {
         quote:
-          "[Placeholder testimonial: to be provided by SilverLining.]",
-        author: "[Placeholder Name]",
-        role: "[Placeholder Role], SilverLining",
+          "Jake brings a rare mix of strategic thinking and hands-on execution. He's helped elevate every part of our communications, from email to LinkedIn to founder-led video. I'm so glad we brought Blaven Media on board when we did.",
+        author: "Alexandra",
+        role: "Head of Special Projects, SilverLining",
       },
       cta: {
         label: "Get in touch",
@@ -114,9 +114,9 @@ export const caseStudiesContent = {
       ],
       testimonial: {
         quote:
-          "[Placeholder testimonial: to be provided by Climate Impact.]",
-        author: "[Placeholder Name]",
-        role: "[Placeholder Role], Climate Impact",
+          "From content to design, Jake just gets it. Everything he's delivered has been thoughtful, on-brand, and high quality. The weekly newsletter he developed from scratch has been one of the greatest drivers of engagement for us, and our events have been growing every month because of it.",
+        author: "Kendall",
+        role: "Head of Community, Climate Impact",
       },
       cta: {
         label: "Get in touch",
@@ -148,9 +148,9 @@ export const caseStudiesContent = {
       ],
       testimonial: {
         quote:
-          "[Placeholder testimonial: to be provided by Exactly.ai.]",
-        author: "[Placeholder Name]",
-        role: "[Placeholder Role], Exactly.ai",
+          "The best part of working with Blaven is that I stay in control of the narrative while doing very little. Two hours per month with them gives me weeks of daily content. They're diligent and incredibly fast, delivering everything the day after recording. A traditional journalist might take two weeks. By any standard, that's exceptional.",
+        author: "Tonia Samsonova",
+        role: "Founder & CEO, Exactly.ai",
       },
       cta: {
         label: "Get in touch",
@@ -179,9 +179,10 @@ export const caseStudiesContent = {
         "Video & Content Systems",
       ],
       testimonial: {
-        quote: "[Placeholder testimonial: to be provided by LDPR.]",
-        author: "[Placeholder Name]",
-        role: "[Placeholder Role], LDPR",
+        quote:
+          "Working with Blaven has brought clarity and consistency to LDPR's voice. We've seen a real uptick in engagement, particularly on LinkedIn, due to the creative video content they've produced with our senior team members. From strategy to execution, they've been an amazing partner, and we couldn't be more grateful.",
+        author: "Laura",
+        role: "Founder & President, LDPR",
       },
       cta: {
         label: "Get in touch",
@@ -210,12 +211,6 @@ export const caseStudiesContent = {
         "Event Communications",
         "Content Strategy",
       ],
-      testimonial: {
-        quote:
-          "[Placeholder testimonial: to be provided by Eight Sleep.]",
-        author: "[Placeholder Name]",
-        role: "[Placeholder Role], Eight Sleep",
-      },
       cta: {
         label: "Get in touch",
         href: "/contact",
@@ -243,12 +238,6 @@ export const caseStudiesContent = {
         "Content Strategy",
         "Communications Strategy",
       ],
-      testimonial: {
-        quote:
-          "[Placeholder testimonial: to be provided by Sideways.]",
-        author: "[Placeholder Name]",
-        role: "[Placeholder Role], Sideways",
-      },
       cta: {
         label: "Get in touch",
         href: "/contact",

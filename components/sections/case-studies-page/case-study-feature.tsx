@@ -163,25 +163,27 @@ function CaseStudyFeature({
                 </Field>
               </div>
 
-              <blockquote className="max-w-prose space-y-4 border-l border-stone/40 pl-5">
-                <p className="text-sm leading-[1.55] text-foreground/80 md:text-[0.9375rem]">
-                  <span className="text-stone" aria-hidden>
-                    &ldquo;
-                  </span>
-                  {study.testimonial.quote}
-                  <span className="text-stone" aria-hidden>
-                    &rdquo;
-                  </span>
-                </p>
-                <footer className="space-y-0.5">
-                  <p className="text-sm font-medium text-foreground">
-                    {study.testimonial.author}
+              {study.testimonial ? (
+                <blockquote className="max-w-prose space-y-4 border-l border-stone/40 pl-5">
+                  <p className="text-sm leading-[1.55] text-foreground/80 md:text-[0.9375rem]">
+                    <span className="text-stone" aria-hidden>
+                      &ldquo;
+                    </span>
+                    {study.testimonial.quote}
+                    <span className="text-stone" aria-hidden>
+                      &rdquo;
+                    </span>
                   </p>
-                  <p className="text-caption text-muted-foreground">
-                    {study.testimonial.role}
-                  </p>
-                </footer>
-              </blockquote>
+                  <footer className="space-y-0.5">
+                    <p className="text-sm font-medium text-foreground">
+                      {study.testimonial.author}
+                    </p>
+                    <p className="text-caption text-muted-foreground">
+                      {study.testimonial.role}
+                    </p>
+                  </footer>
+                </blockquote>
+              ) : null}
 
               <div>
                 <Button

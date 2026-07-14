@@ -9,86 +9,79 @@
     {
       "id": "01",
       "logo": {
-        "src": "/images/logos/placeholder-01.svg",
-        "alt": "[Placeholder Company Logo]"
+        "src": "/images/logos/placeholder-03.svg",
+        "alt": "Exactly.ai"
       },
-      "clientName": "[Placeholder Client Name]",
-      "jobTitle": "[Placeholder Job Title]",
-      "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial: sentence one establishing the context of the engagement. Sentence two reflecting on the quality of thinking and collaboration. Sentence three describing the clarity brought to the work. Sentence four noting the lasting impact on how the organisation communicates.]",
-      "services": ["Thought Leadership", "Content Systems"],
-      "rating": 5,
-      "caseStudyHref": "/case-studies"
+      "clientName": "Tonia Samsonova",
+      "jobTitle": "Founder & CEO",
+      "companyName": "Exactly.ai",
+      "quote": "The best part of working with Blaven is that I stay in control of the narrative while doing very little. Two hours per month with them gives me weeks of daily content. They're diligent and incredibly fast, delivering everything the day after recording. A traditional journalist might take two weeks. By any standard, that's exceptional.",
+      "services": [
+        "Thought Leadership",
+        "Content Systems",
+        "Video & Content Systems"
+      ],
+      "rating": null,
+      "caseStudyHref": "/case-studies#exactly-ai"
     },
     {
       "id": "02",
       "logo": {
-        "src": "/images/logos/placeholder-02.svg",
-        "alt": "[Placeholder Company Logo]"
+        "src": "/images/logos/placeholder-01.svg",
+        "alt": "SilverLining"
       },
-      "clientName": "[Placeholder Client Name]",
-      "jobTitle": "[Placeholder Job Title]",
-      "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial: sentence one on the challenge faced. Sentence two on the strategic approach taken. Sentence three on the standard of execution. Sentence four on the confidence gained as a result.]",
-      "services": ["Brand & Digital", "Communications Strategy"],
-      "rating": 5,
-      "caseStudyHref": "/case-studies"
+      "clientName": "Alexandra",
+      "jobTitle": "Head of Special Projects",
+      "companyName": "SilverLining",
+      "quote": "Jake brings a rare mix of strategic thinking and hands-on execution. He's helped elevate every part of our communications, from email to LinkedIn to founder-led video. I'm so glad we brought Blaven Media on board when we did.",
+      "services": [
+        "Thought Leadership",
+        "Communications Strategy",
+        "Newsletter",
+        "Website",
+        "Event Communications",
+        "Content Strategy"
+      ],
+      "rating": null,
+      "caseStudyHref": "/case-studies#silverlining"
     },
     {
       "id": "03",
       "logo": {
-        "src": "/images/logos/placeholder-03.svg",
-        "alt": "[Placeholder Company Logo]"
+        "src": "/images/logos/placeholder-02.svg",
+        "alt": "Climate Impact"
       },
-      "clientName": "[Placeholder Client Name]",
-      "jobTitle": "[Placeholder Job Title]",
-      "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial: sentence one introducing the partnership. Sentence two describing the care taken with voice and positioning. Sentence three noting how the work landed with audiences. Sentence four and five reflecting on trust built over time.]",
-      "services": ["Thought Leadership", "Communications Strategy"],
-      "rating": 4,
-      "caseStudyHref": null
+      "clientName": "Kendall",
+      "jobTitle": "Head of Community",
+      "companyName": "Climate Impact",
+      "quote": "From content to design, Jake just gets it. Everything he's delivered has been thoughtful, on-brand, and high quality. The weekly newsletter he developed from scratch has been one of the greatest drivers of engagement for us, and our events have been growing every month because of it.",
+      "services": [
+        "Thought Leadership",
+        "Newsletter",
+        "Brand & Digital",
+        "Event Communications",
+        "Communications Strategy"
+      ],
+      "rating": null,
+      "caseStudyHref": "/case-studies#climate-impact"
     },
     {
       "id": "04",
       "logo": {
         "src": "/images/logos/placeholder-04.svg",
-        "alt": "[Placeholder Company Logo]"
+        "alt": "LDPR"
       },
-      "clientName": "[Placeholder Client Name]",
-      "jobTitle": "[Placeholder Job Title]",
-      "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial: sentence one on what was needed. Sentence two on how Blaven Media approached the brief. Sentence three on the quality of the output. Sentence four on the difference it made.]",
-      "services": ["Content Systems", "Brand & Digital"],
-      "rating": 5,
-      "caseStudyHref": "/case-studies"
-    },
-    {
-      "id": "05",
-      "logo": {
-        "src": "/images/logos/placeholder-05.svg",
-        "alt": "[Placeholder Company Logo]"
-      },
-      "clientName": "[Placeholder Client Name]",
-      "jobTitle": "[Placeholder Job Title]",
-      "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial: sentence one establishing rapport. Sentence two on the depth of strategic counsel. Sentence three on consistency of delivery. Sentence four on recommending the partnership to peers.]",
-      "services": ["Thought Leadership", "Content Systems", "Brand & Digital"],
-      "rating": 5,
-      "caseStudyHref": null
-    },
-    {
-      "id": "06",
-      "logo": {
-        "src": "/images/logos/placeholder-01.svg",
-        "alt": "[Placeholder Company Logo]"
-      },
-      "clientName": "[Placeholder Client Name]",
-      "jobTitle": "[Placeholder Job Title]",
-      "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial: sentence one on the starting point. Sentence two on the process of working together. Sentence three on the craftsmanship of the work. Sentence four on the outcome for the brand.]",
-      "services": ["Communications Strategy"],
+      "clientName": "Laura",
+      "jobTitle": "Founder & President",
+      "companyName": "LDPR",
+      "quote": "Working with Blaven has brought clarity and consistency to LDPR's voice. We've seen a real uptick in engagement, particularly on LinkedIn, due to the creative video content they've produced with our senior team members. From strategy to execution, they've been an amazing partner, and we couldn't be more grateful.",
+      "services": [
+        "Thought Leadership",
+        "Executive Communications",
+        "Video & Content Systems"
+      ],
       "rating": null,
-      "caseStudyHref": null
+      "caseStudyHref": "/case-studies#ldpr"
     }
   ]
 }
