@@ -18,7 +18,7 @@ function ContactHero() {
   return (
     <Section
       id="contact"
-      spacing="lg"
+      spacing="md"
       surface="dark"
       className="relative overflow-hidden"
       aria-labelledby="contact-heading"
@@ -31,11 +31,11 @@ function ContactHero() {
           label={hero.label}
           heading={hero.heading}
           labelSpacing="tight"
-          className="max-w-3xl"
+          className="max-w-5xl"
         />
 
-        <MotionReveal className="mt-6 max-w-prose" delay={0.1}>
-          <Text variant="body-lg" className="leading-[1.55] text-foreground/85">
+        <MotionReveal className="mt-5 max-w-prose-wide" delay={0.1}>
+          <Text variant="body-lg" className="text-foreground/85">
             {hero.body}
           </Text>
         </MotionReveal>
@@ -58,9 +58,9 @@ function ContactMain() {
       <SurfaceTexture variant="paper" tone="light" />
 
       <Container className="relative z-10">
-        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20">
           <MotionReveal>
-            <dl className="space-y-7">
+            <dl className="space-y-6">
               <div className="space-y-2">
                 <dt className="text-eyebrow uppercase text-muted-foreground">
                   Email
@@ -123,19 +123,19 @@ function ContactDirect() {
       <SurfaceTexture variant="mesh" tone="light" />
 
       <Container className="relative z-10">
-        <MotionReveal className="max-w-2xl">
+        <MotionReveal className="max-w-4xl">
           <Heading id="prefer-email-heading" level="h2">
             {directContact.heading}
           </Heading>
 
           <Text
             variant="body-lg"
-            className="mt-5 max-w-prose leading-[1.55] text-foreground/85"
+            className="mt-4 max-w-prose-wide text-foreground/85"
           >
             {directContact.body}
           </Text>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
             <EmailReveal variant="button" revealLabel="Reveal Email" />
 
             <Button

@@ -105,7 +105,7 @@ function TestimonialCarousel({ items, className }: TestimonialCarouselProps) {
 
   return (
     <div
-      className={cn("space-y-8", className)}
+      className={cn("space-y-6", className)}
       role="region"
       aria-roledescription="carousel"
       aria-labelledby={labelId}

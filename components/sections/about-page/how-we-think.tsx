@@ -26,10 +26,10 @@ function HowWeThink() {
           id="how-we-think-heading"
           label={howWeThink.label}
           heading={howWeThink.heading}
-          className="max-w-2xl"
+          className="max-w-5xl"
         />
 
-        <Stagger className="mt-10 grid gap-9 border-t border-border/60 pt-9 md:mt-12 md:grid-cols-3 md:gap-12 md:pt-11 lg:gap-16">
+        <Stagger className="mt-9 grid gap-8 border-t border-border/60 pt-8 md:mt-10 md:grid-cols-3 md:gap-10 md:pt-9 lg:gap-14">
           {howWeThink.columns.map((column) => (
             <StaggerItem key={column.title}>
               <article className="space-y-3">

@@ -11,11 +11,11 @@ function CapabilityBlock({ capability, className }: CapabilityBlockProps) {
   return (
     <article
       className={cn(
-        "group border-b border-border/60 py-10 last:border-b-0 md:py-12",
+        "group border-b border-border/60 py-8 last:border-b-0 md:py-9",
         className,
       )}
     >
-      <div className="grid gap-6 md:grid-cols-[4.5rem_minmax(0,1fr)] md:gap-10 lg:grid-cols-[5rem_minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start lg:gap-16">
+      <div className="grid gap-4 md:grid-cols-[2.5rem_minmax(0,1fr)] md:gap-6 lg:grid-cols-[2.75rem_minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start lg:gap-x-8 lg:gap-y-6">
         <p className="font-mono text-xs tracking-[0.14em] text-stone transition-colors duration-300 group-hover:text-foreground/70">
           {capability.number}
         </p>
@@ -26,7 +26,7 @@ function CapabilityBlock({ capability, className }: CapabilityBlockProps) {
           </h3>
           <Text
             variant="muted"
-            className="max-w-prose text-sm leading-relaxed md:text-[0.9375rem]"
+            className="max-w-prose-wide text-sm leading-relaxed md:text-[0.9375rem]"
           >
             {capability.description}
           </Text>

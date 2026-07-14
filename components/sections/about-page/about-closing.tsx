@@ -24,23 +24,23 @@ function AboutClosing() {
       <SurfaceTexture variant="paper" tone="light" />
 
       <Container className="relative z-10">
-        <MotionReveal className="mx-auto max-w-3xl text-center">
+        <MotionReveal className="mx-auto max-w-4xl text-center">
           <Heading
             id="about-closing-heading"
             level="h2"
-            className="mx-auto max-w-2xl"
+            className="mx-auto max-w-4xl"
           >
             {closing.heading}
           </Heading>
 
           <Text
             variant="body-lg"
-            className="mx-auto mt-5 max-w-prose leading-[1.55] text-foreground/85"
+            className="mx-auto mt-4 max-w-prose-wide text-foreground/85"
           >
             {closing.body}
           </Text>
 
-          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
               variant="primary"
               size="default"

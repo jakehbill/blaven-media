@@ -18,25 +18,25 @@ function AboutPreview() {
       aria-labelledby="about-preview-heading"
     >
       <Container>
-        <MotionReveal className="max-w-3xl">
+        <MotionReveal className="max-w-5xl">
           <Text variant="eyebrow">{aboutPreviewContent.label}</Text>
 
           <Heading
             id="about-preview-heading"
             level="h2"
-            className="mt-5 max-w-2xl"
+            className="mt-4 max-w-5xl"
           >
             {aboutPreviewContent.heading}
           </Heading>
 
           <Text
             variant="body-lg"
-            className="mt-5 max-w-prose text-foreground/85"
+            className="mt-4 max-w-prose-wide text-foreground/85"
           >
             {aboutPreviewContent.body}
           </Text>
 
-          <div className="mt-8">
+          <div className="mt-6">
             <Button
               variant="secondary"
               size="default"

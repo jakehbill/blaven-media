@@ -27,15 +27,15 @@ function HowWeWork() {
           id="how-we-work-heading"
           label={howWeWork.label}
           heading={howWeWork.heading}
-          className="max-w-2xl"
+          className="max-w-5xl"
         />
 
-        <div className="mt-7 max-w-prose space-y-4 md:mt-8">
+        <div className="mt-6 max-w-prose-wide space-y-4 md:mt-7">
           {howWeWork.paragraphs.map((paragraph, index) => (
             <MotionReveal key={paragraph} delay={0.08 + index * 0.04}>
               <Text
                 variant="body-lg"
-                className="leading-[1.55] text-foreground/85"
+                className="text-foreground/85"
               >
                 {paragraph}
               </Text>
@@ -43,7 +43,7 @@ function HowWeWork() {
           ))}
         </div>
 
-        <Stagger className="mt-12 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-border/60 pt-9 md:mt-14 md:grid-cols-4 md:gap-12 md:pt-11">
+        <Stagger className="mt-10 grid grid-cols-2 gap-x-8 gap-y-7 border-t border-border/60 pt-8 md:mt-11 md:grid-cols-4 md:gap-10 md:pt-9">
           {howWeWork.metrics.map((metric) => (
             <StaggerItem key={metric.label}>
               <div className="space-y-2.5">

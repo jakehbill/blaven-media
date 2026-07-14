@@ -58,6 +58,7 @@ const textVariants = cva("", {
     },
     width: {
       none: "",
+      wide: "max-w-prose-wide",
       prose: "max-w-prose",
       narrow: "max-w-prose-narrow",
     },

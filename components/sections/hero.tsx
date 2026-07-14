@@ -22,14 +22,14 @@ function Hero() {
   return (
     <section
       id="home"
-      className="surface-dark relative flex min-h-[88svh] items-center overflow-hidden md:min-h-svh"
+      className="surface-dark relative overflow-hidden"
       aria-labelledby="hero-headline"
     >
       <HeroBackground />
 
-      <Container className="relative z-10 py-16 md:py-24">
+      <Container className="relative z-10 pt-24 pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
         <motion.div
-          className="max-w-3xl"
+          className="mx-auto max-w-5xl text-center"
           initial="hidden"
           animate="visible"
           variants={
@@ -39,25 +39,29 @@ function Hero() {
           }
         >
           <motion.div variants={revealVariant} transition={transition}>
-            <Heading id="hero-headline" level="h1" className="max-w-3xl">
+            <Heading
+              id="hero-headline"
+              level="h1"
+              className="mx-auto max-w-5xl text-pretty"
+            >
               {heroContent.headline}
             </Heading>
           </motion.div>
 
           <motion.div
-            className="mt-6 space-y-5"
+            className="mx-auto mt-5 max-w-prose-wide space-y-4"
             variants={revealVariant}
             transition={transition}
           >
             {heroContent.supportingCopy.map((paragraph) => (
-              <Text key={paragraph} variant="body-lg" width="prose">
+              <Text key={paragraph} variant="body-lg">
                 {paragraph}
               </Text>
             ))}
           </motion.div>
 
           <motion.div
-            className="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center"
+            className="mt-7 flex w-full flex-col items-center justify-center gap-3 sm:flex-row"
             variants={revealVariant}
             transition={transition}
           >

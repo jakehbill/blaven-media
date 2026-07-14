@@ -64,12 +64,14 @@
 
   /* Layout */
   --container-max: 77.5rem;
-  --container-padding: clamp(1.25rem, 4vw, 2.5rem);
-  --section-gap-sm: clamp(2rem, 4.8vw, 2.8rem);
-  --section-gap-md: clamp(2.8rem, 6.4vw, 4rem);
-  --section-gap-lg: clamp(3.6rem, 8vw, 5.2rem);
-  --prose-width: 42rem;
-  --prose-width-narrow: 36rem;
+  --container-padding: clamp(1.25rem, 3.5vw, 2.5rem);
+  --section-gap-sm: clamp(1.75rem, 3.2vw, 2.25rem);
+  --section-gap-md: clamp(2.25rem, 4.5vw, 3.25rem);
+  --section-gap-lg: clamp(2.75rem, 5.5vw, 4rem);
+  /* Comfortable editorial measure — wider for desktop section intros */
+  --prose-width: 48rem;
+  --prose-width-narrow: 40rem;
+  --prose-width-wide: 56rem;
 
   /* shadcn compatibility */
   --sidebar: oklch(0.09 0 0);

@@ -29,13 +29,13 @@ function SectionHeader({
     : [];
 
   return (
-    <div className={cn("max-w-prose", className)}>
+    <div className={cn("max-w-5xl", className)}>
       <MotionReveal>
         <Text variant="eyebrow">{label}</Text>
       </MotionReveal>
 
       <MotionReveal
-        className={labelSpacing === "tight" ? "mt-2.5" : "mt-6"}
+        className={labelSpacing === "tight" ? "mt-2.5" : "mt-4"}
         delay={0.05}
       >
         <Heading id={id} level="h2">
@@ -44,7 +44,7 @@ function SectionHeader({
       </MotionReveal>
 
       {introductionParagraphs.length > 0 ? (
-        <MotionReveal className="mt-6 space-y-4" delay={0.1}>
+        <MotionReveal className="mt-5 max-w-prose-wide space-y-4" delay={0.1}>
           {introductionParagraphs.map((paragraph) => (
             <Text
               key={paragraph}

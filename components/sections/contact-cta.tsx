@@ -18,22 +18,22 @@ function ContactCta() {
       aria-labelledby="contact-cta-heading"
     >
       <Container>
-        <MotionReveal className="mx-auto max-w-3xl text-center">
+        <MotionReveal className="mx-auto max-w-4xl text-center">
           <Text variant="eyebrow">{contactCtaContent.label}</Text>
           <Heading
             id="contact-cta-heading"
             level="h2"
-            className="mx-auto mt-6 max-w-2xl"
+            className="mx-auto mt-4 max-w-4xl"
           >
             {contactCtaContent.heading}
           </Heading>
           <Text
             variant="body-lg"
-            className="mx-auto mt-6 max-w-prose text-foreground/85"
+            className="mx-auto mt-4 max-w-prose-wide text-foreground/85"
           >
             {contactCtaContent.body}
           </Text>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Button
               variant="primary"
               size="default"

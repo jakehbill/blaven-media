@@ -20,12 +20,12 @@ function WhyThisMatters() {
           id="why-this-matters-heading"
           label={whyThisMattersContent.label}
           heading={whyThisMattersContent.heading}
-          className="max-w-3xl"
+          className="max-w-5xl"
         />
 
-        <div className="mt-8 max-w-prose space-y-8 md:mt-10">
+        <div className="mt-6 max-w-prose-wide space-y-5 md:mt-7">
           <MotionReveal delay={0.1}>
-            <div className="space-y-1.5">
+            <div className="space-y-1">
               {whyThisMattersContent.lead.map((line) => (
                 <Text
                   key={line}
@@ -38,7 +38,7 @@ function WhyThisMatters() {
             </div>
           </MotionReveal>
 
-          <div className="space-y-5">
+          <div className="space-y-4">
             {whyThisMattersContent.paragraphs.map((paragraph, index) => (
               <MotionReveal key={paragraph} delay={0.15 + index * 0.05}>
                 <Text variant="body-lg" className="text-foreground/85">

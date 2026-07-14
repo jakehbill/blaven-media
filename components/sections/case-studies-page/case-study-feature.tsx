@@ -66,11 +66,11 @@ function CaseStudyFeature({
           >
             <MotionReveal
               className={cn(
-                "space-y-8 lg:col-span-5",
+                "space-y-6 lg:col-span-5",
                 reverse && "lg:order-2",
               )}
             >
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between gap-6">
                   <span className="font-mono text-xs tracking-[0.14em] text-stone">
                     {String(index + 1).padStart(2, "0")}
@@ -138,16 +138,16 @@ function CaseStudyFeature({
 
             <MotionReveal
               className={cn(
-                "space-y-8 lg:col-span-7",
+                "space-y-6 lg:col-span-7",
                 reverse && "lg:order-1",
               )}
               delay={0.06}
             >
-              <div className="space-y-8 border-t border-border/50 pt-8 lg:border-t-0 lg:pt-0">
+              <div className="space-y-6 border-t border-border/50 pt-6 lg:border-t-0 lg:pt-0">
                 <Field label="Challenge">
                   <Text
                     variant="body-lg"
-                    className="max-w-prose leading-[1.55] text-foreground/85"
+                    className="max-w-prose text-foreground/85"
                   >
                     {study.challenge}
                   </Text>
@@ -156,7 +156,7 @@ function CaseStudyFeature({
                 <Field label="Approach">
                   <Text
                     variant="body-lg"
-                    className="max-w-prose leading-[1.55] text-foreground/85"
+                    className="max-w-prose text-foreground/85"
                   >
                     {study.approach}
                   </Text>

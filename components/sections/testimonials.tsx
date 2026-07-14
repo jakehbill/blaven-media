@@ -20,10 +20,10 @@ function Testimonials() {
           label={testimonialsContent.label}
           heading={testimonialsContent.heading}
           introduction={testimonialsContent.introduction}
-          className="max-w-3xl"
+          className="max-w-5xl"
         />
 
-        <div className="mt-14 border-t border-border/60 pt-12 md:mt-16 md:pt-14">
+        <div className="mt-10 border-t border-border/60 pt-9 md:mt-11 md:pt-10">
           <TestimonialCarousel items={testimonialsContent.items} />
         </div>
       </Container>

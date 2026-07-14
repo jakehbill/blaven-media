@@ -12,7 +12,7 @@ function CaseStudiesIntro() {
   return (
     <Section
       id="case-studies"
-      spacing="lg"
+      spacing="md"
       surface="light"
       className="relative overflow-hidden"
       aria-labelledby="case-studies-heading"
@@ -25,10 +25,10 @@ function CaseStudiesIntro() {
           label={caseStudiesContent.label}
           heading={caseStudiesContent.heading}
           labelSpacing="tight"
-          className="max-w-3xl"
+          className="max-w-5xl"
         />
 
-        <div className="mt-6 max-w-prose space-y-4">
+        <div className="mt-5 max-w-prose-wide space-y-4">
           {caseStudiesContent.introduction.map((paragraph, index) => (
             <MotionReveal key={paragraph} delay={0.1 + index * 0.05}>
               <Text

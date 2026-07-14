@@ -14,7 +14,7 @@ function WhyBlaven() {
   return (
     <Section
       id="why-blaven"
-      spacing="lg"
+      spacing="md"
       surface="grey"
       className="relative overflow-hidden"
       aria-labelledby="why-blaven-heading"
@@ -27,10 +27,10 @@ function WhyBlaven() {
           label={whyBlaven.label}
           heading={whyBlaven.heading}
           labelSpacing="tight"
-          className="max-w-3xl"
+          className="max-w-5xl"
         />
 
-        <div className="mt-5 max-w-prose space-y-4">
+        <div className="mt-5 max-w-prose-wide space-y-4">
           {whyBlaven.paragraphs.map((paragraph, index) => (
             <MotionReveal key={paragraph} delay={0.1 + index * 0.04}>
               <Text

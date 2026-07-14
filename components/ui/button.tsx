@@ -8,10 +8,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        /* Surface-aware: white on dark, black on light via --primary tokens */
         primary:
           "bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/85",
+        /* Outlined for secondary actions — stronger border for contrast on both surfaces */
         secondary:
-          "border border-border bg-transparent text-foreground hover:border-foreground/25 hover:bg-muted/40",
+          "border border-foreground/35 bg-transparent text-foreground hover:border-foreground/55 hover:bg-foreground/[0.04] active:bg-foreground/[0.06]",
         link: "h-auto rounded-none p-0 text-foreground/75 underline-offset-[0.2em] hover:text-foreground hover:underline",
       },
       size: {

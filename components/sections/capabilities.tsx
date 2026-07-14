@@ -21,10 +21,10 @@ function Capabilities() {
           label={capabilitiesContent.label}
           heading={capabilitiesContent.heading}
           introduction={capabilitiesContent.introduction}
-          className="max-w-3xl"
+          className="max-w-5xl"
         />
 
-        <Stagger className="mt-10 border-t border-border/60 md:mt-12">
+        <Stagger className="mt-8 border-t border-border/60 md:mt-9">
           {capabilitiesContent.items.map((capability) => (
             <StaggerItem key={capability.number}>
               <CapabilityBlock capability={capability} />

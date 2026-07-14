@@ -50,7 +50,7 @@ function MobileMenu({
           <motion.button
             type="button"
             aria-label="Close menu"
-            className="fixed inset-0 z-40 bg-background/60 md:hidden"
+            className="fixed inset-0 z-40 bg-black/40 md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -64,7 +64,7 @@ function MobileMenu({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="surface-dark fixed inset-x-0 top-16 z-50 border-b border-border/60 bg-background/95 backdrop-blur-md md:hidden"
+            className="surface-light fixed inset-x-0 top-16 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md md:hidden"
             initial={{ opacity: 0, y: prefersReducedMotion ? 0 : -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: prefersReducedMotion ? 0 : -8 }}

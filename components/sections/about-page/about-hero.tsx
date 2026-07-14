@@ -13,7 +13,7 @@ function AboutHero() {
   return (
     <Section
       id="about"
-      spacing="lg"
+      spacing="md"
       surface="dark"
       className="relative overflow-hidden"
       aria-labelledby="about-heading"
@@ -21,18 +21,18 @@ function AboutHero() {
       <SurfaceTexture variant="grain" tone="dark" />
 
       <Container className="relative z-10">
-        <div className="max-w-3xl">
+        <div className="max-w-5xl">
           <MotionReveal>
             <Text variant="eyebrow">{hero.label}</Text>
           </MotionReveal>
 
           <MotionReveal className="mt-3" delay={0.05}>
-            <Heading id="about-heading" level="h1" className="max-w-3xl">
+            <Heading id="about-heading" level="h1" className="max-w-5xl">
               {hero.heading}
             </Heading>
           </MotionReveal>
 
-          <div className="mt-6 max-w-prose space-y-4">
+          <div className="mt-5 max-w-prose-wide space-y-4">
             {hero.paragraphs.map((paragraph, index) => (
               <MotionReveal key={paragraph} delay={0.1 + index * 0.05}>
                 <Text

@@ -25,10 +25,10 @@ function SelectedExperience() {
           id="selected-experience-heading"
           label={experience.label}
           heading={experience.heading}
-          className="max-w-3xl"
+          className="max-w-5xl"
         />
 
-        <Stagger className="mt-10 border-t border-border/60 md:mt-12">
+        <Stagger className="mt-8 border-t border-border/60 md:mt-9">
           {experience.items.map((item, index) => (
             <StaggerItem key={item}>
               <div className="group flex items-baseline gap-5 border-b border-border/60 py-4 md:gap-8 md:py-5">

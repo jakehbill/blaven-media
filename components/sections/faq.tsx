@@ -16,11 +16,12 @@ function Faq() {
       aria-labelledby="faq-heading"
     >
       <Container>
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
           <SectionHeader
             id="faq-heading"
             label={faqContent.label}
             heading={faqContent.heading}
+            className="max-w-2xl"
           />
 
           <MotionReveal delay={0.08}>
