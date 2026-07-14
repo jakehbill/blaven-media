@@ -15,7 +15,7 @@
       "clientName": "[Placeholder Client Name]",
       "jobTitle": "[Placeholder Job Title]",
       "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial — sentence one establishing the context of the engagement. Sentence two reflecting on the quality of thinking and collaboration. Sentence three describing the clarity brought to the work. Sentence four noting the lasting impact on how the organisation communicates.]",
+      "quote": "[Placeholder testimonial: sentence one establishing the context of the engagement. Sentence two reflecting on the quality of thinking and collaboration. Sentence three describing the clarity brought to the work. Sentence four noting the lasting impact on how the organisation communicates.]",
       "services": ["Thought Leadership", "Content Systems"],
       "rating": 5,
       "caseStudyHref": "/case-studies"
@@ -29,7 +29,7 @@
       "clientName": "[Placeholder Client Name]",
       "jobTitle": "[Placeholder Job Title]",
       "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial — sentence one on the challenge faced. Sentence two on the strategic approach taken. Sentence three on the standard of execution. Sentence four on the confidence gained as a result.]",
+      "quote": "[Placeholder testimonial: sentence one on the challenge faced. Sentence two on the strategic approach taken. Sentence three on the standard of execution. Sentence four on the confidence gained as a result.]",
       "services": ["Brand & Digital", "Communications Strategy"],
       "rating": 5,
       "caseStudyHref": "/case-studies"
@@ -43,7 +43,7 @@
       "clientName": "[Placeholder Client Name]",
       "jobTitle": "[Placeholder Job Title]",
       "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial — sentence one introducing the partnership. Sentence two describing the care taken with voice and positioning. Sentence three noting how the work landed with audiences. Sentence four and five reflecting on trust built over time.]",
+      "quote": "[Placeholder testimonial: sentence one introducing the partnership. Sentence two describing the care taken with voice and positioning. Sentence three noting how the work landed with audiences. Sentence four and five reflecting on trust built over time.]",
       "services": ["Thought Leadership", "Communications Strategy"],
       "rating": 4,
       "caseStudyHref": null
@@ -57,7 +57,7 @@
       "clientName": "[Placeholder Client Name]",
       "jobTitle": "[Placeholder Job Title]",
       "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial — sentence one on what was needed. Sentence two on how Blaven Media approached the brief. Sentence three on the quality of the output. Sentence four on the difference it made.]",
+      "quote": "[Placeholder testimonial: sentence one on what was needed. Sentence two on how Blaven Media approached the brief. Sentence three on the quality of the output. Sentence four on the difference it made.]",
       "services": ["Content Systems", "Brand & Digital"],
       "rating": 5,
       "caseStudyHref": "/case-studies"
@@ -71,7 +71,7 @@
       "clientName": "[Placeholder Client Name]",
       "jobTitle": "[Placeholder Job Title]",
       "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial — sentence one establishing rapport. Sentence two on the depth of strategic counsel. Sentence three on consistency of delivery. Sentence four on recommending the partnership to peers.]",
+      "quote": "[Placeholder testimonial: sentence one establishing rapport. Sentence two on the depth of strategic counsel. Sentence three on consistency of delivery. Sentence four on recommending the partnership to peers.]",
       "services": ["Thought Leadership", "Content Systems", "Brand & Digital"],
       "rating": 5,
       "caseStudyHref": null
@@ -85,7 +85,7 @@
       "clientName": "[Placeholder Client Name]",
       "jobTitle": "[Placeholder Job Title]",
       "companyName": "[Placeholder Company]",
-      "quote": "[Placeholder testimonial — sentence one on the starting point. Sentence two on the process of working together. Sentence three on the craftsmanship of the work. Sentence four on the outcome for the brand.]",
+      "quote": "[Placeholder testimonial: sentence one on the starting point. Sentence two on the process of working together. Sentence three on the craftsmanship of the work. Sentence four on the outcome for the brand.]",
       "services": ["Communications Strategy"],
       "rating": null,
       "caseStudyHref": null

@@ -85,7 +85,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
     setStatus("submitting");
 
     try {
-      // Placeholder submission — replace with API / form service later.
+      // Placeholder submission: replace with API / form service later.
       await (onSubmitPlaceholder?.(values) ??
         new Promise((resolve) => {
           setTimeout(resolve, 600);

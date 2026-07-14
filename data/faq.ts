@@ -4,39 +4,38 @@ export type FaqItem = {
 };
 
 export const faqContent = {
-  label: "FAQ",
+  label: "Before we talk",
   heading: "A few questions we often hear.",
   items: [
     {
-      question: "How do projects typically begin?",
+      question: "Who do you work with?",
       answer:
-        "[Placeholder answer — how an initial conversation leads into discovery, scoping and the first phase of work.]",
+        "We work with founders, leadership teams, startups, scale-ups, nonprofits, and established organisations. Whether you're launching something new or leading a recognised brand, we help communicate what makes your work worth paying attention to.",
     },
     {
-      question: "Do you work on one-off projects or retainers?",
+      question: "What exactly does Blaven Media do?",
       answer:
-        "[Placeholder answer — both project-based engagements and ongoing retainers, depending on the need.]",
+        "We're a communications and authority partner. That means we help organisations build trust through strategic communications, thought leadership, video, branding, websites, newsletters, and content systems. Every engagement is tailored, but the goal is always the same: helping meaningful ideas reach the right people.",
     },
     {
-      question: "Can you work alongside an internal marketing team?",
+      question: "How are you different from a traditional marketing agency?",
       answer:
-        "[Placeholder answer — how we collaborate with in-house teams, stakeholders and existing processes.]",
+        "Most agencies focus on campaigns, channels, or outputs. We focus on recognition. We believe the strongest brands aren't simply the loudest: they're the ones people remember and trust. Every piece of work we create is designed to strengthen that reputation over time.",
     },
     {
       question: "Do you only work with founders?",
       answer:
-        "[Placeholder answer — the kinds of founders, experts and organisations we partner with.]",
+        "Not at all. While we enjoy working closely with founders, many of our clients are established organisations and leadership teams looking for an external perspective. Sometimes the most valuable thing isn't another pair of hands: it's a fresh way of looking at how your organisation communicates.",
     },
     {
-      question:
-        "Can you help with websites and branding as well as content?",
+      question: "Can you work alongside our internal marketing team?",
       answer:
-        "[Placeholder answer — brand, digital and content sit within one connected communications practice.]",
+        "Absolutely. We're just as comfortable supporting in-house teams as we are leading projects independently. Whether you need strategic direction, creative execution, or specialist expertise, we integrate seamlessly with the people already driving your communications.",
     },
     {
-      question: "How involved is the process?",
+      question: "Do you offer one-off projects or ongoing partnerships?",
       answer:
-        "[Placeholder answer — the level of collaboration expected and how decisions are made along the way.]",
+        "Both. Some clients come to us for a focused project, such as a website or thought leadership campaign. Others work with us over several months as an ongoing communications partner. We'll always recommend the approach that makes the most sense for your goals, rather than trying to fit every client into the same model.",
     },
   ] as const satisfies readonly FaqItem[],
 } as const;

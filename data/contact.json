@@ -44,9 +44,9 @@
       }
     },
     "submitLabel": "Send Message",
-    "privacyNote": "[Placeholder privacy note — a brief line on how enquiries are handled.]",
-    "successMessage": "[Placeholder success message — thank you, we will be in touch.]",
-    "errorMessage": "[Placeholder error message — something went wrong. Please try again.]"
+    "privacyNote": "[Placeholder privacy note: a brief line on how enquiries are handled.]",
+    "successMessage": "[Placeholder success message: thank you, we will be in touch.]",
+    "errorMessage": "[Placeholder error message: something went wrong. Please try again.]"
   },
   "social": {
     "linkedin": {

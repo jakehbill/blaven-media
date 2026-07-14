@@ -12,7 +12,7 @@
   --popover: oklch(0.09 0 0);
   --popover-foreground: oklch(0.94 0.004 95);
 
-  /* Grey scale — subtle steps for hierarchy */
+  /* Grey scale: subtle steps for hierarchy */
   --grey-50: oklch(0.97 0 0);
   --grey-100: oklch(0.93 0 0);
   --grey-200: oklch(0.86 0 0);
@@ -35,7 +35,7 @@
   --accent: oklch(0.14 0 0);
   --accent-foreground: oklch(0.94 0.004 95);
 
-  /* Scottish granite / alpine stone — cool, understated */
+  /* Scottish granite / alpine stone: cool, understated */
   --stone: oklch(0.62 0.018 245);
   --stone-muted: oklch(0.48 0.012 245);
   --stone-subtle: oklch(0.62 0.018 245 / 12%);

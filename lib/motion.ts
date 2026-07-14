@@ -2,7 +2,7 @@ import type { Transition, Variants } from "framer-motion";
 
 import { motionDuration } from "@/lib/design-system";
 
-/** Refined ease — deliberate, never bouncy. */
+/** Refined ease: deliberate, never bouncy. */
 export const easeRefined: Transition["ease"] = [0.25, 0.1, 0.25, 1];
 
 export const transition: Transition = {

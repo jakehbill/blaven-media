@@ -24,7 +24,7 @@ export const caseStudiesContent = {
   label: "Selected Work",
   heading: "[Placeholder Heading]",
   introduction:
-    "[Placeholder introduction — a short editorial lead framing the work as evidence of strategic thinking and careful execution.]",
+    "[Placeholder introduction: a short editorial lead framing the work as evidence of strategic thinking and careful execution.]",
   items: [
     {
       id: "01",
@@ -36,17 +36,17 @@ export const caseStudiesContent = {
         alt: "[Placeholder Client Logo]",
       },
       summary:
-        "[Placeholder project summary — outline the challenge, the strategic approach, and the role Blaven Media played.]",
+        "[Placeholder project summary: outline the challenge, the strategic approach, and the role Blaven Media played.]",
       services: [
         "Thought Leadership",
         "Content Systems",
         "Brand & Digital",
       ],
       outcome:
-        "[Placeholder outcome — a concise statement of the result or shift achieved.]",
+        "[Placeholder outcome: a concise statement of the result or shift achieved.]",
       testimonial: {
         quote:
-          "[Placeholder testimonial — a short reflection on the partnership and its impact.]",
+          "[Placeholder testimonial: a short reflection on the partnership and its impact.]",
         author: "[Placeholder Author]",
         role: "[Placeholder Role]",
       },
@@ -62,16 +62,16 @@ export const caseStudiesContent = {
         alt: "[Placeholder Client Logo]",
       },
       summary:
-        "[Placeholder project summary — outline the challenge, the strategic approach, and the role Blaven Media played.]",
+        "[Placeholder project summary: outline the challenge, the strategic approach, and the role Blaven Media played.]",
       services: [
         "Communications Strategy",
         "Thought Leadership",
       ],
       outcome:
-        "[Placeholder outcome — a concise statement of the result or shift achieved.]",
+        "[Placeholder outcome: a concise statement of the result or shift achieved.]",
       testimonial: {
         quote:
-          "[Placeholder testimonial — a short reflection on the partnership and its impact.]",
+          "[Placeholder testimonial: a short reflection on the partnership and its impact.]",
         author: "[Placeholder Author]",
         role: "[Placeholder Role]",
       },
@@ -87,16 +87,16 @@ export const caseStudiesContent = {
         alt: "[Placeholder Client Logo]",
       },
       summary:
-        "[Placeholder project summary — outline the challenge, the strategic approach, and the role Blaven Media played.]",
+        "[Placeholder project summary: outline the challenge, the strategic approach, and the role Blaven Media played.]",
       services: [
         "Brand & Digital",
         "Content Systems",
       ],
       outcome:
-        "[Placeholder outcome — a concise statement of the result or shift achieved.]",
+        "[Placeholder outcome: a concise statement of the result or shift achieved.]",
       testimonial: {
         quote:
-          "[Placeholder testimonial — a short reflection on the partnership and its impact.]",
+          "[Placeholder testimonial: a short reflection on the partnership and its impact.]",
         author: "[Placeholder Author]",
         role: "[Placeholder Role]",
       },
@@ -112,17 +112,17 @@ export const caseStudiesContent = {
         alt: "[Placeholder Client Logo]",
       },
       summary:
-        "[Placeholder project summary — outline the challenge, the strategic approach, and the role Blaven Media played.]",
+        "[Placeholder project summary: outline the challenge, the strategic approach, and the role Blaven Media played.]",
       services: [
         "Thought Leadership",
         "Communications Strategy",
         "Content Systems",
       ],
       outcome:
-        "[Placeholder outcome — a concise statement of the result or shift achieved.]",
+        "[Placeholder outcome: a concise statement of the result or shift achieved.]",
       testimonial: {
         quote:
-          "[Placeholder testimonial — a short reflection on the partnership and its impact.]",
+          "[Placeholder testimonial: a short reflection on the partnership and its impact.]",
         author: "[Placeholder Author]",
         role: "[Placeholder Role]",
       },

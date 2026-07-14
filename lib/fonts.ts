@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import { Geist_Mono } from "next/font/google";
 
 /**
- * General Sans — self-hosted from Fontshare (Indian Type Foundry).
+ * General Sans: self-hosted from Fontshare (Indian Type Foundry).
  * Geist Mono retained for code and technical labels only.
  */
 export const fontSans = localFont({
