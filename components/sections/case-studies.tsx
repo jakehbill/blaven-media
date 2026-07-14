@@ -1,41 +1,26 @@
-"use client";
+import { CaseStudiesClosing } from "@/components/sections/case-studies-page/case-studies-closing";
+import { CaseStudiesIntro } from "@/components/sections/case-studies-page/case-studies-intro";
+import { CaseStudyFeature } from "@/components/sections/case-studies-page/case-study-feature";
+import {
+  caseStudiesContent,
+  caseStudySurfaces,
+} from "@/data/case-studies";
 
-import { CaseStudyItem } from "@/components/sections/case-study-item";
-import { Container } from "@/components/ui/container";
-import { Section } from "@/components/ui/section";
-import { SectionHeader } from "@/components/ui/section-header";
-import { Stagger, StaggerItem } from "@/components/ui/stagger";
-import { caseStudiesContent } from "@/data/case-studies";
-
-type CaseStudiesProps = {
-  surface?: "dark" | "light" | "stone";
-};
-
-function CaseStudies({ surface = "light" }: CaseStudiesProps) {
+function CaseStudies() {
   return (
-    <Section
-      id="case-studies"
-      spacing="md"
-      surface={surface}
-      aria-labelledby="case-studies-heading"
-    >
-      <Container>
-        <SectionHeader
-          id="case-studies-heading"
-          label={caseStudiesContent.label}
-          heading={caseStudiesContent.heading}
-          introduction={caseStudiesContent.introduction}
+    <>
+      <CaseStudiesIntro />
+      {caseStudiesContent.items.map((study, index) => (
+        <CaseStudyFeature
+          key={study.id}
+          study={study}
+          index={index}
+          surface={caseStudySurfaces[index] ?? "light"}
+          reverse={index % 2 === 1}
         />
-
-        <Stagger className="mt-12 border-t border-border/60 md:mt-14">
-          {caseStudiesContent.items.map((study, index) => (
-            <StaggerItem key={study.id}>
-              <CaseStudyItem study={study} reverse={index % 2 === 1} />
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </Container>
-    </Section>
+      ))}
+      <CaseStudiesClosing />
+    </>
   );
 }
 
