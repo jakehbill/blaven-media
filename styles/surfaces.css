@@ -6,6 +6,7 @@
 
 .surface-dark,
 .surface-light,
+.surface-grey,
 .surface-stone {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -73,6 +74,31 @@
   --accent-foreground: oklch(0.12 0 0);
   --border: oklch(0.12 0 0 / 12%);
   --input: oklch(0.12 0 0 / 14%);
+  --ring: oklch(0.45 0.014 245);
+  --stone: oklch(0.45 0.014 245);
+  --stone-muted: oklch(0.4 0.01 245);
+  --stone-subtle: oklch(0.45 0.014 245 / 14%);
+  --destructive: oklch(0.45 0 0);
+}
+
+/* Neutral light grey — distinct from near-white `.surface-light` */
+.surface-grey {
+  --background: oklch(0.935 0.002 95);
+  --foreground: oklch(0.13 0 0);
+  --card: oklch(0.97 0.002 95);
+  --card-foreground: oklch(0.13 0 0);
+  --popover: oklch(0.97 0.002 95);
+  --popover-foreground: oklch(0.13 0 0);
+  --primary: oklch(0.13 0 0);
+  --primary-foreground: oklch(0.97 0.002 95);
+  --secondary: oklch(0.89 0.002 95);
+  --secondary-foreground: oklch(0.16 0 0);
+  --muted: oklch(0.89 0.002 95);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.89 0.002 95);
+  --accent-foreground: oklch(0.13 0 0);
+  --border: oklch(0.13 0 0 / 12%);
+  --input: oklch(0.13 0 0 / 14%);
   --ring: oklch(0.45 0.014 245);
   --stone: oklch(0.45 0.014 245);
   --stone-muted: oklch(0.4 0.01 245);

@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 import { MotionReveal } from "@/components/ui/motion-reveal";
 import { Section } from "@/components/ui/section";
 import { Heading, Text } from "@/components/ui/typography";
-import { aboutContent } from "@/data/about";
+import { aboutPreviewContent } from "@/data/about";
 
 function AboutPreview() {
   return (
@@ -19,26 +19,30 @@ function AboutPreview() {
     >
       <Container>
         <MotionReveal className="max-w-3xl">
-          <Text variant="eyebrow">{aboutContent.label}</Text>
+          <Text variant="eyebrow">{aboutPreviewContent.label}</Text>
 
-          <Heading id="about-preview-heading" level="h2" className="mt-5 max-w-2xl">
-            {aboutContent.heading}
+          <Heading
+            id="about-preview-heading"
+            level="h2"
+            className="mt-5 max-w-2xl"
+          >
+            {aboutPreviewContent.heading}
           </Heading>
 
           <Text
             variant="body-lg"
             className="mt-5 max-w-prose text-foreground/85"
           >
-            {aboutContent.paragraphs[0]}
+            {aboutPreviewContent.body}
           </Text>
 
           <div className="mt-8">
             <Button
               variant="secondary"
               size="default"
-              render={<Link href="/about" />}
+              render={<Link href={aboutPreviewContent.cta.href} />}
             >
-              Learn More
+              {aboutPreviewContent.cta.label}
             </Button>
           </div>
         </MotionReveal>

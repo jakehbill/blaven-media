@@ -9,6 +9,8 @@ type SectionHeaderProps = {
   label: string;
   heading: string;
   introduction?: string | readonly string[];
+  /** Space between label and heading. */
+  labelSpacing?: "default" | "tight";
   className?: string;
 };
 
@@ -17,6 +19,7 @@ function SectionHeader({
   label,
   heading,
   introduction,
+  labelSpacing = "default",
   className,
 }: SectionHeaderProps) {
   const introductionParagraphs = introduction
@@ -31,7 +34,10 @@ function SectionHeader({
         <Text variant="eyebrow">{label}</Text>
       </MotionReveal>
 
-      <MotionReveal className="mt-6" delay={0.05}>
+      <MotionReveal
+        className={labelSpacing === "tight" ? "mt-2.5" : "mt-6"}
+        delay={0.05}
+      >
         <Heading id={id} level="h2">
           {heading}
         </Heading>

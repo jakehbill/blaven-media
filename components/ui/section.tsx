@@ -19,6 +19,7 @@ const sectionVariants = cva("", {
       none: "",
       dark: "surface-dark",
       light: "surface-light",
+      grey: "surface-grey",
       stone: "surface-stone",
     },
   },

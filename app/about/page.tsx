@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `[Placeholder About page description] ${siteConfig.description}`,
+  description: `Building recognition for organisations with meaningful ideas. ${siteConfig.description}`,
   alternates: {
     canonical: "/about",
   },
