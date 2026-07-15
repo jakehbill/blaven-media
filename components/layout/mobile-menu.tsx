@@ -50,7 +50,7 @@ function MobileMenu({
           <motion.button
             type="button"
             aria-label="Close menu"
-            className="fixed inset-0 z-40 bg-black/40 md:hidden"
+            className="fixed inset-0 z-40 bg-black/40 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -64,7 +64,7 @@ function MobileMenu({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="surface-light fixed inset-x-0 top-16 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md md:hidden"
+            className="surface-light fixed inset-x-0 top-14 z-50 max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-b border-border/50 bg-background/95 backdrop-blur-md sm:top-16 lg:hidden"
             initial={{ opacity: 0, y: prefersReducedMotion ? 0 : -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: prefersReducedMotion ? 0 : -8 }}
@@ -72,7 +72,7 @@ function MobileMenu({
           >
             <Container>
               <nav aria-label="Mobile primary">
-                <ul className="flex flex-col py-8">
+                <ul className="flex flex-col py-6 sm:py-8">
                   {primaryNavigation.map((item, index) => (
                     <motion.li
                       key={item.href}
@@ -99,7 +99,7 @@ function MobileMenu({
                   initial="hidden"
                   animate="visible"
                   variants={itemVariants}
-                  className="border-t border-border/60 pb-8 pt-6"
+                  className="border-t border-border/60 pb-6 pt-5 sm:pb-8 sm:pt-6"
                 >
                   <Button
                     variant="primary"

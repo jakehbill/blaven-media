@@ -27,7 +27,7 @@ function Hero() {
     >
       <HeroBackground />
 
-      <Container className="relative z-10 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24">
+      <Container className="relative z-10 pt-16 pb-12 sm:pt-20 sm:pb-14 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24">
         <motion.div
           className="mx-auto max-w-4xl text-center"
           initial="hidden"
@@ -42,14 +42,14 @@ function Hero() {
             <Heading
               id="hero-headline"
               level="h1"
-              className="mx-auto max-w-4xl text-pretty"
+              className="mx-auto max-w-[20ch] text-balance sm:max-w-3xl lg:max-w-4xl"
             >
               {heroContent.headline}
             </Heading>
           </motion.div>
 
           <motion.div
-            className="mx-auto mt-5 max-w-prose space-y-4"
+            className="mx-auto mt-4 max-w-prose space-y-3 sm:mt-5 sm:space-y-4"
             variants={revealVariant}
             transition={transition}
           >
@@ -61,7 +61,7 @@ function Hero() {
           </motion.div>
 
           <motion.div
-            className="mt-6 flex w-full flex-col items-center justify-center gap-3 sm:flex-row"
+            className="mx-auto mt-6 flex w-full max-w-sm flex-col items-stretch gap-2.5 sm:max-w-none sm:flex-row sm:items-center sm:justify-center sm:gap-3"
             variants={revealVariant}
             transition={transition}
           >

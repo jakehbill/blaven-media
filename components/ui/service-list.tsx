@@ -30,11 +30,11 @@ function ServiceList({ services, className }: ServiceListProps) {
             key={service}
             className={cn(
               "inline-flex max-w-full items-center",
-              !isLast &&
-                "after:mx-2.5 after:block after:size-1 after:shrink-0 after:rounded-full after:bg-foreground/40 after:content-[''] md:after:mx-3 md:after:size-1.5",
+                !isLast &&
+                "after:mx-2 after:block after:size-1 after:shrink-0 after:rounded-full after:bg-foreground/40 after:content-[''] sm:after:mx-2.5 md:after:mx-3 md:after:size-1.5",
             )}
           >
-            <span className="whitespace-nowrap">{service}</span>
+            <span className="break-words">{service}</span>
           </li>
         );
       })}

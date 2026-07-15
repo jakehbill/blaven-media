@@ -55,9 +55,9 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
       />
 
       <Container className="relative z-10">
-        <div className="relative border-t border-border/60 pt-8 md:pt-10">
+        <div className="relative overflow-hidden border-t border-border/60 pt-6 sm:pt-8 md:pt-10">
           <span
-            className="pointer-events-none absolute -top-1 right-0 font-mono text-[4.5rem] leading-none tracking-tight text-foreground/[0.05] select-none md:text-[6.5rem] lg:text-[7.5rem]"
+            className="pointer-events-none absolute -top-1 right-0 hidden font-mono text-[6.5rem] leading-none tracking-tight text-foreground/[0.05] select-none sm:block lg:text-[7.5rem]"
             aria-hidden
           >
             {String(index + 1).padStart(2, "0")}
@@ -69,7 +69,7 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
             </span>
 
             <div className="space-y-2">
-              <h2 id={headingId} className="text-h2 text-foreground">
+              <h2 id={headingId} className="text-h2 text-pretty text-foreground">
                 {study.client}
               </h2>
               <p className="text-eyebrow uppercase text-muted-foreground">
@@ -78,12 +78,12 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
             </div>
           </MotionReveal>
 
-          <div className="mt-8 grid items-start gap-8 md:mt-10 md:gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+          <div className="mt-6 grid items-start gap-7 sm:mt-8 sm:gap-8 md:mt-10 md:gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
             {/* Left: evidence rail — one panel, spacing does the rest */}
-            <MotionReveal className="lg:col-span-5" delay={0.04}>
+            <MotionReveal className="min-w-0 lg:col-span-5" delay={0.04}>
               <div
                 className={cn(
-                  "space-y-7 rounded-sm border border-border/55 p-5 md:p-6",
+                  "space-y-6 rounded-sm border border-border/55 p-4 sm:space-y-7 sm:p-5 md:p-6",
                   isDark ? "bg-foreground/[0.035]" : "bg-muted/40",
                 )}
               >
@@ -129,7 +129,7 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
             </MotionReveal>
 
             {/* Right: narrative — rhythm via spacing, not rules */}
-            <MotionReveal className="space-y-8 lg:col-span-7" delay={0.06}>
+            <MotionReveal className="min-w-0 space-y-6 sm:space-y-8 lg:col-span-7" delay={0.06}>
               <Field label="Challenge">
                 <Text
                   variant="body-lg"

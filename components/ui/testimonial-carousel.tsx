@@ -37,7 +37,7 @@ function useVisibleCount() {
 
 function TestimonialSlide({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <article className="relative flex h-full flex-col justify-between gap-8 rounded-sm border border-border/60 bg-transparent p-6 md:p-8">
+    <article className="relative flex h-full flex-col justify-between gap-6 rounded-sm border border-border/60 bg-transparent p-5 sm:gap-8 sm:p-6 md:p-8">
       <blockquote className="text-sm leading-relaxed text-foreground/85 md:text-[0.9375rem]">
         <p>
           <span className="text-stone" aria-hidden>
@@ -50,30 +50,31 @@ function TestimonialSlide({ testimonial }: { testimonial: Testimonial }) {
         </p>
       </blockquote>
 
-      <div className="space-y-4 border-t border-border/60 pt-6 pr-[11rem] sm:pr-[12rem] md:pr-[13.5rem]">
-        <div className="min-w-0 space-y-1">
-          <p className="text-sm font-medium text-foreground">
-            {testimonial.clientName}
-          </p>
-          <Text variant="caption">
-            {testimonial.jobTitle}, {testimonial.companyName}
-          </Text>
+      <div className="flex flex-col gap-5 border-t border-border/60 pt-5 sm:flex-row sm:items-end sm:justify-between sm:gap-6 sm:pt-6">
+        <div className="min-w-0 space-y-3">
+          <div className="space-y-1">
+            <p className="text-sm font-medium text-foreground">
+              {testimonial.clientName}
+            </p>
+            <Text variant="caption">
+              {testimonial.jobTitle}, {testimonial.companyName}
+            </Text>
+          </div>
+
+          {testimonial.caseStudyHref ? (
+            <TextLink href={testimonial.caseStudyHref} variant="muted">
+              View related work
+            </TextLink>
+          ) : null}
         </div>
 
-        {testimonial.caseStudyHref ? (
-          <TextLink href={testimonial.caseStudyHref} variant="muted">
-            View related work
-          </TextLink>
-        ) : null}
-      </div>
-
-      <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8">
         <CompanyLogo
           src={testimonial.logo.src}
           alt={testimonial.logo.alt}
           href={testimonial.companyHref}
           align="right"
           size="large"
+          className="self-start sm:self-end"
         />
       </div>
     </article>

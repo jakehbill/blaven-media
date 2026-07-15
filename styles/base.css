@@ -12,7 +12,13 @@
   }
 
   html {
-    scroll-padding-top: 4rem;
+    scroll-padding-top: 3.5rem;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 4rem;
+    }
   }
 
   ::selection {
@@ -27,5 +33,6 @@
 
   body {
     @apply bg-background text-foreground text-body;
+    overflow-x: clip;
   }
 }

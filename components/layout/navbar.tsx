@@ -50,13 +50,13 @@ function Navbar({ className }: NavbarProps) {
         )}
       >
         <Container>
-          <div className="flex h-16 items-center justify-between gap-6">
+          <div className="flex h-14 items-center justify-between gap-3 sm:h-16 sm:gap-6">
             <Link
               href="/"
-              className="flex items-center gap-2.5 text-base font-medium tracking-tight text-foreground/90 transition-colors duration-300 hover:text-foreground"
+              className="flex min-w-0 items-center gap-2 text-[0.9375rem] font-medium tracking-tight text-foreground/90 transition-colors duration-300 hover:text-foreground sm:gap-2.5 sm:text-base"
             >
               {/* Replace `/public/images/logo.svg` with your square logo (SVG, PNG, or WebP). */}
-              <span className="relative size-8 shrink-0 overflow-hidden rounded-sm">
+              <span className="relative size-7 shrink-0 overflow-hidden rounded-sm sm:size-8">
                 <Image
                   src={siteConfig.logo.src}
                   alt=""
@@ -66,12 +66,12 @@ function Navbar({ className }: NavbarProps) {
                   priority
                 />
               </span>
-              <span>{siteConfig.name}</span>
+              <span className="truncate">{siteConfig.name}</span>
             </Link>
 
-            <div className="flex items-center gap-6">
-              <nav aria-label="Primary" className="hidden md:block">
-                <ul className="flex items-center gap-8">
+            <div className="flex shrink-0 items-center gap-3 sm:gap-6">
+              <nav aria-label="Primary" className="hidden lg:block">
+                <ul className="flex items-center gap-6 xl:gap-8">
                   {primaryNavigation.map((item) => (
                     <li key={item.href}>
                       <NavLink
@@ -88,7 +88,7 @@ function Navbar({ className }: NavbarProps) {
               <Button
                 variant="primary"
                 size="sm"
-                className="hidden md:inline-flex"
+                className="hidden lg:inline-flex"
                 render={<Link href={navigationCta.href} />}
               >
                 {navigationCta.label}
@@ -97,7 +97,7 @@ function Navbar({ className }: NavbarProps) {
               <button
                 ref={triggerRef}
                 type="button"
-                className="inline-flex size-11 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
+                className="inline-flex size-11 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
                 aria-expanded={open}
                 aria-controls="mobile-navigation"
                 aria-label={open ? "Close menu" : "Open menu"}

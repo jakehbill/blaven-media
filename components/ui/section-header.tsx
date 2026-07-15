@@ -38,7 +38,7 @@ function SectionHeader({
         className={labelSpacing === "tight" ? "mt-2.5" : "mt-4"}
         delay={0.05}
       >
-        <Heading id={id} level="h2">
+        <Heading id={id} level="h2" className="text-pretty">
           {heading}
         </Heading>
       </MotionReveal>

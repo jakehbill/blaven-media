@@ -21,7 +21,7 @@ const navLinkVariants = cva(
       },
       layout: {
         horizontal: "relative text-sm py-1",
-        vertical: "text-lg tracking-tight py-2",
+        vertical: "text-base tracking-tight py-3 sm:text-lg sm:py-2.5",
       },
     },
     defaultVariants: {

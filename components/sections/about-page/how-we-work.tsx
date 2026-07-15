@@ -39,7 +39,7 @@ function HowWeWork() {
           ))}
         </div>
 
-        <Stagger className="mt-8 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-border/60 pt-8 md:mt-9 md:grid-cols-4 md:gap-10 md:pt-9">
+        <Stagger className="mt-8 grid grid-cols-2 gap-x-5 gap-y-6 border-t border-border/60 pt-7 sm:gap-x-8 sm:gap-y-8 sm:pt-8 md:mt-9 md:grid-cols-4 md:gap-10 md:pt-9">
           {howWeWork.metrics.map((metric) => (
             <StaggerItem key={metric.label}>
               <div className="space-y-2.5">

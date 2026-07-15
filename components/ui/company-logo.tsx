@@ -14,14 +14,14 @@ type CompanyLogoProps = {
 
 const sizeClasses = {
   /** Wider wordmark slot for sparse layouts */
-  default: "h-14 w-[12.5rem] max-w-[50%]",
+  default: "h-12 w-[10rem] max-w-full sm:h-14 sm:w-[12.5rem] sm:max-w-[50%]",
   /** Compact slot used in testimonial cards */
-  large: "h-14 w-[10rem] sm:w-[11rem] md:w-[12.5rem]",
+  large: "h-10 w-36 max-w-full sm:h-12 sm:w-40 md:h-14 md:w-[12.5rem]",
 } as const;
 
 const sizeHints = {
-  default: "200px",
-  large: "200px",
+  default: "(max-width: 640px) 160px, 200px",
+  large: "(max-width: 640px) 144px, 200px",
 } as const;
 
 /**

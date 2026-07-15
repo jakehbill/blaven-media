@@ -16,7 +16,7 @@ function Faq() {
       aria-labelledby="faq-heading"
     >
       <Container>
-        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
+        <div className="grid items-start gap-6 sm:gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-12 xl:gap-16">
           <SectionHeader
             id="faq-heading"
             label={faqContent.label}
@@ -24,7 +24,7 @@ function Faq() {
             className="max-w-2xl"
           />
 
-          <MotionReveal delay={0.08}>
+          <MotionReveal delay={0.08} className="min-w-0">
             <Accordion items={faqContent.items} />
           </MotionReveal>
         </div>

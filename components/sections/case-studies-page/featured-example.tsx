@@ -27,10 +27,10 @@ function FeaturedExample({ example, className }: FeaturedExampleProps) {
         className,
       )}
     >
-      <div className="flex flex-col gap-5 p-5 sm:flex-row sm:items-start sm:gap-6 sm:p-6">
+      <div className="flex flex-col gap-5 p-4 sm:flex-row sm:items-start sm:gap-6 sm:p-5 md:p-6">
         <a
           {...externalLinkProps}
-          className="relative block aspect-[3/4] w-44 shrink-0 overflow-hidden rounded-sm border border-border/50 bg-muted/30 transition-[border-color,opacity] duration-300 hover:border-foreground/25 hover:opacity-95"
+          className="relative mx-auto block aspect-[3/4] w-36 shrink-0 overflow-hidden rounded-sm border border-border/50 bg-muted/30 transition-[border-color,opacity] duration-300 hover:border-foreground/25 hover:opacity-95 sm:mx-0 sm:w-40 md:w-44"
           aria-label={`View example: ${example.title} (opens in a new tab)`}
         >
           <Image
@@ -39,7 +39,7 @@ function FeaturedExample({ example, className }: FeaturedExampleProps) {
             fill
             loading="lazy"
             className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-            sizes="176px"
+            sizes="(max-width: 640px) 144px, 176px"
           />
         </a>
 

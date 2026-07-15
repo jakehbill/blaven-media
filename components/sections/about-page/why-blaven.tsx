@@ -40,8 +40,8 @@ function WhyBlaven() {
       <MountainAtmosphere tone="light" />
 
       <Container className="relative z-10">
-        <div className="grid items-start gap-10 md:gap-12 lg:grid-cols-12 lg:items-stretch lg:gap-12">
-          <div className="relative z-10 lg:col-span-7">
+        <div className="grid items-start gap-8 sm:gap-10 md:gap-12 lg:grid-cols-12 lg:items-stretch lg:gap-12 xl:gap-16">
+          <div className="relative z-10 min-w-0 lg:col-span-7">
             <SectionHeader
               id="why-blaven-heading"
               label={whyBlaven.label}
@@ -60,8 +60,8 @@ function WhyBlaven() {
             </div>
           </div>
 
-          <MotionReveal className="lg:col-span-5 lg:h-full" delay={0.12}>
-            <div className="relative mx-auto aspect-[3/4] w-full max-w-md lg:mx-0 lg:aspect-auto lg:h-full lg:min-h-0 lg:max-w-none">
+          <MotionReveal className="min-w-0 lg:col-span-5 lg:h-full" delay={0.12}>
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden sm:max-w-md lg:mx-0 lg:aspect-auto lg:h-full lg:min-h-[28rem] lg:max-w-none">
               {/* Photo blends into grey: multiply + soft mask, no hard card edge */}
               <div className="absolute inset-0" style={EDGE_MASK}>
                 <Image

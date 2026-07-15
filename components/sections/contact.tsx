@@ -52,7 +52,7 @@ function ContactMain() {
       <SurfaceTexture variant="paper" tone="light" />
 
       <Container className="relative z-10">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid items-start gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-14">
           <MotionReveal>
             <dl className="space-y-6">
               <div className="space-y-2">
