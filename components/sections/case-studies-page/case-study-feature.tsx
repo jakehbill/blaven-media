@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { MotionReveal } from "@/components/ui/motion-reveal";
 import { Section } from "@/components/ui/section";
+import { ServiceList } from "@/components/ui/service-list";
 import { SurfaceTexture } from "@/components/ui/surface-texture";
 import { Text } from "@/components/ui/typography";
 import type { CaseStudiesSurface, CaseStudy } from "@/data/case-studies";
@@ -97,16 +98,7 @@ function CaseStudyFeature({
               </div>
 
               <Field label="Services Provided">
-                <ul className="flex flex-wrap gap-x-4 gap-y-1.5">
-                  {study.services.map((service) => (
-                    <li
-                      key={service}
-                      className="text-sm text-foreground/75 md:text-[0.9375rem]"
-                    >
-                      {service}
-                    </li>
-                  ))}
-                </ul>
+                <ServiceList services={study.services} />
               </Field>
             </MotionReveal>
 

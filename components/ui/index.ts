@@ -14,6 +14,7 @@ export { LogoCloud } from "@/components/ui/logo-cloud";
 export { MotionReveal } from "@/components/ui/motion-reveal";
 export { Section, sectionVariants } from "@/components/ui/section";
 export { SectionHeader } from "@/components/ui/section-header";
+export { ServiceList } from "@/components/ui/service-list";
 export { Stagger, StaggerItem } from "@/components/ui/stagger";
 export { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 export { TextLink, textLinkVariants } from "@/components/ui/text-link";
