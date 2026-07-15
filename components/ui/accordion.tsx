@@ -42,7 +42,7 @@ function Accordion({ items, className }: AccordionProps) {
                 </span>
                 <ChevronDown
                   className={cn(
-                    "size-4 shrink-0 text-muted-foreground transition-transform duration-300",
+                    "size-4 shrink-0 text-muted-foreground transition-transform duration-300 motion-reduce:transition-none",
                     isOpen && "rotate-180",
                   )}
                   aria-hidden

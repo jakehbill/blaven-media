@@ -20,6 +20,7 @@ function CaseStudiesIntro() {
       <Container className="relative z-10">
         <SectionHeader
           id="case-studies-heading"
+          level="h1"
           label={caseStudiesContent.label}
           heading={caseStudiesContent.heading}
           introduction={caseStudiesContent.introduction}

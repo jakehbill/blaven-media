@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { X } from "lucide-react";
 import { useMemo } from "react";
 
 import { NavLink } from "@/components/layout/nav-link";
@@ -71,8 +72,19 @@ function MobileMenu({
             transition={transitionFast}
           >
             <Container>
+              <div className="flex justify-end pt-3 sm:pt-4">
+                <button
+                  type="button"
+                  className="inline-flex size-11 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  aria-label="Close menu"
+                  onClick={onClose}
+                >
+                  <X className="size-5" aria-hidden />
+                </button>
+              </div>
+
               <nav aria-label="Mobile primary">
-                <ul className="flex flex-col py-6 sm:py-8">
+                <ul className="flex flex-col pb-6 pt-1 sm:pb-8">
                   {primaryNavigation.map((item, index) => (
                     <motion.li
                       key={item.href}

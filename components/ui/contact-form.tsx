@@ -35,6 +35,8 @@ const initialValues: ContactFormValues = {
   website: "",
 };
 
+const fieldOrder = ["name", "email", "message"] as const;
+
 function validate(values: ContactFormValues): ContactFormErrors {
   const errors: ContactFormErrors = {};
 
@@ -81,6 +83,15 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
     }
   };
 
+  const focusFirstInvalid = (nextErrors: ContactFormErrors) => {
+    const firstInvalid = fieldOrder.find((key) => nextErrors[key]);
+    if (!firstInvalid) return;
+
+    requestAnimationFrame(() => {
+      document.getElementById(`${formId}-${firstInvalid}`)?.focus();
+    });
+  };
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -96,6 +107,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
 
     if (Object.keys(nextErrors).length > 0) {
       setStatus("idle");
+      focusFirstInvalid(nextErrors);
       return;
     }
 
@@ -124,6 +136,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
       className={cn("relative space-y-5", className)}
       onSubmit={handleSubmit}
       noValidate
+      aria-describedby={status === "error" ? `${formId}-form-error` : undefined}
     >
       {/* Honeypot: hidden from users and assistive tech */}
       <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden>
@@ -152,6 +165,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
           value={values.name}
           onChange={(event) => updateField("name", event.target.value)}
           invalid={Boolean(errors.name)}
+          required
           aria-required
           aria-describedby={errors.name ? `${formId}-name-error` : undefined}
           disabled={status === "submitting"}
@@ -172,6 +186,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
           value={values.email}
           onChange={(event) => updateField("email", event.target.value)}
           invalid={Boolean(errors.email)}
+          required
           aria-required
           aria-describedby={errors.email ? `${formId}-email-error` : undefined}
           disabled={status === "submitting"}
@@ -206,6 +221,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
           value={values.message}
           onChange={(event) => updateField("message", event.target.value)}
           invalid={Boolean(errors.message)}
+          required
           aria-required
           aria-describedby={
             errors.message ? `${formId}-message-error` : undefined
@@ -235,7 +251,11 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
         ) : null}
 
         {status === "error" ? (
-          <p className="text-sm text-destructive" role="alert">
+          <p
+            id={`${formId}-form-error`}
+            className="text-sm text-destructive"
+            role="alert"
+          >
             {contactPageContent.form.errorMessage}
           </p>
         ) : null}

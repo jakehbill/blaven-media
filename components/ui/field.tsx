@@ -4,7 +4,7 @@ import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/utils";
 
 const fieldVariants = cva(
-  "w-full rounded-sm border bg-transparent px-4 py-3 text-sm text-foreground transition-colors duration-300 placeholder:text-muted-foreground/50 outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50",
+  "w-full rounded-sm border bg-transparent px-4 py-3 text-sm text-foreground transition-colors duration-300 placeholder:text-muted-foreground/70 outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       invalid: {
@@ -62,9 +62,12 @@ function Label({ className, children, required, ...props }: LabelProps) {
     >
       {children}
       {required ? (
-        <span className="ml-1 text-muted-foreground" aria-hidden>
-          *
-        </span>
+        <>
+          <span className="ml-1 text-muted-foreground" aria-hidden>
+            *
+          </span>
+          <span className="sr-only"> (required)</span>
+        </>
       ) : null}
     </label>
   );

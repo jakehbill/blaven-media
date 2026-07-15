@@ -100,6 +100,7 @@ function Navbar({ className }: NavbarProps) {
                 className="inline-flex size-11 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
                 aria-expanded={open}
                 aria-controls="mobile-navigation"
+                aria-haspopup="dialog"
                 aria-label={open ? "Close menu" : "Open menu"}
                 onClick={toggle}
               >

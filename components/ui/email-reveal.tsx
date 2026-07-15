@@ -1,7 +1,7 @@
 "use client";
 
 import { Check, Copy } from "lucide-react";
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -24,9 +24,16 @@ function EmailReveal({
   revealLabel = contactPageContent.emailReveal.revealLabel,
 }: EmailRevealProps) {
   const statusId = useId();
+  const mailtoRef = useRef<HTMLAnchorElement>(null);
   const [revealed, setRevealed] = useState(false);
   const [copied, setCopied] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (revealed && email) {
+      mailtoRef.current?.focus();
+    }
+  }, [revealed, email]);
 
   const handleReveal = () => {
     const assembled = assembleContactEmail(
@@ -72,6 +79,7 @@ function EmailReveal({
   return (
     <div className={cn("flex flex-wrap items-center gap-3", className)}>
       <a
+        ref={mailtoRef}
         href={`mailto:${email}`}
         className="text-sm font-medium text-foreground/75 underline-offset-[0.2em] transition-colors duration-300 hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:text-[0.9375rem]"
         aria-label={`Send email to ${email}`}

@@ -112,6 +112,12 @@ function TestimonialCarousel({ items, className }: TestimonialCarouselProps) {
     else goNext();
   };
 
+  const lastVisible = Math.min(activeIndex + visibleCount, items.length);
+  const statusText =
+    visibleCount > 1
+      ? `Showing testimonials ${activeIndex + 1} to ${lastVisible} of ${items.length}`
+      : `Testimonial ${activeIndex + 1} of ${items.length}`;
+
   return (
     <div
       className={cn("space-y-6", className)}
@@ -131,7 +137,8 @@ function TestimonialCarousel({ items, className }: TestimonialCarouselProps) {
       }}
     >
       <p id={labelId} className="sr-only">
-        Client testimonials
+        Client testimonials. Use left and right arrow keys to navigate when this
+        region is focused.
       </p>
 
       <div
@@ -148,26 +155,33 @@ function TestimonialCarousel({ items, className }: TestimonialCarouselProps) {
             transform: `translateX(-${(activeIndex * 100) / visibleCount}%)`,
           }}
         >
-          {items.map((item, itemIndex) => (
-            <div
-              key={item.id}
-              className="shrink-0 px-0 sm:px-0"
-              style={{ width: `${100 / visibleCount}%` }}
-              aria-hidden={
-                itemIndex < activeIndex ||
-                itemIndex >= activeIndex + visibleCount
-              }
-            >
-              <div className={cn(visibleCount > 1 && "pr-4 lg:pr-6")}>
-                <TestimonialSlide testimonial={item} />
+          {items.map((item, itemIndex) => {
+            const isHidden =
+              itemIndex < activeIndex ||
+              itemIndex >= activeIndex + visibleCount;
+
+            return (
+              <div
+                key={item.id}
+                className="shrink-0 px-0 sm:px-0"
+                style={{ width: `${100 / visibleCount}%` }}
+                aria-hidden={isHidden}
+                {...(isHidden ? { inert: true } : {})}
+              >
+                <div className={cn(visibleCount > 1 && "pr-4 lg:pr-6")}>
+                  <TestimonialSlide testimonial={item} />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
       <div className="flex items-center justify-between gap-4">
-        <p className="text-caption text-muted-foreground" aria-live="polite">
+        <p className="sr-only" aria-live="polite" aria-atomic="true">
+          {statusText}
+        </p>
+        <p className="text-caption text-muted-foreground" aria-hidden>
           {String(activeIndex + 1).padStart(2, "0")}
           <span className="mx-2 text-border">/</span>
           {String(items.length).padStart(2, "0")}

@@ -47,7 +47,8 @@ function CompanyLogo({
     >
       <Image
         src={src}
-        alt={alt}
+        // Decorative when linked; the parent anchor carries the accessible name.
+        alt={href ? "" : alt}
         fill
         unoptimized
         sizes={sizeHints[size]}
@@ -69,7 +70,7 @@ function CompanyLogo({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Visit ${alt}`}
+      aria-label={`Visit ${alt} (opens in a new tab)`}
       className="inline-flex shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       {image}

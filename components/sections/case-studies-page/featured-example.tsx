@@ -38,7 +38,7 @@ function FeaturedExample({ example, className }: FeaturedExampleProps) {
             alt={example.thumbnail.alt}
             fill
             loading="lazy"
-            className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             sizes="(max-width: 640px) 144px, 176px"
           />
         </a>

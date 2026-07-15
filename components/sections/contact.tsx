@@ -28,6 +28,7 @@ function ContactHero() {
       <Container className="relative z-10">
         <SectionHeader
           id="contact-heading"
+          level="h1"
           label={hero.label}
           heading={hero.heading}
           introduction={hero.body}
@@ -77,6 +78,7 @@ function ContactMain() {
                     rel="noopener noreferrer"
                   >
                     {details.linkedin.value}
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </TextLink>
                 </dd>
               </div>
@@ -145,6 +147,7 @@ function ContactDirect() {
               }
             >
               {directContact.linkedinLabel}
+              <span className="sr-only"> (opens in a new tab)</span>
             </Button>
           </div>
         </MotionReveal>

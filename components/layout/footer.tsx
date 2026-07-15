@@ -43,16 +43,13 @@ export function Footer() {
           </div>
 
           <div className="space-y-1.5 md:max-w-xs md:text-right">
-            <Text variant="caption" className="text-muted-foreground/80">
+            <Text variant="caption" className="text-muted-foreground">
               Blaven Studios Ltd
             </Text>
-            <Text variant="caption" className="text-muted-foreground/80">
+            <Text variant="caption" className="text-muted-foreground">
               Company No. 15985782
             </Text>
-            <Text
-              variant="caption"
-              className="pt-2 text-muted-foreground/70"
-            >
+            <Text variant="caption" className="pt-2 text-muted-foreground">
               © 2026 Blaven Studios Ltd
             </Text>
           </div>

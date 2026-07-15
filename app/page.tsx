@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <SiteShell>
       <HashScroll />
-      <main id="main-content" className="flex flex-1 flex-col">
+      <main id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
         <Hero />
         <WhyThisMatters />
         <Capabilities />

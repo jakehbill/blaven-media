@@ -26,6 +26,12 @@ export function scrollToHash(hash: string, behavior: ScrollBehavior = "smooth") 
   const element = document.getElementById(hash);
   if (!element) return false;
 
+  if (!element.hasAttribute("tabindex")) {
+    element.setAttribute("tabindex", "-1");
+  }
+
   element.scrollIntoView({ behavior, block: "start" });
+  // Move keyboard focus with the viewport so AT announcements stay in sync.
+  element.focus({ preventScroll: true });
   return true;
 }

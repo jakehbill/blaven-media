@@ -1,5 +1,3 @@
-"use client";
-
 import { MotionReveal } from "@/components/ui/motion-reveal";
 import { Heading, Text } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
@@ -11,6 +9,8 @@ type SectionHeaderProps = {
   introduction?: string | readonly string[];
   /** Space between label and heading. */
   labelSpacing?: "default" | "tight";
+  /** Semantic heading element. Visual size stays section (h2) styles. */
+  level?: "h1" | "h2";
   className?: string;
 };
 
@@ -20,6 +20,7 @@ function SectionHeader({
   heading,
   introduction,
   labelSpacing = "default",
+  level = "h2",
   className,
 }: SectionHeaderProps) {
   const introductionParagraphs = introduction
@@ -38,7 +39,7 @@ function SectionHeader({
         className={labelSpacing === "tight" ? "mt-2.5" : "mt-4"}
         delay={0.05}
       >
-        <Heading id={id} level="h2" className="text-pretty">
+        <Heading id={id} as={level} level="h2" className="text-pretty">
           {heading}
         </Heading>
       </MotionReveal>
