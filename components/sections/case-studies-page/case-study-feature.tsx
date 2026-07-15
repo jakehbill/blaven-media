@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 
+import { FeaturedExample } from "@/components/sections/case-studies-page/featured-example";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { MotionReveal } from "@/components/ui/motion-reveal";
@@ -107,23 +108,6 @@ function CaseStudyFeature({
                   ))}
                 </ul>
               </Field>
-
-              <Field label="Outcomes">
-                <ul className="max-w-prose space-y-2.5">
-                  {study.outcomes.map((outcome) => (
-                    <li
-                      key={outcome}
-                      className="flex gap-3 text-sm leading-[1.55] text-foreground/85 md:text-[0.9375rem]"
-                    >
-                      <span
-                        className="mt-[0.55em] size-1 shrink-0 rounded-full bg-stone"
-                        aria-hidden
-                      />
-                      <span>{outcome}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Field>
             </MotionReveal>
 
             <MotionReveal
@@ -150,6 +134,27 @@ function CaseStudyFeature({
                   >
                     {study.approach}
                   </Text>
+                </Field>
+
+                {study.featuredExample ? (
+                  <FeaturedExample example={study.featuredExample} />
+                ) : null}
+
+                <Field label="Outcomes">
+                  <ul className="max-w-prose space-y-2.5">
+                    {study.outcomes.map((outcome) => (
+                      <li
+                        key={outcome}
+                        className="flex gap-3 text-sm leading-[1.55] text-foreground/85 md:text-[0.9375rem]"
+                      >
+                        <span
+                          className="mt-[0.55em] size-1 shrink-0 rounded-full bg-stone"
+                          aria-hidden
+                        />
+                        <span>{outcome}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </Field>
               </div>
 

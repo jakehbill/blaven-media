@@ -1,5 +1,16 @@
 export type CaseStudyOutcome = string;
 
+export type CaseStudyFeaturedExample = {
+  title: string;
+  description: string;
+  href: string;
+  ctaLabel: string;
+  thumbnail: {
+    src: string;
+    alt: string;
+  };
+};
+
 export type CaseStudy = {
   id: string;
   slug: string;
@@ -14,6 +25,7 @@ export type CaseStudy = {
   engagement?: string;
   challenge: string;
   approach: string;
+  featuredExample?: CaseStudyFeaturedExample;
   outcomes: readonly CaseStudyOutcome[];
   services: readonly string[];
   testimonial?: {
@@ -65,6 +77,17 @@ export const caseStudiesContent = {
         "Help establish SilverLining as a trusted global voice on atmospheric science and climate risk while supporting fundraising, events and strategic communications.",
       approach:
         "Built executive thought leadership across LinkedIn, developed newsletter campaigns, redesigned sections of the website, produced research-driven content, organised executive roundtables, supported event marketing, and created communications around major reports and initiatives.",
+      featuredExample: {
+        title: "Fundraising Thought Leadership",
+        description:
+          "Founder-led video created as part of SilverLining's thought leadership programme. By translating complex atmospheric science into a compelling story, this content reached key philanthropic audiences and became an important communications asset supporting fundraising conversations and donor engagement.",
+        href: "https://www.linkedin.com/feed/update/urn:li:activity:7447262038260822016",
+        ctaLabel: "View Example",
+        thumbnail: {
+          src: "/images/case_studies/silverlining_casestudy.png",
+          alt: "SilverLining fundraising thought leadership video thumbnail",
+        },
+      },
       outcomes: [
         "Approximately 1.5× LinkedIn audience growth",
         "Newsletter programme established",
@@ -141,6 +164,17 @@ export const caseStudiesContent = {
         "Build consistent founder thought leadership without requiring a significant time commitment.",
       approach:
         "Recorded a single long-form session and transformed it into approximately two months of strategic content across multiple formats.",
+      featuredExample: {
+        title: "Founder Thought Leadership",
+        description:
+          "One recording session became weeks of authentic founder content across LinkedIn, allowing Exactly.ai to maintain a consistent founder presence while requiring very little time from the CEO.",
+        href: "https://www.linkedin.com/posts/toniasamsonova_brandai-creativeops-marketingtechnology-activity-7376921013487345664-zW0r?utm_source=share&utm_medium=member_desktop&rcm=ACoAADMMVRIBYh2HdsIhNmBJe-0O68gmYbXCF-Q",
+        ctaLabel: "View Example",
+        thumbnail: {
+          src: "/images/case_studies/exactlyai_casestudy.png",
+          alt: "Exactly.ai founder thought leadership content example",
+        },
+      },
       outcomes: [
         "Established a consistent publishing cadence from a single recording session",
         "Improved efficiency by converting one long-form capture into multi-format content",
@@ -175,6 +209,17 @@ export const caseStudiesContent = {
       challenge: "Increase visibility of senior leadership.",
       approach:
         "Developed a LinkedIn thought leadership programme for senior executives including strategy, scripting and talking-head video production.",
+      featuredExample: {
+        title: "Executive Thought Leadership",
+        description:
+          "A talking-head video produced for LDPR's leadership team as part of a broader executive communications strategy, helping increase visibility and engagement while giving senior leaders a more authentic voice on LinkedIn.",
+        href: "https://www.linkedin.com/posts/lauradavidson-ldpr_ldpr-travelpr-laborday-activity-7368613674967674881-hWC4?utm_source=share&utm_medium=member_desktop&rcm=ACoAADMMVRIBYh2HdsIhNmBJe-0O68gmYbXCF-Q",
+        ctaLabel: "View Example",
+        thumbnail: {
+          src: "/images/case_studies/ldpr_casestudy.png",
+          alt: "LDPR executive thought leadership video example",
+        },
+      },
       outcomes: [
         "Increased executive presence across LinkedIn",
         "Stronger engagement with leadership content",
@@ -235,6 +280,17 @@ export const caseStudiesContent = {
       challenge: "Validate product positioning before launch.",
       approach:
         "Designed and conducted street interviews across London to gather qualitative research, test messaging and build an early waitlist.",
+      featuredExample: {
+        title: "Street Interview Campaign",
+        description:
+          "A street interview series designed to test messaging, validate product positioning, and build early awareness ahead of launch. The interviews provided valuable market insight while generating engaging content that supported the wider campaign.",
+        href: "https://www.youtube.com/shorts/vhonKZpkh4I",
+        ctaLabel: "View Example",
+        thumbnail: {
+          src: "/images/case_studies/sideways_casestudy.png",
+          alt: "Sideways street interview campaign content example",
+        },
+      },
       outcomes: [
         "Improved understanding of market response to positioning",
         "Stronger messaging informed by qualitative research",

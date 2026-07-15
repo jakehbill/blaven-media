@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
 import { TextLink } from "@/components/ui/text-link";
 import { primaryNavigation } from "@/data/navigation";
+import { siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
@@ -12,9 +14,18 @@ export function Footer() {
           <div className="space-y-4">
             <Link
               href="/"
-              className="inline-block text-[0.9375rem] font-medium tracking-[0.06em] text-foreground uppercase transition-opacity duration-300 hover:opacity-70"
+              className="flex items-center gap-2.5 text-base font-medium tracking-tight text-foreground transition-opacity duration-300 hover:opacity-75"
             >
-              Blaven Media
+              <span className="relative size-8 shrink-0 overflow-hidden rounded-sm">
+                <Image
+                  src={siteConfig.logo.src}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="32px"
+                />
+              </span>
+              <span>{siteConfig.name}</span>
             </Link>
 
             <nav aria-label="Footer">
