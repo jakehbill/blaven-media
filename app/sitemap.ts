@@ -2,13 +2,26 @@ import type { MetadataRoute } from "next";
 
 import { SITE_URL } from "@/lib/constants";
 
-const routes = ["", "/about", "/case-studies", "/contact"] as const;
+type SiteRoute = {
+  path: string;
+  priority: number;
+  changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
+};
+
+const routes: SiteRoute[] = [
+  { path: "/", priority: 1, changeFrequency: "weekly" },
+  { path: "/about", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/case-studies", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.7, changeFrequency: "yearly" },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
-    url: `${SITE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1 : 0.8,
+  const lastModified = new Date();
+
+  return routes.map(({ path, priority, changeFrequency }) => ({
+    url: path === "/" ? SITE_URL : `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
   }));
 }

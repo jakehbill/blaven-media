@@ -6,7 +6,8 @@ export const alt = `${siteConfig.name} — ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+/** Same creative as Open Graph for consistent large-card previews. */
+export default function TwitterImage() {
   return new ImageResponse(
     (
       <div

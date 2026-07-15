@@ -4,15 +4,15 @@ export const siteConfig = {
     src: "/images/logo.svg",
     alt: "Blaven Media",
   },
-  tagline: "Premium marketing for ambitious brands.",
+  tagline: "Strategic communications for organisations with meaningful ideas.",
   description:
-    "Blaven Media is a premium marketing agency crafting distinctive brand experiences, digital campaigns, and growth strategies.",
+    "Blaven Media helps founders and organisations with meaningful ideas build recognition through strategic communications, thought leadership, and carefully crafted digital experiences.",
   locale: "en_GB",
   keywords: [
-    "marketing agency",
+    "strategic communications",
+    "thought leadership",
     "brand strategy",
-    "digital marketing",
-    "creative agency",
+    "founder communications",
     "Blaven Media",
   ],
 } as const;
