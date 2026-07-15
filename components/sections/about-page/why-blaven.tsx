@@ -40,23 +40,19 @@ function WhyBlaven() {
       <MountainAtmosphere tone="light" />
 
       <Container className="relative z-10">
-        <div className="grid items-start gap-10 md:gap-12 lg:grid-cols-12 lg:items-stretch lg:gap-10">
+        <div className="grid items-start gap-10 md:gap-12 lg:grid-cols-12 lg:items-stretch lg:gap-12">
           <div className="relative z-10 lg:col-span-7">
             <SectionHeader
               id="why-blaven-heading"
               label={whyBlaven.label}
               heading={whyBlaven.heading}
               labelSpacing="tight"
-              className="max-w-5xl"
             />
 
             <div className="mt-5 max-w-prose-wide space-y-4">
               {whyBlaven.paragraphs.map((paragraph, index) => (
                 <MotionReveal key={paragraph} delay={0.1 + index * 0.04}>
-                  <Text
-                    variant="body-lg"
-                    className="leading-[1.55] text-foreground/85"
-                  >
+                  <Text variant="body-lg" className="text-foreground/85">
                     {paragraph}
                   </Text>
                 </MotionReveal>

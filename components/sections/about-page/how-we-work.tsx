@@ -27,23 +27,19 @@ function HowWeWork() {
           id="how-we-work-heading"
           label={howWeWork.label}
           heading={howWeWork.heading}
-          className="max-w-5xl"
         />
 
-        <div className="mt-6 max-w-prose-wide space-y-4 md:mt-7">
+        <div className="mt-8 max-w-prose-wide space-y-4 md:mt-9">
           {howWeWork.paragraphs.map((paragraph, index) => (
             <MotionReveal key={paragraph} delay={0.08 + index * 0.04}>
-              <Text
-                variant="body-lg"
-                className="text-foreground/85"
-              >
+              <Text variant="body-lg" className="text-foreground/85">
                 {paragraph}
               </Text>
             </MotionReveal>
           ))}
         </div>
 
-        <Stagger className="mt-10 grid grid-cols-2 gap-x-8 gap-y-7 border-t border-border/60 pt-8 md:mt-11 md:grid-cols-4 md:gap-10 md:pt-9">
+        <Stagger className="mt-8 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-border/60 pt-8 md:mt-9 md:grid-cols-4 md:gap-10 md:pt-9">
           {howWeWork.metrics.map((metric) => (
             <StaggerItem key={metric.label}>
               <div className="space-y-2.5">

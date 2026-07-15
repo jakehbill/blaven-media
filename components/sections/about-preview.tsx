@@ -4,48 +4,35 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { MotionReveal } from "@/components/ui/motion-reveal";
 import { Section } from "@/components/ui/section";
-import { Heading, Text } from "@/components/ui/typography";
+import { SectionHeader } from "@/components/ui/section-header";
 import { aboutPreviewContent } from "@/data/about";
 
 function AboutPreview() {
   return (
     <Section
       id="about-preview"
-      spacing="sm"
+      spacing="md"
       surface="dark"
       aria-labelledby="about-preview-heading"
     >
       <Container>
-        <MotionReveal className="max-w-5xl">
-          <Text variant="eyebrow">{aboutPreviewContent.label}</Text>
+        <SectionHeader
+          id="about-preview-heading"
+          label={aboutPreviewContent.label}
+          heading={aboutPreviewContent.heading}
+          introduction={aboutPreviewContent.body}
+        />
 
-          <Heading
-            id="about-preview-heading"
-            level="h2"
-            className="mt-4 max-w-5xl"
+        <div className="mt-6">
+          <Button
+            variant="secondary"
+            size="default"
+            render={<Link href={aboutPreviewContent.cta.href} />}
           >
-            {aboutPreviewContent.heading}
-          </Heading>
-
-          <Text
-            variant="body-lg"
-            className="mt-4 max-w-prose-wide text-foreground/85"
-          >
-            {aboutPreviewContent.body}
-          </Text>
-
-          <div className="mt-6">
-            <Button
-              variant="secondary"
-              size="default"
-              render={<Link href={aboutPreviewContent.cta.href} />}
-            >
-              {aboutPreviewContent.cta.label}
-            </Button>
-          </div>
-        </MotionReveal>
+            {aboutPreviewContent.cta.label}
+          </Button>
+        </div>
       </Container>
     </Section>
   );

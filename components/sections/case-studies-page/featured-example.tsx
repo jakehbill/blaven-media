@@ -21,15 +21,16 @@ function FeaturedExample({ example, className }: FeaturedExampleProps) {
   return (
     <Card
       padding="none"
+      interactive
       className={cn(
-        "group max-w-prose overflow-hidden border-border/70 bg-muted/25 transition-colors duration-300 hover:border-foreground/20 hover:bg-muted/35",
+        "group max-w-prose overflow-hidden border-border/55 bg-muted/25 transition-colors duration-300 hover:bg-muted/35",
         className,
       )}
     >
       <div className="flex flex-col gap-5 p-5 sm:flex-row sm:items-start sm:gap-6 sm:p-6">
         <a
           {...externalLinkProps}
-          className="relative block aspect-[3/4] w-full max-w-[12rem] shrink-0 overflow-hidden rounded-sm border border-border/50 bg-muted/30 transition-[border-color,opacity] duration-300 hover:border-foreground/25 hover:opacity-95 sm:w-44 sm:max-w-none md:w-48"
+          className="relative block aspect-[3/4] w-44 shrink-0 overflow-hidden rounded-sm border border-border/50 bg-muted/30 transition-[border-color,opacity] duration-300 hover:border-foreground/25 hover:opacity-95"
           aria-label={`View example: ${example.title} (opens in a new tab)`}
         >
           <Image
@@ -38,7 +39,7 @@ function FeaturedExample({ example, className }: FeaturedExampleProps) {
             fill
             loading="lazy"
             className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-            sizes="(max-width: 640px) 192px, 192px"
+            sizes="176px"
           />
         </a>
 

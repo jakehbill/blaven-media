@@ -37,7 +37,7 @@ function useVisibleCount() {
 
 function TestimonialSlide({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <article className="relative flex h-full flex-col justify-between gap-8 border border-border/70 bg-transparent p-6 md:p-8">
+    <article className="relative flex h-full flex-col justify-between gap-8 rounded-sm border border-border/60 bg-transparent p-6 md:p-8">
       <blockquote className="text-sm leading-relaxed text-foreground/85 md:text-[0.9375rem]">
         <p>
           <span className="text-stone" aria-hidden>
@@ -175,7 +175,7 @@ function TestimonialCarousel({ items, className }: TestimonialCarouselProps) {
         <div className="flex items-center gap-2">
           <button
             type="button"
-            className="inline-flex size-10 items-center justify-center rounded-sm border border-border text-foreground transition-colors hover:border-foreground/25 hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-30"
+            className="inline-flex size-11 items-center justify-center rounded-sm border border-border text-foreground transition-colors hover:border-foreground/25 hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-30"
             onClick={goPrev}
             disabled={activeIndex === 0}
             aria-label="Previous testimonial"
@@ -184,7 +184,7 @@ function TestimonialCarousel({ items, className }: TestimonialCarouselProps) {
           </button>
           <button
             type="button"
-            className="inline-flex size-10 items-center justify-center rounded-sm border border-border text-foreground transition-colors hover:border-foreground/25 hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-30"
+            className="inline-flex size-11 items-center justify-center rounded-sm border border-border text-foreground transition-colors hover:border-foreground/25 hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-30"
             onClick={goNext}
             disabled={activeIndex >= maxIndex}
             aria-label="Next testimonial"

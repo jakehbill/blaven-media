@@ -79,7 +79,7 @@ function FieldError({ id, message }: FieldErrorProps) {
   if (!message) return null;
 
   return (
-    <p id={id} className="mt-2 text-xs text-destructive" role="alert">
+    <p id={id} className="mt-2 text-caption text-destructive" role="alert">
       {message}
     </p>
   );

@@ -30,15 +30,9 @@ function ContactHero() {
           id="contact-heading"
           label={hero.label}
           heading={hero.heading}
+          introduction={hero.body}
           labelSpacing="tight"
-          className="max-w-5xl"
         />
-
-        <MotionReveal className="mt-5 max-w-prose-wide" delay={0.1}>
-          <Text variant="body-lg" className="text-foreground/85">
-            {hero.body}
-          </Text>
-        </MotionReveal>
       </Container>
     </Section>
   );
@@ -58,7 +52,7 @@ function ContactMain() {
       <SurfaceTexture variant="paper" tone="light" />
 
       <Container className="relative z-10">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
           <MotionReveal>
             <dl className="space-y-6">
               <div className="space-y-2">
@@ -115,7 +109,7 @@ function ContactDirect() {
   return (
     <Section
       id="prefer-email"
-      spacing="md"
+      spacing="sm"
       surface="grey"
       className="relative overflow-hidden"
       aria-labelledby="prefer-email-heading"
@@ -130,7 +124,7 @@ function ContactDirect() {
 
           <Text
             variant="body-lg"
-            className="mt-4 max-w-prose-wide text-foreground/85"
+            className="mt-4 max-w-prose text-foreground/85"
           >
             {directContact.body}
           </Text>

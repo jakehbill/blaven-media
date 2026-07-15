@@ -20,10 +20,10 @@ function WhyThisMatters() {
           id="why-this-matters-heading"
           label={whyThisMattersContent.label}
           heading={whyThisMattersContent.heading}
-          className="max-w-5xl"
+          className="max-w-3xl"
         />
 
-        <div className="mt-6 max-w-prose-wide space-y-5 md:mt-7">
+        <div className="mt-8 max-w-prose-wide space-y-5 md:mt-9">
           <MotionReveal delay={0.1}>
             <div className="space-y-1">
               {whyThisMattersContent.lead.map((line) => (

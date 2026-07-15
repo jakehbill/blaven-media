@@ -53,7 +53,7 @@ function Navbar({ className }: NavbarProps) {
           <div className="flex h-16 items-center justify-between gap-6">
             <Link
               href="/"
-              className="flex items-center gap-2.5 text-base font-medium tracking-tight text-foreground transition-opacity duration-300 hover:opacity-75"
+              className="flex items-center gap-2.5 text-base font-medium tracking-tight text-foreground/90 transition-colors duration-300 hover:text-foreground"
             >
               {/* Replace `/public/images/logo.svg` with your square logo (SVG, PNG, or WebP). */}
               <span className="relative size-8 shrink-0 overflow-hidden rounded-sm">
@@ -97,7 +97,7 @@ function Navbar({ className }: NavbarProps) {
               <button
                 ref={triggerRef}
                 type="button"
-                className="inline-flex size-10 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
+                className="inline-flex size-11 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
                 aria-expanded={open}
                 aria-controls="mobile-navigation"
                 aria-label={open ? "Close menu" : "Open menu"}

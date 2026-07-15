@@ -26,8 +26,8 @@ function AboutHero() {
             <Text variant="eyebrow">{hero.label}</Text>
           </MotionReveal>
 
-          <MotionReveal className="mt-3" delay={0.05}>
-            <Heading id="about-heading" level="h1" className="max-w-5xl">
+          <MotionReveal className="mt-2.5" delay={0.05}>
+            <Heading id="about-heading" level="h1" className="max-w-4xl text-pretty">
               {hero.heading}
             </Heading>
           </MotionReveal>
@@ -35,10 +35,7 @@ function AboutHero() {
           <div className="mt-5 max-w-prose-wide space-y-4">
             {hero.paragraphs.map((paragraph, index) => (
               <MotionReveal key={paragraph} delay={0.1 + index * 0.05}>
-                <Text
-                  variant="body-lg"
-                  className="leading-[1.55] text-foreground/85"
-                >
+                <Text variant="body-lg" className="text-foreground/85">
                   {paragraph}
                 </Text>
               </MotionReveal>

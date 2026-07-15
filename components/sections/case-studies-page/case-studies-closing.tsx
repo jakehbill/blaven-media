@@ -24,18 +24,18 @@ function CaseStudiesClosing() {
       <SurfaceTexture variant="grain" tone="dark" />
 
       <Container className="relative z-10">
-        <MotionReveal className="mx-auto max-w-4xl text-center">
+        <MotionReveal className="mx-auto max-w-3xl text-center">
           <Heading
             id="case-studies-closing-heading"
             level="h2"
-            className="mx-auto max-w-4xl"
+            className="mx-auto max-w-3xl text-pretty"
           >
             {closing.heading}
           </Heading>
 
           <Text
             variant="body-lg"
-            className="mx-auto mt-4 max-w-prose-wide text-foreground/85"
+            className="mx-auto mt-4 max-w-prose text-foreground/85"
           >
             {closing.body}
           </Text>

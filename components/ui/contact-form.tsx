@@ -220,6 +220,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
           type="submit"
           variant="primary"
           size="default"
+          className="w-full sm:w-auto"
           disabled={status === "submitting"}
         >
           {status === "submitting"
@@ -228,7 +229,7 @@ function ContactForm({ className, onSubmitPlaceholder }: ContactFormProps) {
         </Button>
 
         {status === "success" ? (
-          <p className="text-sm text-foreground/80" role="status">
+          <p className="text-sm text-foreground/85" role="status">
             {contactPageContent.form.successMessage}
           </p>
         ) : null}

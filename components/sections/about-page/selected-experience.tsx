@@ -25,13 +25,12 @@ function SelectedExperience() {
           id="selected-experience-heading"
           label={experience.label}
           heading={experience.heading}
-          className="max-w-5xl"
         />
 
         <Stagger className="mt-8 border-t border-border/60 md:mt-9">
           {experience.items.map((item, index) => (
             <StaggerItem key={item}>
-              <div className="group flex items-baseline gap-5 border-b border-border/60 py-4 md:gap-8 md:py-5">
+              <div className="group flex items-baseline gap-5 border-b border-border/60 py-5 md:gap-8 md:py-6">
                 <span className="font-mono text-xs tracking-[0.14em] text-stone transition-colors duration-300 group-hover:text-foreground/70">
                   {String(index + 1).padStart(2, "0")}
                 </span>

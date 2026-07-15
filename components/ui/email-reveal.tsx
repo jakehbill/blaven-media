@@ -73,7 +73,7 @@ function EmailReveal({
     <div className={cn("flex flex-wrap items-center gap-3", className)}>
       <a
         href={`mailto:${email}`}
-        className="text-sm font-medium text-foreground underline-offset-[0.2em] transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:text-[0.9375rem]"
+        className="text-sm font-medium text-foreground/75 underline-offset-[0.2em] transition-colors duration-300 hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:text-[0.9375rem]"
         aria-label={`Send email to ${email}`}
       >
         {email}

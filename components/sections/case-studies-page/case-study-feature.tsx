@@ -29,7 +29,7 @@ function Field({
 }) {
   return (
     <div className="space-y-2.5">
-      <p className="text-eyebrow uppercase tracking-[0.14em] text-muted-foreground">
+      <p className="text-eyebrow uppercase text-muted-foreground">
         {label}
       </p>
       {children}
@@ -72,7 +72,7 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
               <h2 id={headingId} className="text-h2 text-foreground">
                 {study.client}
               </h2>
-              <p className="text-eyebrow uppercase tracking-[0.14em] text-muted-foreground">
+              <p className="text-eyebrow uppercase text-muted-foreground">
                 {study.industry}
               </p>
             </div>
@@ -91,7 +91,7 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
                   <Field label="Engagement">
                     <Text
                       variant="body-lg"
-                      className="leading-[1.55] text-foreground/85"
+                      className="max-w-prose leading-[1.55] text-foreground/85"
                     >
                       {study.engagement}
                     </Text>

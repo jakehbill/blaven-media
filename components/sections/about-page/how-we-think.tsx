@@ -26,18 +26,14 @@ function HowWeThink() {
           id="how-we-think-heading"
           label={howWeThink.label}
           heading={howWeThink.heading}
-          className="max-w-5xl"
         />
 
-        <Stagger className="mt-9 grid gap-8 border-t border-border/60 pt-8 md:mt-10 md:grid-cols-3 md:gap-10 md:pt-9 lg:gap-14">
+        <Stagger className="mt-8 grid gap-8 border-t border-border/60 pt-8 md:mt-9 md:grid-cols-3 md:gap-10 md:pt-9 lg:gap-14">
           {howWeThink.columns.map((column) => (
             <StaggerItem key={column.title}>
               <article className="space-y-3">
                 <h3 className="text-h4 text-foreground">{column.title}</h3>
-                <Text
-                  variant="muted"
-                  className="text-sm leading-[1.55] md:text-[0.9375rem]"
-                >
+                <Text variant="muted" className="leading-relaxed">
                   {column.body}
                 </Text>
               </article>

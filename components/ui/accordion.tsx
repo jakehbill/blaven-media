@@ -32,7 +32,7 @@ function Accordion({ items, className }: AccordionProps) {
               <button
                 id={buttonId}
                 type="button"
-                className="flex w-full items-center justify-between gap-6 py-4 text-left transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="flex w-full items-center justify-between gap-6 py-5 text-left transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -57,7 +57,7 @@ function Accordion({ items, className }: AccordionProps) {
               hidden={!isOpen}
               className={cn(!isOpen && "hidden")}
             >
-              <p className="max-w-prose pb-6 text-sm leading-relaxed text-muted-foreground md:text-[0.9375rem]">
+              <p className="max-w-prose-wide pb-6 text-sm leading-relaxed text-muted-foreground md:text-[0.9375rem]">
                 {item.answer}
               </p>
             </div>

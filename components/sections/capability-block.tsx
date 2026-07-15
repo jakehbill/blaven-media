@@ -11,7 +11,7 @@ function CapabilityBlock({ capability, className }: CapabilityBlockProps) {
   return (
     <article
       className={cn(
-        "group border-b border-border/60 py-8 last:border-b-0 md:py-9",
+        "group border-b border-border/60 py-7 last:border-b-0 md:py-8",
         className,
       )}
     >
@@ -26,7 +26,7 @@ function CapabilityBlock({ capability, className }: CapabilityBlockProps) {
           </h3>
           <Text
             variant="muted"
-            className="max-w-prose-wide text-sm leading-relaxed md:text-[0.9375rem]"
+            className="max-w-prose-wide leading-relaxed"
           >
             {capability.description}
           </Text>

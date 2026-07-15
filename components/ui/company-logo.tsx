@@ -13,13 +13,15 @@ type CompanyLogoProps = {
 };
 
 const sizeClasses = {
-  default: "h-20 w-[20rem] max-w-[50%]",
+  /** Wider wordmark slot for sparse layouts */
+  default: "h-14 w-[12.5rem] max-w-[50%]",
+  /** Compact slot used in testimonial cards */
   large: "h-14 w-[10rem] sm:w-[11rem] md:w-[12.5rem]",
 } as const;
 
 const sizeHints = {
-  default: "320px",
-  large: "480px",
+  default: "200px",
+  large: "200px",
 } as const;
 
 /**
