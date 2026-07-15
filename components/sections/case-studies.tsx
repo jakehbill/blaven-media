@@ -16,7 +16,6 @@ function CaseStudies() {
           study={study}
           index={index}
           surface={caseStudySurfaces[index] ?? "light"}
-          reverse={index % 2 === 1}
         />
       ))}
       <CaseStudiesClosing />

@@ -12,13 +12,11 @@ import { ServiceList } from "@/components/ui/service-list";
 import { SurfaceTexture } from "@/components/ui/surface-texture";
 import { Text } from "@/components/ui/typography";
 import type { CaseStudiesSurface, CaseStudy } from "@/data/case-studies";
-import { cn } from "@/lib/utils";
 
 type CaseStudyFeatureProps = {
   study: CaseStudy;
   index: number;
   surface: CaseStudiesSurface;
-  reverse?: boolean;
 };
 
 function Field({
@@ -36,12 +34,7 @@ function Field({
   );
 }
 
-function CaseStudyFeature({
-  study,
-  index,
-  surface,
-  reverse = false,
-}: CaseStudyFeatureProps) {
+function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
   const isDark = surface === "dark";
   const headingId = `case-study-${study.slug}-heading`;
 
@@ -60,98 +53,42 @@ function CaseStudyFeature({
 
       <Container className="relative z-10">
         <div className="border-t border-border/60 pt-2">
-          <div
-            className={cn(
-              "grid items-start gap-10 md:gap-14 lg:grid-cols-12 lg:gap-16",
-            )}
-          >
-            <MotionReveal
-              className={cn(
-                "space-y-6 lg:col-span-5",
-                reverse && "lg:order-2",
-              )}
-            >
-              <div className="space-y-4">
-                <span className="font-mono text-xs tracking-[0.14em] text-stone">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+          {/* Identity sits above the columns so Engagement + Challenge share a baseline */}
+          <MotionReveal className="max-w-xl space-y-4 lg:max-w-none lg:w-[calc((100%-4rem)*5/12)]">
+            <span className="font-mono text-xs tracking-[0.14em] text-stone">
+              {String(index + 1).padStart(2, "0")}
+            </span>
 
-                <div className="space-y-2">
-                  <h2 id={headingId} className="text-h2 text-foreground">
-                    {study.client}
-                  </h2>
-                  <p className="text-eyebrow uppercase text-muted-foreground">
-                    {study.industry}
-                  </p>
-                </div>
+            <div className="space-y-2">
+              <h2 id={headingId} className="text-h2 text-foreground">
+                {study.client}
+              </h2>
+              <p className="text-eyebrow uppercase text-muted-foreground">
+                {study.industry}
+              </p>
+            </div>
+          </MotionReveal>
 
-                {study.engagement ? (
-                  <Field label="Engagement">
-                    <Text
-                      variant="body-lg"
-                      className="leading-[1.55] text-foreground/85"
-                    >
-                      {study.engagement}
-                    </Text>
-                  </Field>
-                ) : null}
-              </div>
+          <div className="mt-7 grid items-start gap-10 md:gap-14 lg:mt-8 lg:grid-cols-12 lg:gap-16">
+            {/* Left: Engagement, Services, Testimonial */}
+            <MotionReveal className="space-y-7 lg:col-span-5" delay={0.04}>
+              {study.engagement ? (
+                <Field label="Engagement">
+                  <Text
+                    variant="body-lg"
+                    className="leading-[1.55] text-foreground/85"
+                  >
+                    {study.engagement}
+                  </Text>
+                </Field>
+              ) : null}
 
               <Field label="Services Provided">
                 <ServiceList services={study.services} />
               </Field>
-            </MotionReveal>
-
-            <MotionReveal
-              className={cn(
-                "space-y-6 lg:col-span-7",
-                reverse && "lg:order-1",
-              )}
-              delay={0.06}
-            >
-              <div className="space-y-6 border-t border-border/50 pt-6 lg:border-t-0 lg:pt-0">
-                <Field label="Challenge">
-                  <Text
-                    variant="body-lg"
-                    className="max-w-prose text-foreground/85"
-                  >
-                    {study.challenge}
-                  </Text>
-                </Field>
-
-                <Field label="Approach">
-                  <Text
-                    variant="body-lg"
-                    className="max-w-prose text-foreground/85"
-                  >
-                    {study.approach}
-                  </Text>
-                </Field>
-
-                {study.featuredExample ? (
-                  <FeaturedExample example={study.featuredExample} />
-                ) : null}
-
-                <Field label="Outcomes">
-                  <ul className="max-w-prose space-y-2.5">
-                    {study.outcomes.map((outcome) => (
-                      <li
-                        key={outcome}
-                        className="flex gap-3 text-sm leading-[1.55] text-foreground/85 md:text-[0.9375rem]"
-                      >
-                        <span
-                          className="mt-[0.55em] size-1 shrink-0 rounded-full bg-stone"
-                          aria-hidden
-                        />
-                        <span>{outcome}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </Field>
-              </div>
 
               {study.testimonial ? (
-                <blockquote className="max-w-prose space-y-4 border-l border-stone/40 pl-5">
+                <blockquote className="space-y-4 border-l border-stone/40 pl-5">
                   <p className="text-sm leading-[1.55] text-foreground/80 md:text-[0.9375rem]">
                     <span className="text-stone" aria-hidden>
                       &ldquo;
@@ -170,6 +107,48 @@ function CaseStudyFeature({
                     </p>
                   </footer>
                 </blockquote>
+              ) : null}
+            </MotionReveal>
+
+            {/* Right: Challenge, Approach, Outcomes, Featured Example */}
+            <MotionReveal className="space-y-7 lg:col-span-7" delay={0.06}>
+              <Field label="Challenge">
+                <Text
+                  variant="body-lg"
+                  className="max-w-prose text-foreground/85"
+                >
+                  {study.challenge}
+                </Text>
+              </Field>
+
+              <Field label="Approach">
+                <Text
+                  variant="body-lg"
+                  className="max-w-prose text-foreground/85"
+                >
+                  {study.approach}
+                </Text>
+              </Field>
+
+              <Field label="Outcomes">
+                <ul className="max-w-prose space-y-2.5">
+                  {study.outcomes.map((outcome) => (
+                    <li
+                      key={outcome}
+                      className="flex gap-3 text-sm leading-[1.55] text-foreground/85 md:text-[0.9375rem]"
+                    >
+                      <span
+                        className="mt-[0.55em] size-1 shrink-0 rounded-full bg-stone"
+                        aria-hidden
+                      />
+                      <span>{outcome}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Field>
+
+              {study.featuredExample ? (
+                <FeaturedExample example={study.featuredExample} />
               ) : null}
 
               <div>

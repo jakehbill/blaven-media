@@ -12,6 +12,20 @@ import { aboutPageContent } from "@/data/about";
 
 const GRAIN_URL = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E")`;
 
+/** Soft dissolve so edges melt into the grey surface on all sides. */
+const EDGE_MASK = {
+  maskImage: `
+    linear-gradient(to right, transparent 0%, black 18%, black 72%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 14%, black 82%, transparent 100%)
+  `,
+  WebkitMaskImage: `
+    linear-gradient(to right, transparent 0%, black 18%, black 72%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 14%, black 82%, transparent 100%)
+  `,
+  maskComposite: "intersect" as const,
+  WebkitMaskComposite: "source-in" as const,
+};
+
 function WhyBlaven() {
   const { whyBlaven } = aboutPageContent;
 
@@ -26,8 +40,8 @@ function WhyBlaven() {
       <MountainAtmosphere tone="light" />
 
       <Container className="relative z-10">
-        <div className="grid items-start gap-10 md:gap-12 lg:grid-cols-12 lg:items-stretch lg:gap-16">
-          <div className="lg:col-span-7">
+        <div className="grid items-start gap-10 md:gap-12 lg:grid-cols-12 lg:items-stretch lg:gap-10">
+          <div className="relative z-10 lg:col-span-7">
             <SectionHeader
               id="why-blaven-heading"
               label={whyBlaven.label}
@@ -51,39 +65,41 @@ function WhyBlaven() {
           </div>
 
           <MotionReveal className="lg:col-span-5 lg:h-full" delay={0.12}>
-            <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-sm lg:mx-0 lg:aspect-auto lg:h-full lg:min-h-0 lg:max-w-none">
-              <Image
-                src={whyBlaven.image.src}
-                alt={whyBlaven.image.alt}
-                fill
-                className="object-cover object-center grayscale contrast-[0.92] brightness-[1.05] saturate-0"
-                sizes="(max-width: 1024px) 28rem, 40vw"
-              />
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-md lg:mx-0 lg:aspect-auto lg:h-full lg:min-h-0 lg:max-w-none">
+              {/* Photo blends into grey: multiply + soft mask, no hard card edge */}
+              <div className="absolute inset-0" style={EDGE_MASK}>
+                <Image
+                  src={whyBlaven.image.src}
+                  alt={whyBlaven.image.alt}
+                  fill
+                  className="object-cover object-[center_40%] grayscale contrast-[0.78] brightness-[1.18] saturate-0 mix-blend-multiply opacity-[0.78]"
+                  sizes="(max-width: 1024px) 28rem, 42vw"
+                />
 
-              {/* Soft cool wash so the photo sits in the monochrome system */}
-              <div
-                className="absolute inset-0 bg-background/25 mix-blend-soft-light"
-                aria-hidden
-              />
-              <div
-                className="absolute inset-0 bg-foreground/[0.06] mix-blend-multiply"
-                aria-hidden
-              />
+                {/* Paper fibre texture so it isn't a flat wash */}
+                <div
+                  className="absolute inset-0 opacity-[0.35] mix-blend-soft-light"
+                  style={{
+                    backgroundImage: GRAIN_URL,
+                    backgroundRepeat: "repeat",
+                    backgroundSize: "200px 200px",
+                  }}
+                  aria-hidden
+                />
+                <div
+                  className="absolute inset-0 opacity-[0.22] mix-blend-multiply"
+                  style={{
+                    backgroundImage: GRAIN_URL,
+                    backgroundRepeat: "repeat",
+                    backgroundSize: "140px 140px",
+                  }}
+                  aria-hidden
+                />
+              </div>
 
-              {/* Light film grain — matches section atmosphere */}
+              {/* Extra edge wash so the dissolve reads against the surface */}
               <div
-                className="absolute inset-0 opacity-[0.2] mix-blend-overlay"
-                style={{
-                  backgroundImage: GRAIN_URL,
-                  backgroundRepeat: "repeat",
-                  backgroundSize: "180px 180px",
-                }}
-                aria-hidden
-              />
-
-              {/* Edge fade into the grey surface */}
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-background/35 via-transparent to-background/20"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_55%_45%,transparent_28%,var(--background)_78%)]"
                 aria-hidden
               />
             </div>
