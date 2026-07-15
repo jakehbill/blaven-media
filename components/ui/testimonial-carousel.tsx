@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   useCallback,
@@ -11,6 +10,7 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from "react";
 
+import { CompanyLogo } from "@/components/ui/company-logo";
 import { TextLink } from "@/components/ui/text-link";
 import { Text } from "@/components/ui/typography";
 import type { Testimonial } from "@/data/testimonials";
@@ -37,23 +37,21 @@ function useVisibleCount() {
 
 function TestimonialSlide({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <article className="flex h-full flex-col justify-between gap-8 border border-border/70 bg-transparent p-6 md:p-8">
-      <div className="space-y-6">
-        <Image
-          src={testimonial.logo.src}
-          alt={testimonial.logo.alt}
-          width={120}
-          height={32}
-          className="h-6 w-auto opacity-55"
-        />
+    <article className="relative flex h-full flex-col justify-between gap-8 border border-border/70 bg-transparent p-6 md:p-8">
+      <blockquote className="text-sm leading-relaxed text-foreground/85 md:text-[0.9375rem]">
+        <p>
+          <span className="text-stone" aria-hidden>
+            &ldquo;
+          </span>
+          {testimonial.quote}
+          <span className="text-stone" aria-hidden>
+            &rdquo;
+          </span>
+        </p>
+      </blockquote>
 
-        <blockquote className="text-sm leading-relaxed text-foreground/85 md:text-[0.9375rem]">
-          <p>{testimonial.quote}</p>
-        </blockquote>
-      </div>
-
-      <div className="space-y-4 border-t border-border/60 pt-6">
-        <div className="space-y-1">
+      <div className="space-y-4 border-t border-border/60 pt-6 pr-[11rem] sm:pr-[12rem] md:pr-[13.5rem]">
+        <div className="min-w-0 space-y-1">
           <p className="text-sm font-medium text-foreground">
             {testimonial.clientName}
           </p>
@@ -67,6 +65,16 @@ function TestimonialSlide({ testimonial }: { testimonial: Testimonial }) {
             View related work
           </TextLink>
         ) : null}
+      </div>
+
+      <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8">
+        <CompanyLogo
+          src={testimonial.logo.src}
+          alt={testimonial.logo.alt}
+          href={testimonial.companyHref}
+          align="right"
+          size="large"
+        />
       </div>
     </article>
   );

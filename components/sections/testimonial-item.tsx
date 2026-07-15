@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Star } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { CompanyLogo } from "@/components/ui/company-logo";
 import { Text } from "@/components/ui/typography";
 import type { Testimonial } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
@@ -43,33 +43,19 @@ function TestimonialItem({ testimonial, className }: TestimonialItemProps) {
       padding="lg"
       interactive
       className={cn(
-        "flex h-full flex-col gap-8 bg-transparent",
+        "relative flex h-full flex-col gap-5 bg-transparent",
         "transition-[transform,border-color,background-color] duration-300 ease-out",
         "hover:-translate-y-0.5 hover:bg-card/60",
         "motion-reduce:hover:translate-y-0",
         className,
       )}
     >
-      <div className="flex items-start justify-between gap-4">
-        <Image
-          src={testimonial.logo.src}
-          alt={testimonial.logo.alt}
-          width={120}
-          height={32}
-          className="h-6 w-auto opacity-55"
-        />
-
-        {typeof testimonial.rating === "number" ? (
-          <Rating value={testimonial.rating} />
-        ) : null}
-      </div>
-
       <blockquote className="flex-1 text-sm leading-relaxed text-foreground/85 md:text-[0.9375rem]">
         <p>{testimonial.quote}</p>
       </blockquote>
 
-      <div className="space-y-5 border-t border-border/60 pt-6">
-        <div className="space-y-1">
+      <div className="space-y-5 border-t border-border/60 pt-6 pr-[11rem] sm:pr-[12rem] md:pr-[13.5rem]">
+        <div className="min-w-0 space-y-1">
           <p className="text-sm font-medium text-foreground">
             {testimonial.clientName}
           </p>
@@ -77,6 +63,10 @@ function TestimonialItem({ testimonial, className }: TestimonialItemProps) {
             {testimonial.jobTitle}, {testimonial.companyName}
           </Text>
         </div>
+
+        {typeof testimonial.rating === "number" ? (
+          <Rating value={testimonial.rating} />
+        ) : null}
 
         <div className="space-y-2">
           <p className="text-eyebrow uppercase text-muted-foreground">
@@ -90,6 +80,16 @@ function TestimonialItem({ testimonial, className }: TestimonialItemProps) {
             ))}
           </ul>
         </div>
+      </div>
+
+      <div className="absolute bottom-8 right-8">
+        <CompanyLogo
+          src={testimonial.logo.src}
+          alt={testimonial.logo.alt}
+          href={testimonial.companyHref}
+          align="right"
+          size="large"
+        />
       </div>
     </Card>
   );

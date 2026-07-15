@@ -6,6 +6,8 @@ export type Testimonial = {
     src: string;
     alt: string;
   };
+  /** External company site. Null when the organisation no longer exists or has no URL. */
+  companyHref: string | null;
   clientName: string;
   jobTitle: string;
   companyName: string;

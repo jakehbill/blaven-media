@@ -1,7 +1,6 @@
 "use client";
 
 import type { ReactNode } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -71,18 +70,9 @@ function CaseStudyFeature({
               )}
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between gap-6">
-                  <span className="font-mono text-xs tracking-[0.14em] text-stone">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <Image
-                    src={study.logo.src}
-                    alt={study.logo.alt}
-                    width={120}
-                    height={32}
-                    className="h-6 w-auto opacity-50 grayscale"
-                  />
-                </div>
+                <span className="font-mono text-xs tracking-[0.14em] text-stone">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
                 <div className="space-y-2">
                   <h2 id={headingId} className="text-h2 text-foreground">

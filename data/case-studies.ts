@@ -9,6 +9,8 @@ export type CaseStudy = {
     src: string;
     alt: string;
   };
+  /** External company site. Null when the organisation no longer exists or has no URL. */
+  companyHref?: string | null;
   engagement?: string;
   challenge: string;
   approach: string;
@@ -53,9 +55,10 @@ export const caseStudiesContent = {
       client: "SilverLining",
       industry: "Climate nonprofit",
       logo: {
-        src: "/images/logos/placeholder-01.svg",
-        alt: "SilverLining logo placeholder",
+        src: "/images/logos/silverlining.svg",
+        alt: "SilverLining",
       },
+      companyHref: "https://www.silverlining.ngo/",
       engagement:
         "Long-term communications and thought leadership partner.",
       challenge:
@@ -93,9 +96,10 @@ export const caseStudiesContent = {
       client: "Climate Impact",
       industry: "Climate innovation",
       logo: {
-        src: "/images/logos/placeholder-02.svg",
-        alt: "Climate Impact logo placeholder",
+        src: "/images/logos/climateimpact.svg",
+        alt: "Climate Impact",
       },
+      companyHref: null,
       challenge:
         "Increase visibility while strengthening the organisation's overall brand and communications.",
       approach:
@@ -129,9 +133,10 @@ export const caseStudiesContent = {
       client: "Exactly.ai",
       industry: "Creative AI",
       logo: {
-        src: "/images/logos/placeholder-03.svg",
-        alt: "Exactly.ai logo placeholder",
+        src: "/images/logos/exactly.png",
+        alt: "Exactly.ai",
       },
+      companyHref: "https://exactly.ai/",
       challenge:
         "Build consistent founder thought leadership without requiring a significant time commitment.",
       approach:
@@ -163,9 +168,10 @@ export const caseStudiesContent = {
       client: "LDPR",
       industry: "Public Relations",
       logo: {
-        src: "/images/logos/placeholder-04.svg",
-        alt: "LDPR logo placeholder",
+        src: "/images/logos/ldpr.svg",
+        alt: "LDPR",
       },
+      companyHref: "https://www.ldpr.com/",
       challenge: "Increase visibility of senior leadership.",
       approach:
         "Developed a LinkedIn thought leadership programme for senior executives including strategy, scripting and talking-head video production.",
@@ -195,9 +201,10 @@ export const caseStudiesContent = {
       client: "Eight Sleep",
       industry: "Consumer technology",
       logo: {
-        src: "/images/logos/placeholder-05.svg",
-        alt: "Eight Sleep logo placeholder",
+        src: "/images/logos/eightsleep.svg",
+        alt: "Eight Sleep",
       },
+      companyHref: "https://www.eightsleep.com/",
       challenge:
         "Expand awareness through creator partnerships and brand collaborations.",
       approach:

@@ -9,9 +9,10 @@
     {
       "id": "01",
       "logo": {
-        "src": "/images/logos/placeholder-03.svg",
+        "src": "/images/logos/exactly.png",
         "alt": "Exactly.ai"
       },
+      "companyHref": "https://exactly.ai/",
       "clientName": "Tonia Samsonova",
       "jobTitle": "Founder & CEO",
       "companyName": "Exactly.ai",
@@ -27,9 +28,10 @@
     {
       "id": "02",
       "logo": {
-        "src": "/images/logos/placeholder-01.svg",
+        "src": "/images/logos/silverlining.svg",
         "alt": "SilverLining"
       },
+      "companyHref": "https://www.silverlining.ngo/",
       "clientName": "Alexandra",
       "jobTitle": "Head of Special Projects",
       "companyName": "SilverLining",
@@ -48,9 +50,10 @@
     {
       "id": "03",
       "logo": {
-        "src": "/images/logos/placeholder-02.svg",
+        "src": "/images/logos/climateimpact.svg",
         "alt": "Climate Impact"
       },
+      "companyHref": null,
       "clientName": "Kendall",
       "jobTitle": "Head of Community",
       "companyName": "Climate Impact",
@@ -68,9 +71,10 @@
     {
       "id": "04",
       "logo": {
-        "src": "/images/logos/placeholder-04.svg",
+        "src": "/images/logos/ldpr.svg",
         "alt": "LDPR"
       },
+      "companyHref": "https://www.ldpr.com/",
       "clientName": "Laura",
       "jobTitle": "Founder & President",
       "companyName": "LDPR",
