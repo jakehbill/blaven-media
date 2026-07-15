@@ -12,6 +12,7 @@ import { ServiceList } from "@/components/ui/service-list";
 import { SurfaceTexture } from "@/components/ui/surface-texture";
 import { Text } from "@/components/ui/typography";
 import type { CaseStudiesSurface, CaseStudy } from "@/data/case-studies";
+import { cn } from "@/lib/utils";
 
 type CaseStudyFeatureProps = {
   study: CaseStudy;
@@ -28,7 +29,9 @@ function Field({
 }) {
   return (
     <div className="space-y-2.5">
-      <p className="text-eyebrow uppercase text-muted-foreground">{label}</p>
+      <p className="text-eyebrow uppercase tracking-[0.14em] text-muted-foreground">
+        {label}
+      </p>
       {children}
     </div>
   );
@@ -52,10 +55,16 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
       />
 
       <Container className="relative z-10">
-        <div className="border-t border-border/60 pt-2">
-          {/* Identity sits above the columns so Engagement + Challenge share a baseline */}
-          <MotionReveal className="max-w-xl space-y-4 lg:max-w-none lg:w-[calc((100%-4rem)*5/12)]">
-            <span className="font-mono text-xs tracking-[0.14em] text-stone">
+        <div className="relative border-t border-border/60 pt-8 md:pt-10">
+          <span
+            className="pointer-events-none absolute -top-1 right-0 font-mono text-[4.5rem] leading-none tracking-tight text-foreground/[0.05] select-none md:text-[6.5rem] lg:text-[7.5rem]"
+            aria-hidden
+          >
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <MotionReveal className="relative max-w-xl space-y-3 lg:max-w-none lg:w-[calc((100%-4rem)*5/12)]">
+            <span className="font-mono text-xs tracking-[0.16em] text-stone">
               {String(index + 1).padStart(2, "0")}
             </span>
 
@@ -63,55 +72,64 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
               <h2 id={headingId} className="text-h2 text-foreground">
                 {study.client}
               </h2>
-              <p className="text-eyebrow uppercase text-muted-foreground">
+              <p className="text-eyebrow uppercase tracking-[0.14em] text-muted-foreground">
                 {study.industry}
               </p>
             </div>
           </MotionReveal>
 
-          <div className="mt-7 grid items-start gap-10 md:gap-14 lg:mt-8 lg:grid-cols-12 lg:gap-16">
-            {/* Left: Engagement, Services, Testimonial */}
-            <MotionReveal className="space-y-7 lg:col-span-5" delay={0.04}>
-              {study.engagement ? (
-                <Field label="Engagement">
-                  <Text
-                    variant="body-lg"
-                    className="leading-[1.55] text-foreground/85"
-                  >
-                    {study.engagement}
-                  </Text>
+          <div className="mt-8 grid items-start gap-8 md:mt-10 md:gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+            {/* Left: evidence rail — one panel, spacing does the rest */}
+            <MotionReveal className="lg:col-span-5" delay={0.04}>
+              <div
+                className={cn(
+                  "space-y-7 rounded-sm border border-border/55 p-5 md:p-6",
+                  isDark ? "bg-foreground/[0.035]" : "bg-muted/40",
+                )}
+              >
+                {study.engagement ? (
+                  <Field label="Engagement">
+                    <Text
+                      variant="body-lg"
+                      className="leading-[1.55] text-foreground/85"
+                    >
+                      {study.engagement}
+                    </Text>
+                  </Field>
+                ) : null}
+
+                <Field label="Services Provided">
+                  <ServiceList services={study.services} />
                 </Field>
-              ) : null}
 
-              <Field label="Services Provided">
-                <ServiceList services={study.services} />
-              </Field>
-
-              {study.testimonial ? (
-                <blockquote className="space-y-4 border-l border-stone/40 pl-5">
-                  <p className="text-sm leading-[1.55] text-foreground/80 md:text-[0.9375rem]">
-                    <span className="text-stone" aria-hidden>
-                      &ldquo;
-                    </span>
-                    {study.testimonial.quote}
-                    <span className="text-stone" aria-hidden>
-                      &rdquo;
-                    </span>
-                  </p>
-                  <footer className="space-y-0.5">
-                    <p className="text-sm font-medium text-foreground">
-                      {study.testimonial.author}
-                    </p>
-                    <p className="text-caption text-muted-foreground">
-                      {study.testimonial.role}
-                    </p>
-                  </footer>
-                </blockquote>
-              ) : null}
+                {study.testimonial ? (
+                  <Field label="Client Voice">
+                    <blockquote className="space-y-4">
+                      <p className="text-sm leading-[1.6] text-foreground/80 md:text-[0.9375rem]">
+                        <span className="text-stone" aria-hidden>
+                          &ldquo;
+                        </span>
+                        {study.testimonial.quote}
+                        <span className="text-stone" aria-hidden>
+                          &rdquo;
+                        </span>
+                      </p>
+                      <footer className="space-y-0.5">
+                        <p className="text-sm font-medium text-foreground">
+                          {study.testimonial.author}
+                        </p>
+                        <p className="text-caption text-muted-foreground">
+                          {study.testimonial.role}
+                        </p>
+                      </footer>
+                    </blockquote>
+                  </Field>
+                ) : null}
+              </div>
             </MotionReveal>
 
-            {/* Right: Challenge, Approach, Outcomes, Featured Example */}
-            <MotionReveal className="space-y-7 lg:col-span-7" delay={0.06}>
+            {/* Right: narrative — rhythm via spacing, not rules */}
+            <MotionReveal className="space-y-8 lg:col-span-7" delay={0.06}>
               <Field label="Challenge">
                 <Text
                   variant="body-lg"
@@ -131,14 +149,14 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
               </Field>
 
               <Field label="Outcomes">
-                <ul className="max-w-prose space-y-2.5">
+                <ul className="max-w-prose space-y-3">
                   {study.outcomes.map((outcome) => (
                     <li
                       key={outcome}
                       className="flex gap-3 text-sm leading-[1.55] text-foreground/85 md:text-[0.9375rem]"
                     >
                       <span
-                        className="mt-[0.55em] size-1 shrink-0 rounded-full bg-stone"
+                        className="mt-[0.55em] size-1.5 shrink-0 rounded-full bg-stone/80"
                         aria-hidden
                       />
                       <span>{outcome}</span>

@@ -22,7 +22,7 @@ function FeaturedExample({ example, className }: FeaturedExampleProps) {
     <Card
       padding="none"
       className={cn(
-        "group max-w-prose overflow-hidden border-border/70 bg-transparent transition-colors duration-300 hover:border-foreground/20",
+        "group max-w-prose overflow-hidden border-border/70 bg-muted/25 transition-colors duration-300 hover:border-foreground/20 hover:bg-muted/35",
         className,
       )}
     >
