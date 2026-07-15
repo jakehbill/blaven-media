@@ -1,7 +1,7 @@
 export const whyThisMattersContent = {
   label: "Why This Matters",
   heading:
-    "AI changed how people discover brands. The fundamentals of trust haven't changed.",
+    "AI changed how people discover brands, but the fundamentals of trust haven't changed.",
   /** Short, rhythmic lines that lead the body. */
   lead: [
     "Anyone can publish.",

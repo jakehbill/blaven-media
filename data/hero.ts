@@ -1,5 +1,5 @@
 export const heroContent = {
-  headline: "Recognition isn't given. It's built.",
+  headline: "Strategic communications for organisations with meaningful ideas.",
   supportingCopy: [
     "AI has made content abundant. Trust has become the rarest commodity on the internet.",
     "Blaven Media partners with founders, leadership teams, and organisations with meaningful ideas to build authority through strategic communications, thought leadership, compelling storytelling, and exceptional digital experiences.",

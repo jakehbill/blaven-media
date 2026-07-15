@@ -17,6 +17,10 @@ export type AboutPageContent = {
   whyBlaven: {
     label: string;
     heading: string;
+    image: {
+      src: string;
+      alt: string;
+    };
     paragraphs: readonly string[];
   };
   howWeThink: {
@@ -78,6 +82,10 @@ export const aboutPageContent: AboutPageContent = {
   whyBlaven: {
     label: "Why Blaven?",
     heading: "A mountain with a point of view.",
+    image: {
+      src: "/images/Blaven.jpeg",
+      alt: "Blaven, a distinctive mountain on the Isle of Skye",
+    },
     paragraphs: [
       "Blaven is a mountain on the Isle of Skye. It isn't Scotland's tallest mountain. It isn't the most famous. Yet for those who know it, it's unforgettable.",
       "Rugged, distinctive, and slightly off the beaten path, it stands out not because it shouts the loudest, but because there is nothing quite like it. That's the kind of brand we want to build.",

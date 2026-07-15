@@ -1,10 +1,7 @@
 {
   "label": "Testimonials",
   "heading": "Trusted by organisations doing meaningful work.",
-  "introduction": [
-    "Our clients range from ambitious startups to established organisations looking for a fresh perspective.",
-    "Every project begins differently, but they all share one goal: helping important ideas reach the people who need to hear them."
-  ],
+  "introduction": "Our clients range from ambitious startups to established organisations looking for a fresh perspective. Every project begins differently, but they all share one goal: helping important ideas reach the people who need to hear them.",
   "items": [
     {
       "id": "01",
