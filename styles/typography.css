@@ -1,7 +1,13 @@
 @layer base {
   h1,
   h2,
-  h3,
+  h3 {
+    @apply font-serif text-foreground;
+    text-wrap: balance;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+  }
+
   h4,
   h5 {
     @apply font-sans text-foreground;

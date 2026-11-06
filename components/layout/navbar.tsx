@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -35,48 +34,36 @@ function Navbar({ className }: NavbarProps) {
     [],
   );
   const activeSection = useActiveSection(
-    pathname === "/" ? ["home", ...sectionIds] : [],
+    pathname === "/" ? sectionIds : [],
   );
 
   return (
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 surface-light transition-[background-color,border-color,box-shadow] duration-500 ease-out",
-          scrolled
-            ? "border-b border-border/50 bg-background/95 shadow-[0_1px_0_rgb(0_0_0_/_0.03)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90"
-            : "border-b border-border/40 bg-background",
+          "sticky top-0 z-50 border-b border-rule bg-ivory/95 transition-[background-color,box-shadow] duration-500 ease-out backdrop-blur-xl",
+          scrolled && "shadow-[0_1px_0_rgb(36_39_32_/_0.04)]",
           className,
         )}
       >
         <Container>
-          <div className="flex h-14 items-center justify-between gap-3 sm:h-16 sm:gap-6">
+          <div className="flex h-16 items-center justify-between gap-4 md:h-[4.5rem]">
             <Link
               href="/"
-              className="flex min-w-0 items-center gap-2 text-[0.9375rem] font-medium tracking-tight text-foreground/90 transition-colors duration-300 hover:text-foreground sm:gap-2.5 sm:text-base"
+              className="font-serif text-[1.35rem] leading-none tracking-[-0.03em] text-charcoal transition-colors hover:text-sage md:text-[1.5rem]"
             >
-              {/* Replace `/public/images/logo.svg` with your square logo (SVG, PNG, or WebP). */}
-              <span className="relative size-7 shrink-0 overflow-hidden rounded-sm sm:size-8">
-                <Image
-                  src={siteConfig.logo.src}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="32px"
-                  priority
-                />
-              </span>
-              <span className="truncate">{siteConfig.name}</span>
+              {siteConfig.name}
             </Link>
 
-            <div className="flex shrink-0 items-center gap-3 sm:gap-6">
+            <div className="flex shrink-0 items-center gap-4 md:gap-8">
               <nav aria-label="Primary" className="hidden lg:block">
-                <ul className="flex items-center gap-6 xl:gap-8">
+                <ul className="flex items-center gap-8">
                   {primaryNavigation.map((item) => (
                     <li key={item.href}>
                       <NavLink
                         href={item.href}
                         active={isNavItemActive(item, pathname, activeSection)}
+                        className="text-[0.75rem] font-medium tracking-[0.06em] text-ink-muted hover:text-charcoal"
                       >
                         {item.label}
                       </NavLink>
@@ -97,7 +84,7 @@ function Navbar({ className }: NavbarProps) {
               <button
                 ref={triggerRef}
                 type="button"
-                className="inline-flex size-11 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
+                className="inline-flex size-11 items-center justify-center rounded-sm text-charcoal transition-colors hover:bg-panel focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-ivory lg:hidden"
                 aria-expanded={open}
                 aria-controls="mobile-navigation"
                 aria-haspopup="dialog"

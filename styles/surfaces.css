@@ -1,13 +1,14 @@
 /**
- * Section surface themes.
- * Override both semantic tokens and Tailwind --color-* aliases so utilities
- * like text-foreground / bg-muted / border-border adapt inside each surface.
+ * Section surface themes for the editorial palette.
  */
 
 .surface-dark,
 .surface-light,
 .surface-grey,
-.surface-stone {
+.surface-stone,
+.surface-sage,
+.surface-sand,
+.surface-olive {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -33,99 +34,99 @@
   color: var(--foreground);
 }
 
-.surface-dark {
-  --background: oklch(0.055 0 0);
-  --foreground: oklch(0.95 0.004 95);
-  --card: oklch(0.1 0 0);
-  --card-foreground: oklch(0.95 0.004 95);
-  --popover: oklch(0.1 0 0);
-  --popover-foreground: oklch(0.95 0.004 95);
-  --primary: oklch(0.95 0.004 95);
-  --primary-foreground: oklch(0.055 0 0);
-  --secondary: oklch(0.14 0 0);
-  --secondary-foreground: oklch(0.9 0 0);
-  --muted: oklch(0.14 0 0);
-  --muted-foreground: oklch(0.62 0 0);
-  --accent: oklch(0.16 0 0);
-  --accent-foreground: oklch(0.95 0.004 95);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.62 0.018 245);
-  --stone: oklch(0.68 0.016 245);
-  --stone-muted: oklch(0.52 0.012 245);
-  --stone-subtle: oklch(0.68 0.016 245 / 14%);
-  --destructive: oklch(0.65 0 0);
-}
-
+/* Default ivory page surface */
 .surface-light {
-  --background: oklch(0.985 0.002 95);
-  --foreground: oklch(0.12 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.12 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.12 0 0);
-  --primary: oklch(0.12 0 0);
-  --primary-foreground: oklch(0.985 0.002 95);
-  --secondary: oklch(0.94 0.004 95);
-  --secondary-foreground: oklch(0.16 0 0);
-  --muted: oklch(0.94 0.004 95);
-  --muted-foreground: oklch(0.4 0 0);
-  --accent: oklch(0.94 0.004 95);
-  --accent-foreground: oklch(0.12 0 0);
-  --border: oklch(0.12 0 0 / 12%);
-  --input: oklch(0.12 0 0 / 14%);
-  --ring: oklch(0.45 0.014 245);
-  --stone: oklch(0.45 0.014 245);
-  --stone-muted: oklch(0.4 0.01 245);
-  --stone-subtle: oklch(0.45 0.014 245 / 14%);
-  --destructive: oklch(0.45 0 0);
+  --background: var(--ivory);
+  --foreground: var(--charcoal);
+  --card: var(--panel);
+  --card-foreground: var(--charcoal);
+  --popover: #ffffff;
+  --popover-foreground: var(--charcoal);
+  --primary: var(--charcoal);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--panel);
+  --secondary-foreground: var(--charcoal);
+  --muted: var(--panel);
+  --muted-foreground: #3f453f;
+  --accent: var(--sage);
+  --accent-foreground: var(--ivory);
+  --border: var(--rule);
+  --input: color-mix(in srgb, var(--charcoal) 14%, transparent);
+  --ring: var(--olive);
+  --stone: var(--olive);
+  --stone-muted: #4f5a48;
+  --stone-subtle: color-mix(in srgb, var(--sage) 14%, transparent);
+  --destructive: #8b3a3a;
 }
 
-/* Neutral light grey — distinct from near-white `.surface-light` */
-.surface-grey {
-  --background: oklch(0.935 0.002 95);
-  --foreground: oklch(0.13 0 0);
-  --card: oklch(0.97 0.002 95);
-  --card-foreground: oklch(0.13 0 0);
-  --popover: oklch(0.97 0.002 95);
-  --popover-foreground: oklch(0.13 0 0);
-  --primary: oklch(0.13 0 0);
-  --primary-foreground: oklch(0.97 0.002 95);
-  --secondary: oklch(0.89 0.002 95);
-  --secondary-foreground: oklch(0.16 0 0);
-  --muted: oklch(0.89 0.002 95);
-  --muted-foreground: oklch(0.4 0 0);
-  --accent: oklch(0.89 0.002 95);
-  --accent-foreground: oklch(0.13 0 0);
-  --border: oklch(0.13 0 0 / 12%);
-  --input: oklch(0.13 0 0 / 14%);
-  --ring: oklch(0.45 0.014 245);
-  --stone: oklch(0.45 0.014 245);
-  --stone-muted: oklch(0.4 0.01 245);
-  --stone-subtle: oklch(0.45 0.014 245 / 14%);
-  --destructive: oklch(0.45 0 0);
-}
-
+.surface-grey,
 .surface-stone {
-  --background: oklch(0.93 0.008 245);
-  --foreground: oklch(0.14 0 0);
-  --card: oklch(0.96 0.006 245);
-  --card-foreground: oklch(0.14 0 0);
-  --popover: oklch(0.96 0.006 245);
-  --popover-foreground: oklch(0.14 0 0);
-  --primary: oklch(0.14 0 0);
-  --primary-foreground: oklch(0.96 0.006 245);
-  --secondary: oklch(0.88 0.01 245);
-  --secondary-foreground: oklch(0.16 0 0);
-  --muted: oklch(0.88 0.01 245);
-  --muted-foreground: oklch(0.38 0.01 245);
-  --accent: oklch(0.88 0.01 245);
-  --accent-foreground: oklch(0.14 0 0);
-  --border: oklch(0.14 0 0 / 12%);
-  --input: oklch(0.14 0 0 / 14%);
-  --ring: oklch(0.42 0.014 245);
-  --stone: oklch(0.42 0.014 245);
-  --stone-muted: oklch(0.36 0.012 245);
-  --stone-subtle: oklch(0.42 0.014 245 / 16%);
-  --destructive: oklch(0.45 0 0);
+  --background: var(--panel);
+  --foreground: var(--charcoal);
+  --card: #ffffff;
+  --card-foreground: var(--charcoal);
+  --primary: var(--charcoal);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--sand);
+  --secondary-foreground: var(--charcoal);
+  --muted: var(--sand);
+  --muted-foreground: #3f453f;
+  --accent: var(--sage);
+  --accent-foreground: var(--ivory);
+  --border: var(--rule);
+  --ring: var(--sage);
+  --stone: var(--sage);
+}
+
+.surface-sage {
+  --background: var(--sage);
+  --foreground: #f8f6f0;
+  --card: color-mix(in srgb, var(--olive) 35%, var(--sage));
+  --card-foreground: #f8f6f0;
+  --primary: #f8f6f0;
+  --primary-foreground: var(--olive);
+  --secondary: color-mix(in srgb, #ffffff 12%, transparent);
+  --secondary-foreground: #f8f6f0;
+  --muted: color-mix(in srgb, #ffffff 10%, transparent);
+  --muted-foreground: #f0ede6;
+  --accent: var(--sand);
+  --accent-foreground: var(--olive);
+  --border: color-mix(in srgb, #ffffff 22%, transparent);
+  --ring: var(--sand);
+  --stone: var(--sand);
+}
+
+.surface-sand {
+  --background: var(--sand);
+  --foreground: var(--charcoal);
+  --card: color-mix(in srgb, #ffffff 35%, var(--sand));
+  --card-foreground: var(--charcoal);
+  --primary: var(--charcoal);
+  --primary-foreground: var(--ivory);
+  --muted: color-mix(in srgb, var(--charcoal) 8%, transparent);
+  --muted-foreground: #3f453f;
+  --border: color-mix(in srgb, var(--charcoal) 16%, transparent);
+  --ring: var(--olive);
+  --stone: var(--olive);
+}
+
+.surface-olive,
+.surface-dark {
+  --background: var(--olive);
+  --foreground: #f8f6f0;
+  --card: color-mix(in srgb, #000000 18%, var(--olive));
+  --card-foreground: #f8f6f0;
+  --primary: #f8f6f0;
+  --primary-foreground: var(--olive);
+  --secondary: color-mix(in srgb, #ffffff 10%, transparent);
+  --secondary-foreground: #f8f6f0;
+  --muted: color-mix(in srgb, #ffffff 10%, transparent);
+  --muted-foreground: #f0ede6;
+  --accent: var(--sand);
+  --accent-foreground: var(--olive);
+  --border: color-mix(in srgb, #ffffff 20%, transparent);
+  --ring: var(--sand);
+  --stone: var(--sand);
+  --stone-muted: #d7c9b4;
+  --stone-subtle: color-mix(in srgb, var(--sand) 16%, transparent);
 }

@@ -51,7 +51,7 @@ function MobileMenu({
           <motion.button
             type="button"
             aria-label="Close menu"
-            className="fixed inset-0 z-40 bg-black/40 lg:hidden"
+            className="fixed inset-0 z-40 bg-charcoal/30 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -65,17 +65,17 @@ function MobileMenu({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
-            className="surface-light fixed inset-x-0 top-14 z-50 max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-b border-border/50 bg-background/95 backdrop-blur-md sm:top-16 lg:hidden"
+            className="fixed inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-rule bg-ivory md:top-[4.5rem] lg:hidden"
             initial={{ opacity: 0, y: prefersReducedMotion ? 0 : -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: prefersReducedMotion ? 0 : -8 }}
             transition={transitionFast}
           >
             <Container>
-              <div className="flex justify-end pt-3 sm:pt-4">
+              <div className="flex justify-end pt-3">
                 <button
                   type="button"
-                  className="inline-flex size-11 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="inline-flex size-11 items-center justify-center rounded-sm text-charcoal transition-colors hover:bg-panel focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   aria-label="Close menu"
                   onClick={onClose}
                 >
@@ -84,7 +84,7 @@ function MobileMenu({
               </div>
 
               <nav aria-label="Mobile primary">
-                <ul className="flex flex-col pb-6 pt-1 sm:pb-8">
+                <ul className="flex flex-col pb-6 pt-1">
                   {primaryNavigation.map((item, index) => (
                     <motion.li
                       key={item.href}
@@ -97,7 +97,7 @@ function MobileMenu({
                         href={item.href}
                         layout="vertical"
                         active={isNavItemActive(item, pathname, activeSection)}
-                        className="block"
+                        className="font-serif text-2xl tracking-[-0.03em] text-charcoal"
                         onNavigate={onClose}
                       >
                         {item.label}
@@ -111,7 +111,7 @@ function MobileMenu({
                   initial="hidden"
                   animate="visible"
                   variants={itemVariants}
-                  className="border-t border-border/60 pb-6 pt-5 sm:pb-8 sm:pt-6"
+                  className="border-t border-rule pb-8 pt-5"
                 >
                   <Button
                     variant="primary"

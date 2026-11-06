@@ -18,9 +18,9 @@ export default function RootLayout({
     <html
       lang="en-GB"
       data-scroll-behavior="smooth"
-      className={`dark ${fontVariables} h-full antialiased`}
+      className={`${fontVariables} h-full antialiased`}
     >
-      <body className="surface-dark flex min-h-full flex-col bg-background text-foreground">
+      <body className="surface-light flex min-h-full flex-col bg-background text-foreground">
         <JsonLd />
         {children}
       </body>

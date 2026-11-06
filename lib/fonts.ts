@@ -1,9 +1,9 @@
 import localFont from "next/font/local";
-import { Geist_Mono } from "next/font/google";
 
 /**
  * General Sans: self-hosted from Fontshare (Indian Type Foundry).
- * Geist Mono retained for code and technical labels only.
+ * Instrument Serif: self-hosted editorial display face.
+ * Mono uses a system stack so local build never blocks on network fonts.
  */
 export const fontSans = localFont({
   src: [
@@ -33,10 +33,22 @@ export const fontSans = localFont({
   fallback: ["system-ui", "-apple-system", "sans-serif"],
 });
 
-export const fontMono = Geist_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
+export const fontSerif = localFont({
+  src: [
+    {
+      path: "../public/fonts/instrument-serif/InstrumentSerif-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/instrument-serif/InstrumentSerif-Italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-serif",
   display: "swap",
+  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
-export const fontVariables = `${fontSans.variable} ${fontMono.variable}`;
+export const fontVariables = `${fontSans.variable} ${fontSerif.variable}`;
