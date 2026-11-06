@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 import { Reveal } from "@/components/sections/editorial/reveal";
+import { SectionLink } from "@/components/sections/editorial/section-link";
 import { Container } from "@/components/ui/container";
 import { homeEditorialContent } from "@/data/home-editorial";
 
@@ -27,24 +27,26 @@ function EditorialHero() {
                 {hero.headline}{" "}
                 <em className="font-normal text-olive">{hero.headlineEmphasis}</em>
               </h1>
-              <p className="mt-9 max-w-[480px] text-[15px] leading-[1.85] text-ink-muted">
-                {hero.body}
-              </p>
+              <div className="mt-9 max-w-[480px] space-y-4 text-[15px] leading-[1.85] text-ink-muted">
+                {hero.body.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
               <div className="mt-9 flex flex-wrap items-center gap-5">
-                <Link
+                <SectionLink
                   href={hero.primaryCta.href}
                   className="inline-flex items-center gap-3 border-b border-charcoal pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-charcoal transition-colors hover:border-olive hover:text-olive"
                 >
                   {hero.primaryCta.label}
                   <ArrowDownRight size={16} aria-hidden />
-                </Link>
-                <Link
+                </SectionLink>
+                <SectionLink
                   href={hero.secondaryCta.href}
                   className="inline-flex items-center gap-2 bg-charcoal px-5 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-ivory transition-colors hover:bg-olive"
                 >
                   {hero.secondaryCta.label}
                   <ArrowUpRight size={14} aria-hidden />
-                </Link>
+                </SectionLink>
               </div>
             </div>
             <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-ink-subtle">

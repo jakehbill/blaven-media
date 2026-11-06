@@ -4,12 +4,12 @@
  */
 export const seoPages = {
   home: {
-    title: "Blaven Media | Strategic Communications for Meaningful Ideas",
+    title: "Blaven Media | Good Ideas Deserve to Be Heard",
     description:
-      "AI made content abundant. Trust became scarce. Blaven Media partners with founders and leadership teams to build authority through storytelling, thought leadership, and exceptional digital work.",
-    openGraphTitle: "Strategic communications for meaningful ideas",
+      "Blaven is a boutique creative studio helping founders and ambitious organisations turn expertise into compelling content and digital experiences — from thought leadership and video to websites and digital strategy.",
+    openGraphTitle: "Good ideas deserve to be heard",
     openGraphDescription:
-      "Blaven Media helps organisations become recognised — not louder — through trust, storytelling, and founder-led communications.",
+      "Boutique creative studio helping founders and organisations turn expertise into content, digital experiences, and lasting influence.",
   },
   about: {
     title: "About",
@@ -20,12 +20,12 @@ export const seoPages = {
       "Great ideas deserve great communication. Meet the founder-led studio helping meaningful organisations become landmarks in their industries.",
   },
   caseStudies: {
-    title: "Case Studies",
+    title: "Selected Work",
     description:
-      "Selected partnerships with organisations building recognition — from climate and technology to culture and policy. See how thoughtful communications help meaningful ideas reach the right people.",
-    openGraphTitle: "Work that builds recognition",
+      "A short archive of Blaven Media formats — long-form podcasts, LinkedIn shorts, Substack essays, and newsletters — each linking out to where the work lives.",
+    openGraphTitle: "Selected work from Blaven Media",
     openGraphDescription:
-      "Case studies from Blaven Media: helping meaningful organisations become recognised through strategy, storytelling, and carefully executed digital experiences.",
+      "Podcasts, LinkedIn shorts, Substack essays, and newsletters from Blaven Media — open each piece in its own home.",
   },
   contact: {
     title: "Contact",

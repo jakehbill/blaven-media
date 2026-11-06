@@ -6,10 +6,10 @@ export type NavItem = {
 };
 
 export const primaryNavigation: NavItem[] = [
-  { label: "Work", href: "/case-studies" },
+  { label: "Work", href: "/#work", sectionId: "work" },
+  { label: "Approach", href: "/#approach", sectionId: "approach" },
   { label: "Services", href: "/#services", sectionId: "services" },
-  { label: "About", href: "/about" },
-  { label: "Insights", href: "/#in-action", sectionId: "in-action" },
+  { label: "About", href: "/#about", sectionId: "about" },
 ];
 
 export const navigationCta = {

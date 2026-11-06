@@ -1,8 +1,10 @@
 "use client";
 
+import { ArrowDownRight } from "lucide-react";
+
 import { Reveal } from "@/components/sections/editorial/reveal";
+import { SectionLink } from "@/components/sections/editorial/section-link";
 import { Container } from "@/components/ui/container";
-import { capabilitiesContent } from "@/data/capabilities";
 import { homeEditorialContent } from "@/data/home-editorial";
 
 function EditorialServices() {
@@ -26,40 +28,43 @@ function EditorialServices() {
           >
             {services.heading}
           </h2>
-          <p className="mt-6 max-w-prose text-[15px] leading-[1.8] text-ink-muted">
-            {services.introduction}
+          <p className="mt-6 font-serif text-2xl tracking-[-0.02em] text-charcoal md:text-3xl">
+            {services.lead}
+          </p>
+          <p className="mt-5 max-w-prose text-[15px] leading-[1.8] text-ink-muted">
+            {services.body}
           </p>
         </Reveal>
 
-        <div className="mt-14 divide-y divide-rule border-y border-rule">
-          {capabilitiesContent.items.map((item, index) => (
-            <Reveal key={item.number} delay={index * 0.04}>
-              <div className="grid gap-6 py-8 md:grid-cols-[4rem_1fr_14rem] md:gap-10 md:py-10">
-                <span className="font-mono text-xs font-medium tracking-[0.14em] text-olive">
-                  {item.number}
-                </span>
-                <div className="max-w-xl">
-                  <h3 className="font-serif text-3xl tracking-[-0.03em] text-charcoal md:text-4xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-ink-muted">
-                    {item.description}
-                  </p>
-                </div>
-                <ul className="flex flex-wrap gap-x-3 gap-y-1 md:flex-col md:gap-y-2">
-                  {item.services.map((service) => (
-                    <li
-                      key={service}
-                      className="text-xs font-medium tracking-[0.04em] text-ink-subtle"
-                    >
-                      {service}
-                    </li>
-                  ))}
-                </ul>
+        <div className="mt-14 grid gap-3 md:grid-cols-3">
+          {services.items.map((item, index) => (
+            <Reveal
+              key={item.title}
+              delay={index * 0.05}
+              className="flex min-h-[280px] flex-col justify-between bg-ivory p-8 md:p-10"
+            >
+              <span className="font-mono text-xs font-medium tracking-[0.14em] text-olive">
+                0{index + 1}
+              </span>
+              <div>
+                <h3 className="font-serif text-3xl tracking-[-0.03em] text-charcoal">
+                  {item.title}
+                </h3>
+                <p className="mt-5 text-sm leading-7 text-ink-muted">{item.body}</p>
               </div>
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-10">
+          <SectionLink
+            href={services.cta.href}
+            className="inline-flex items-center gap-3 border-b border-charcoal pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-charcoal transition-colors hover:border-olive hover:text-olive"
+          >
+            {services.cta.label}
+            <ArrowDownRight size={16} aria-hidden />
+          </SectionLink>
+        </Reveal>
       </Container>
     </section>
   );
