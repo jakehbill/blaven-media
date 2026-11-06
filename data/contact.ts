@@ -1,4 +1,4 @@
-/** Contact email parts — never store the assembled address as a single string. */
+/** Contact email parts: never store the assembled address as a single string. */
 export const contactEmailParts = {
   user: "jake",
   domain: "blavenmedia.com",
@@ -52,7 +52,7 @@ export type ContactPageContent = {
   };
 };
 
-/** Homepage Contact CTA — kept separate from the Contact page hero. */
+/** Homepage Contact CTA: kept separate from the Contact page hero. */
 export const contactCtaContent = {
   label: "Contact",
   heading: "Ready to build something people remember?",

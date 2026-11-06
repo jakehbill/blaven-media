@@ -29,13 +29,13 @@ function CaseStudiesArchive() {
             </p>
             <h1
               id="archive-heading"
-              className="text-[clamp(2.4rem,5vw,4.25rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-charcoal"
+              className="text-h1 text-charcoal"
             >
               Work in its{" "}
               <em className="font-semibold text-sage not-italic">own home.</em>
             </h1>
             <p className="mt-6 max-w-prose text-[15px] leading-[1.85] text-ink-muted">
-              A short archive of the formats we produce — podcasts, LinkedIn
+              A short archive of the formats we produce: podcasts, LinkedIn
               shorts, Substack essays, and newsletters. Each link opens the
               piece externally. For the curated reel, see the homepage.
             </p>
@@ -55,7 +55,7 @@ function CaseStudiesArchive() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${item.title} — opens ${providerLabel[item.provider]} in a new tab${item.placeholder ? " (placeholder link)" : ""}`}
+                  aria-label={`${item.title}: opens ${providerLabel[item.provider]} in a new tab${item.placeholder ? " (placeholder link)" : ""}`}
                   className="group grid gap-6 py-8 transition-colors md:grid-cols-[7rem_8rem_1fr_auto] md:items-center md:gap-8 md:py-9"
                 >
                   <span className="font-mono text-xs font-medium tracking-[0.14em] text-olive">
@@ -107,7 +107,7 @@ function CaseStudiesArchive() {
                 Have a story worth telling?
               </h2>
               <p className="mt-3 max-w-md text-sm leading-7 text-ink-muted">
-                Tell us what you&apos;re working on — we&apos;ll help it reach the
+                Tell us what you&apos;re working on. We&apos;ll help it reach the
                 people who matter.
               </p>
             </div>

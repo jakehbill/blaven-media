@@ -1,6 +1,5 @@
 export const homeEditorialContent = {
   hero: {
-    eyebrow: "Boutique creative studio / London",
     headline: "Good ideas deserve to be",
     headlineEmphasis: "heard.",
     body: [
@@ -9,18 +8,8 @@ export const homeEditorialContent = {
     ],
     primaryCta: { label: "Explore our work", href: "#work" },
     secondaryCta: { label: "Start a conversation", href: "/contact" },
-    meta: "Thought leadership / Digital / Communications",
-    featured: {
-      label: "Independent studio",
-      title: "Ideas with impact.",
-      image: {
-        src: "/images/mountain.jpg",
-        alt: "Atmospheric landscape suggesting clarity and distance",
-      },
-    },
   },
   offer: {
-    eyebrow: "Signature offering",
     heading: "One conversation.",
     headingEmphasis: "A month of thought leadership.",
     lead: "You have the ideas. We help you share them.",
@@ -32,7 +21,6 @@ export const homeEditorialContent = {
     cta: { label: "Explore our approach", href: "#work" },
   },
   services: {
-    eyebrow: "Capabilities",
     heading: "More than content.",
     lead: "Great ideas need great places to live.",
     body: "Alongside our signature thought leadership offering, we help organisations build and strengthen their digital presence.",
@@ -53,13 +41,11 @@ export const homeEditorialContent = {
     ],
   },
   studio: {
-    eyebrow: "The studio",
-    heading: "Small studio.",
-    headingEmphasis: "Close collaboration.",
-    headingLine: "Considered work.",
+    heading: "Not a marketing agency.",
+    lead: "A communications partner for ideas worth hearing.",
     body: [
-      "We work with a select number of clients, combining strategic thinking, creative production, and hands-on collaboration.",
-      "No unnecessary complexity. Just thoughtful work, strong relationships, and ideas worth sharing.",
+      "We help founders and leaders of organisations with meaningful ideas build authority, from early-stage companies to established brands that need an objective eye and a sharper way of working. Named after Blaven, a mountain on the Isle of Skye that stands out without being the tallest or best-known, we want our clients to do the same: cut through the noise and reach the right people by working smart, not loud.",
+      "We're independent and founder-led. Jake is involved in every project, so we stay lean and only take on work that resonates. In a world where AI has made content abundant and trust scarce, we rebuild that human signal through storytelling and video, and help brands get found when people (and AI) go looking.",
     ],
     cta: { label: "Let's talk", href: "/contact" },
   },

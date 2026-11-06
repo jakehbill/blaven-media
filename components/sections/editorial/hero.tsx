@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
+import { HeroVisual } from "@/components/sections/editorial/hero-visual";
 import { Reveal } from "@/components/sections/editorial/reveal";
 import { SectionLink } from "@/components/sections/editorial/section-link";
 import { Container } from "@/components/ui/container";
@@ -12,72 +12,43 @@ function EditorialHero() {
   const { hero } = homeEditorialContent;
 
   return (
-    <section aria-labelledby="home-heading" className="bg-ivory">
-      <Container className="py-5 md:py-8">
-        <div className="grid gap-3 lg:grid-cols-[1.08fr_0.92fr]">
-          <Reveal className="flex min-h-[530px] flex-col justify-between bg-sand p-8 md:p-14 lg:min-h-[640px]">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-olive">
-              {hero.eyebrow}
-            </p>
-            <div>
-              <h1
-                id="home-heading"
-                className="max-w-[720px] text-[clamp(2.6rem,5.8vw,5.25rem)] font-semibold leading-[0.98] tracking-[-0.035em] text-charcoal"
-              >
-                {hero.headline}{" "}
-                <em className="font-semibold text-sage not-italic">
-                  {hero.headlineEmphasis}
-                </em>
-              </h1>
-              <div className="mt-9 max-w-[480px] space-y-4 text-[15px] leading-[1.85] text-ink-muted">
-                {hero.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-              <div className="mt-9 flex flex-wrap items-center gap-5">
-                <SectionLink
-                  href={hero.primaryCta.href}
-                  className="inline-flex items-center gap-3 border-b border-charcoal pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-charcoal transition-colors hover:border-sage hover:text-sage"
-                >
-                  {hero.primaryCta.label}
-                  <ArrowDownRight size={16} aria-hidden />
-                </SectionLink>
-                <SectionLink
-                  href={hero.secondaryCta.href}
-                  className="inline-flex items-center gap-2 bg-olive px-5 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-ivory transition-colors hover:bg-sage"
-                >
-                  {hero.secondaryCta.label}
-                  <ArrowUpRight size={14} aria-hidden />
-                </SectionLink>
-              </div>
+    <section aria-labelledby="home-heading" className="bg-sage">
+      <Container className="py-16 md:py-24 lg:py-28">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.85fr)] lg:gap-8 xl:gap-12">
+          <Reveal className="relative z-10">
+            <h1
+              id="home-heading"
+              className="max-w-3xl text-h1 text-on-dark"
+            >
+              {hero.headline}{" "}
+              <em className="font-semibold text-sand not-italic">
+                {hero.headlineEmphasis}
+              </em>
+            </h1>
+            <div className="mt-8 max-w-3xl space-y-4 text-[15px] leading-[1.85] text-on-dark-muted">
+              {hero.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
-            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-ink-subtle">
-              {hero.meta}
-            </span>
+            <div className="mt-9 flex flex-wrap items-center gap-5">
+              <SectionLink
+                href={hero.primaryCta.href}
+                className="inline-flex items-center gap-3 border-b border-on-dark pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-on-dark transition-colors hover:border-sand hover:text-sand"
+              >
+                {hero.primaryCta.label}
+                <ArrowDownRight size={16} aria-hidden />
+              </SectionLink>
+              <SectionLink
+                href={hero.secondaryCta.href}
+                className="inline-flex items-center gap-2 bg-olive px-5 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-ivory transition-colors hover:bg-charcoal"
+              >
+                {hero.secondaryCta.label}
+                <ArrowUpRight size={14} aria-hidden />
+              </SectionLink>
+            </div>
           </Reveal>
 
-          <Reveal
-            delay={0.08}
-            className="relative min-h-[390px] overflow-hidden bg-olive lg:min-h-[640px]"
-          >
-            <Image
-              src={hero.featured.image.src}
-              alt={hero.featured.image.alt}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              className="object-cover transition-transform duration-1000 hover:scale-[1.04] motion-reduce:transition-none motion-reduce:hover:scale-100"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121812]/85 via-[#121812]/25 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-on-dark md:p-10">
-              <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-on-dark-muted">
-                {hero.featured.label}
-              </span>
-              <p className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-on-dark md:text-4xl">
-                {hero.featured.title}
-              </p>
-            </div>
-          </Reveal>
+          <HeroVisual className="mx-auto w-full max-w-[480px] lg:mx-0 lg:max-w-none lg:justify-self-end" />
         </div>
       </Container>
     </section>

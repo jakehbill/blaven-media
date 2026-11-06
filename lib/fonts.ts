@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 
 /**
- * Inter — site-wide body and display face.
+ * Inter: site-wide body and display face.
  * Self-hosted via @fontsource-variable so builds never block on network fonts.
  */
 export const fontSans = localFont({

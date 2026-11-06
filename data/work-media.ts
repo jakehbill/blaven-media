@@ -1,6 +1,8 @@
 export type WorkProvider = "youtube" | "linkedin" | "substack" | "other";
 
-export type WorkFormat = "podcast" | "short" | "article" | "newsletter";
+export type WorkFormat = "podcast" | "short" | "article" | "newsletter" | "reel";
+
+export type WorkLayout = "featured" | "rail" | "portrait" | "square";
 
 export type WorkMediaItem = {
   id: string;
@@ -14,113 +16,146 @@ export type WorkMediaItem = {
     alt: string;
   } | null;
   provider: WorkProvider;
-  /** Featured large cell in the reel (podcast). */
-  featured?: boolean;
+  layout: WorkLayout;
   /** True until a real destination URL is supplied. */
   placeholder?: boolean;
 };
 
 /**
- * Format-led work reel. Each asset appears once.
- * Replace placeholder hrefs/thumbnails with live YouTube, LinkedIn, and Substack links.
+ * Format-led work reel. Layout roles drive the homepage mosaic.
  */
 export const workMediaItems: readonly WorkMediaItem[] = [
   {
-    id: "podcast-01",
+    id: "augmentum-podcast",
     format: "podcast",
     formatLabel: "Long-form podcast",
-    title: "Ideas worth exploring",
-    client: "SilverLining",
-    href: "https://www.youtube.com/",
+    title: "Conversations that compound",
+    client: "Augmentum",
+    href: "https://youtu.be/lRkX1oNm3qY",
     thumbnail: {
-      src: "/images/case_studies/silverlining_casestudy.png",
-      alt: "Long-form podcast conversation thumbnail",
+      src: "/images/case_studies/augmentum-1.png",
+      alt: "Augmentum long-form podcast thumbnail",
     },
     provider: "youtube",
-    featured: true,
-    placeholder: true,
+    layout: "featured",
   },
   {
-    id: "short-virtual-01",
+    id: "ldpr-short-01",
     format: "short",
-    formatLabel: "LinkedIn short · Virtual",
-    title: "A moment worth sharing",
-    client: "Exactly AI",
-    href: "https://www.linkedin.com/",
-    thumbnail: {
-      src: "/images/case_studies/exactlyai_casestudy.png",
-      alt: "Virtually recorded LinkedIn short thumbnail",
-    },
-    provider: "linkedin",
-    placeholder: true,
-  },
-  {
-    id: "short-studio-01",
-    format: "short",
-    formatLabel: "LinkedIn short · Studio",
-    title: "The insight that sticks",
+    formatLabel: "LinkedIn short",
+    title: "Leadership worth following",
     client: "LDPR",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/posts/lauradavidson-ldpr_ldpr-travelpr-laborday-activity-7368613674967674881-hWC4",
     thumbnail: {
-      src: "/images/case_studies/ldpr_casestudy.png",
-      alt: "In-studio LinkedIn short thumbnail",
+      src: "/images/case_studies/ldpr-1.png",
+      alt: "LDPR executive thought leadership short",
     },
     provider: "linkedin",
-    placeholder: true,
+    layout: "rail",
   },
   {
-    id: "short-studio-02",
+    id: "silverlining-short-01",
     format: "short",
-    formatLabel: "LinkedIn short · Studio",
-    title: "Clarity in conversation",
-    client: "Sideways",
-    href: "https://www.linkedin.com/",
+    formatLabel: "LinkedIn short",
+    title: "Fundraising starts with trust",
+    client: "SilverLining",
+    href: "https://www.linkedin.com/feed/update/urn:li:activity:7447262038260822016",
     thumbnail: {
-      src: "/images/case_studies/sideways_casestudy.png",
-      alt: "In-studio LinkedIn short thumbnail",
+      src: "/images/case_studies/silverlining-1.png",
+      alt: "SilverLining fundraising thought leadership short",
     },
     provider: "linkedin",
-    placeholder: true,
+    layout: "rail",
   },
   {
-    id: "substack-01",
-    format: "article",
-    formatLabel: "Substack",
-    title: "The story continues in writing",
-    href: "https://substack.com/",
+    id: "exactly-short-01",
+    format: "short",
+    formatLabel: "LinkedIn short",
+    title: "A founder's point of view",
+    client: "Exactly.AI",
+    href: "https://www.linkedin.com/posts/toniasamsonova_brandai-creativeops-marketingtechnology-activity-7376921013487345664-zW0r",
     thumbnail: {
-      src: "/images/mountain.jpg",
-      alt: "Substack essay cover",
+      src: "/images/case_studies/exactly-1.png",
+      alt: "Exactly.AI founder storytelling short",
+    },
+    provider: "linkedin",
+    layout: "portrait",
+  },
+  {
+    id: "sideways-short-01",
+    format: "short",
+    formatLabel: "Street interview",
+    title: "What Londoners really think",
+    client: "Sideways",
+    href: "https://www.youtube.com/shorts/vhonKZpkh4I",
+    thumbnail: {
+      src: "/images/case_studies/sideways-1.png",
+      alt: "Sideways street interview short",
+    },
+    provider: "youtube",
+    layout: "portrait",
+  },
+  {
+    id: "ldpr-short-02",
+    format: "short",
+    formatLabel: "Virtual short",
+    title: "Why the best people stay",
+    client: "LDPR",
+    href: "https://www.linkedin.com/posts/greatstay-leadership-employeeretention-ugcPost-7452008119825788928-DWZt",
+    thumbnail: {
+      src: "/images/case_studies/ldpr-2.png",
+      alt: "LDPR employee retention short",
+    },
+    provider: "linkedin",
+    layout: "square",
+  },
+  {
+    id: "pathaka-reel-01",
+    format: "reel",
+    formatLabel: "Instagram Reel",
+    title: "Podcasts, personalized",
+    client: "Pathaka AI",
+    href: "https://www.youtube.com/shorts/IWXkTd-yAhI",
+    thumbnail: {
+      src: "/images/case_studies/pathaka-1.png",
+      alt: "Pathaka AI personalized podcasts reel",
+    },
+    provider: "youtube",
+    layout: "square",
+  },
+  {
+    id: "silverlining-article-01",
+    format: "article",
+    formatLabel: "Substack essay",
+    title: "Safety first, in writing",
+    client: "SilverLining",
+    href: "https://silverliningngo.substack.com/p/safety-first-a-roadmap-for-evaluating",
+    thumbnail: {
+      src: "/images/case_studies/silverlining-2.png",
+      alt: "SilverLining Substack essay cover",
     },
     provider: "substack",
-    placeholder: true,
+    layout: "square",
   },
   {
-    id: "substack-02",
-    format: "article",
-    formatLabel: "Substack",
-    title: "A distinctive point of view",
-    href: "https://substack.com/",
-    thumbnail: null,
-    provider: "substack",
-    placeholder: true,
-  },
-  {
-    id: "newsletter-01",
+    id: "climateimpact-newsletter-01",
     format: "newsletter",
-    formatLabel: "Newsletter",
-    title: "Ideas that arrive in the inbox",
-    href: "https://substack.com/",
-    thumbnail: null,
+    formatLabel: "Weekly newsletter",
+    title: "Ideas that land in the inbox",
+    client: "Climate Impact",
+    href: "https://drive.google.com/file/d/1WvXfzJ4-5tTAbbsooZNo6NLgmLWgou8_/view?usp=sharing",
+    thumbnail: {
+      src: "/images/case_studies/climateimpact-1.png",
+      alt: "Climate Impact weekly newsletter",
+    },
     provider: "other",
-    placeholder: true,
+    layout: "square",
   },
 ] as const;
 
 export const workMediaContent = {
-  eyebrow: "Selected work / Formats",
   heading: "Work that",
   headingEmphasis: "speaks.",
-  body: "Podcasts, LinkedIn shorts, Substack essays, and newsletters — each piece opens in its own home.",
+  body: "A short conversation with a leader is all we need. From that, we produce weeks to months of high-quality video, writing, and distribution. The work below shows how that process has built visibility, credibility, and reach for the people we've partnered with.",
   archiveCta: { label: "Selected work archive", href: "/case-studies" },
 } as const;

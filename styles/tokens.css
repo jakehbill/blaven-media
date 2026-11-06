@@ -1,5 +1,5 @@
 /**
- * Blaven Media design tokens — editorial warm palette
+ * Blaven Media design tokens: editorial warm palette
  */
 
 :root {
@@ -12,7 +12,7 @@
   --panel: #eeeae1;
   --rule: #dcd9d0;
 
-  /* Mono stack — local only */
+  /* Mono stack: local only */
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 
@@ -37,7 +37,7 @@
   --grey-900: #242720;
   --grey-950: #161914;
 
-  /* Semantic — charcoal buttons on ivory */
+  /* Semantic: charcoal buttons on ivory */
   --primary: var(--charcoal);
   --primary-foreground: var(--ivory);
   --secondary: var(--panel);
@@ -80,7 +80,7 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Layout — wider editorial canvas */
+  /* Layout: wider editorial canvas */
   --container-max: 90rem;
   --container-padding: clamp(1.25rem, 0.9rem + 2vw, 3rem);
   --section-gap-sm: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);

@@ -116,7 +116,7 @@ function MobileMenu({
                   <Button
                     variant="primary"
                     size="default"
-                    className="w-full"
+                    className="w-full bg-sage text-ivory hover:bg-olive active:bg-olive/95"
                     render={<Link href={navigationCta.href} onClick={onClose} />}
                   >
                     {navigationCta.label}

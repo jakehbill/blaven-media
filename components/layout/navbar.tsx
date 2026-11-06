@@ -75,7 +75,7 @@ function Navbar({ className }: NavbarProps) {
               <Button
                 variant="primary"
                 size="sm"
-                className="hidden lg:inline-flex"
+                className="hidden bg-sage text-ivory hover:bg-olive active:bg-olive/95 lg:inline-flex"
                 render={<Link href={navigationCta.href} />}
               >
                 {navigationCta.label}
