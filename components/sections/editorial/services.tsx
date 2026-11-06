@@ -43,11 +43,11 @@ function EditorialServices() {
           </p>
           <h2
             id="services-heading"
-            className="font-serif text-[clamp(2.2rem,4.8vw,4rem)] font-normal leading-[1.05] tracking-[-0.03em] text-charcoal"
+            className="text-[clamp(2.2rem,4.8vw,4rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-charcoal"
           >
             {services.heading}
           </h2>
-          <p className="mt-6 font-serif text-xl font-normal tracking-[-0.02em] text-sage md:text-2xl">
+          <p className="mt-6 text-xl font-medium tracking-[-0.02em] text-sage md:text-2xl">
             {services.lead}
           </p>
           <p className="mt-5 max-w-prose text-[15px] leading-[1.8] text-ink-muted">
@@ -76,7 +76,7 @@ function EditorialServices() {
                   0{index + 1}
                 </span>
                 <div>
-                  <h3 className="font-serif text-2xl font-normal tracking-[-0.03em] md:text-3xl">
+                  <h3 className="text-2xl font-semibold tracking-[-0.03em] md:text-3xl">
                     {item.title}
                   </h3>
                   <p className={cn("mt-5 text-sm leading-7", surface.body)}>

@@ -22,10 +22,12 @@ function EditorialHero() {
             <div>
               <h1
                 id="home-heading"
-                className="max-w-[720px] font-serif text-[clamp(2.6rem,5.8vw,5.25rem)] font-normal leading-[0.98] tracking-[-0.035em] text-charcoal"
+                className="max-w-[720px] text-[clamp(2.6rem,5.8vw,5.25rem)] font-semibold leading-[0.98] tracking-[-0.035em] text-charcoal"
               >
                 {hero.headline}{" "}
-                <em className="text-sage">{hero.headlineEmphasis}</em>
+                <em className="font-semibold text-sage not-italic">
+                  {hero.headlineEmphasis}
+                </em>
               </h1>
               <div className="mt-9 max-w-[480px] space-y-4 text-[15px] leading-[1.85] text-ink-muted">
                 {hero.body.map((paragraph) => (
@@ -71,7 +73,7 @@ function EditorialHero() {
               <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-on-dark-muted">
                 {hero.featured.label}
               </span>
-              <p className="mt-3 font-serif text-3xl font-normal tracking-[-0.03em] text-on-dark md:text-4xl">
+              <p className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-on-dark md:text-4xl">
                 {hero.featured.title}
               </p>
             </div>

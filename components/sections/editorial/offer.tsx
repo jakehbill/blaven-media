@@ -26,13 +26,15 @@ function EditorialOffer() {
             <div>
               <h2
                 id="approach-heading"
-                className="font-serif text-[clamp(2.2rem,4.5vw,3.75rem)] font-normal leading-[1.05] tracking-[-0.03em] text-on-dark"
+                className="text-[clamp(2.2rem,4.5vw,3.75rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-on-dark"
               >
                 {offer.heading}
                 <br />
-                <em className="text-sand">{offer.headingEmphasis}</em>
+                <em className="font-semibold text-sand not-italic">
+                  {offer.headingEmphasis}
+                </em>
               </h2>
-              <p className="mt-8 font-serif text-xl font-normal tracking-[-0.02em] text-on-dark md:text-2xl">
+              <p className="mt-8 text-xl font-medium tracking-[-0.02em] text-on-dark md:text-2xl">
                 {offer.lead}
               </p>
             </div>

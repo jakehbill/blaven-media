@@ -27,10 +27,12 @@ function EditorialStudio() {
               </p>
               <h2
                 id="studio-heading"
-                className="font-serif text-[clamp(2.2rem,5vw,4.25rem)] font-normal leading-[1.05] tracking-[-0.03em] text-on-dark"
+                className="text-[clamp(2.2rem,5vw,4.25rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-on-dark"
               >
                 {studio.heading}{" "}
-                <em className="text-sand">{studio.headingEmphasis}</em>
+                <em className="font-semibold text-sand not-italic">
+                  {studio.headingEmphasis}
+                </em>
                 <br />
                 {studio.headingLine}
               </h2>

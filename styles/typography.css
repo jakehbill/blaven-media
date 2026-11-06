@@ -5,7 +5,7 @@
     @apply font-sans text-foreground;
     text-wrap: balance;
     font-weight: 600;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.035em;
   }
 
   h4,
@@ -13,9 +13,5 @@
     @apply font-sans text-foreground;
     text-wrap: balance;
     font-weight: 500;
-  }
-
-  em {
-    font-style: italic;
   }
 }

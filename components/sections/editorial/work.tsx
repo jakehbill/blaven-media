@@ -110,7 +110,7 @@ function WorkMediaCard({
           </span>
           <h3
             className={cn(
-              "mt-3 font-serif font-normal tracking-[-0.03em]",
+              "mt-3 font-semibold tracking-[-0.03em]",
               item.featured
                 ? "text-3xl md:text-4xl"
                 : "text-2xl md:text-[1.75rem]",
@@ -154,10 +154,12 @@ function EditorialWork() {
             </p>
             <h2
               id="work-heading"
-              className="font-serif text-[clamp(2.5rem,5.5vw,5rem)] font-normal leading-none tracking-[-0.035em] text-charcoal"
+              className="text-[clamp(2.5rem,5.5vw,5rem)] font-semibold leading-none tracking-[-0.035em] text-charcoal"
             >
               {workMediaContent.heading}{" "}
-              <em className="text-sage">{workMediaContent.headingEmphasis}</em>
+              <em className="font-semibold text-sage not-italic">
+                {workMediaContent.headingEmphasis}
+              </em>
             </h2>
             <p className="mt-6 max-w-prose text-[15px] leading-[1.8] text-ink-muted">
               {workMediaContent.body}
