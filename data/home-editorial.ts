@@ -10,6 +10,7 @@ export const homeEditorialContent = {
     secondaryCta: { label: "Start a conversation", href: "/contact" },
   },
   offer: {
+    eyebrow: "Our core offering",
     heading: "One conversation.",
     headingEmphasis: "A month of thought leadership.",
     lead: "You have the ideas. We help you share them.",
