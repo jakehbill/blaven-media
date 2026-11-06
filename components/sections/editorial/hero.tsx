@@ -15,17 +15,17 @@ function EditorialHero() {
     <section aria-labelledby="home-heading" className="bg-ivory">
       <Container className="py-5 md:py-8">
         <div className="grid gap-3 lg:grid-cols-[1.08fr_0.92fr]">
-          <Reveal className="flex min-h-[530px] flex-col justify-between bg-panel p-8 md:p-14 lg:min-h-[640px]">
+          <Reveal className="flex min-h-[530px] flex-col justify-between bg-sand p-8 md:p-14 lg:min-h-[640px]">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-olive">
               {hero.eyebrow}
             </p>
             <div>
               <h1
                 id="home-heading"
-                className="max-w-[720px] font-serif text-[clamp(2.85rem,6.2vw,5.75rem)] leading-[0.96] tracking-[-0.055em] text-charcoal"
+                className="max-w-[720px] font-serif text-[clamp(2.6rem,5.8vw,5.25rem)] font-normal leading-[0.98] tracking-[-0.035em] text-charcoal"
               >
                 {hero.headline}{" "}
-                <em className="font-normal text-olive">{hero.headlineEmphasis}</em>
+                <em className="text-sage">{hero.headlineEmphasis}</em>
               </h1>
               <div className="mt-9 max-w-[480px] space-y-4 text-[15px] leading-[1.85] text-ink-muted">
                 {hero.body.map((paragraph) => (
@@ -35,14 +35,14 @@ function EditorialHero() {
               <div className="mt-9 flex flex-wrap items-center gap-5">
                 <SectionLink
                   href={hero.primaryCta.href}
-                  className="inline-flex items-center gap-3 border-b border-charcoal pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-charcoal transition-colors hover:border-olive hover:text-olive"
+                  className="inline-flex items-center gap-3 border-b border-charcoal pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-charcoal transition-colors hover:border-sage hover:text-sage"
                 >
                   {hero.primaryCta.label}
                   <ArrowDownRight size={16} aria-hidden />
                 </SectionLink>
                 <SectionLink
                   href={hero.secondaryCta.href}
-                  className="inline-flex items-center gap-2 bg-charcoal px-5 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-ivory transition-colors hover:bg-olive"
+                  className="inline-flex items-center gap-2 bg-olive px-5 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-ivory transition-colors hover:bg-sage"
                 >
                   {hero.secondaryCta.label}
                   <ArrowUpRight size={14} aria-hidden />
@@ -71,7 +71,7 @@ function EditorialHero() {
               <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-on-dark-muted">
                 {hero.featured.label}
               </span>
-              <p className="mt-3 font-serif text-4xl tracking-[-0.03em] text-on-dark">
+              <p className="mt-3 font-serif text-3xl font-normal tracking-[-0.03em] text-on-dark md:text-4xl">
                 {hero.featured.title}
               </p>
             </div>

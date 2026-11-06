@@ -1,0 +1,30 @@
+/**
+ * Homepage-only type trial:
+ * IBM Plex Sans (body) + Cormorant Garamond (headings).
+ */
+.home-type {
+  font-family: var(--font-home-sans), system-ui, sans-serif;
+  letter-spacing: normal;
+}
+
+.home-type h1,
+.home-type h2,
+.home-type h3,
+.home-type .font-serif {
+  font-family: var(--font-home-serif), Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.home-type h1 {
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.home-type h1 em,
+.home-type h2 em,
+.home-type h3 em,
+.home-type .font-serif em {
+  font-style: italic;
+  font-weight: 400;
+}

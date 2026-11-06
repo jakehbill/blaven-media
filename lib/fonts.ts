@@ -1,54 +1,41 @@
 import localFont from "next/font/local";
 
 /**
- * General Sans: self-hosted from Fontshare (Indian Type Foundry).
- * Instrument Serif: self-hosted editorial display face.
- * Mono uses a system stack so local build never blocks on network fonts.
+ * Inter — site-wide default until the Source pair is approved everywhere.
+ * Self-hosted via @fontsource-variable so builds never block on network fonts.
  */
 export const fontSans = localFont({
   src: [
     {
-      path: "../public/fonts/general-sans/general-sans-400.woff2",
-      weight: "400",
+      path: "../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2",
+      weight: "100 900",
       style: "normal",
     },
     {
-      path: "../public/fonts/general-sans/general-sans-500.woff2",
-      weight: "500",
+      path: "../node_modules/@fontsource-variable/inter/files/inter-latin-wght-italic.woff2",
+      weight: "100 900",
+      style: "italic",
+    },
+    {
+      path: "../node_modules/@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2",
+      weight: "100 900",
       style: "normal",
     },
     {
-      path: "../public/fonts/general-sans/general-sans-600.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/general-sans/general-sans-700.woff2",
-      weight: "700",
-      style: "normal",
+      path: "../node_modules/@fontsource-variable/inter/files/inter-latin-ext-wght-italic.woff2",
+      weight: "100 900",
+      style: "italic",
     },
   ],
   variable: "--font-sans",
   display: "swap",
-  fallback: ["system-ui", "-apple-system", "sans-serif"],
-});
-
-export const fontSerif = localFont({
-  src: [
-    {
-      path: "../public/fonts/instrument-serif/InstrumentSerif-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/instrument-serif/InstrumentSerif-Italic.woff2",
-      weight: "400",
-      style: "italic",
-    },
+  fallback: [
+    "system-ui",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "sans-serif",
   ],
-  variable: "--font-serif",
-  display: "swap",
-  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
-export const fontVariables = `${fontSans.variable} ${fontSerif.variable}`;
+export const fontVariables = fontSans.variable;

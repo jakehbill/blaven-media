@@ -29,10 +29,10 @@ function CaseStudiesArchive() {
             </p>
             <h1
               id="archive-heading"
-              className="font-serif text-[clamp(2.6rem,5.5vw,4.75rem)] leading-[1.02] tracking-[-0.045em] text-charcoal"
+              className="text-[clamp(2.4rem,5vw,4.25rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-charcoal"
             >
               Work in its{" "}
-              <em className="font-normal text-olive">own home.</em>
+              <em className="font-semibold text-sage not-italic">own home.</em>
             </h1>
             <p className="mt-6 max-w-prose text-[15px] leading-[1.85] text-ink-muted">
               A short archive of the formats we produce — podcasts, LinkedIn
@@ -81,7 +81,7 @@ function CaseStudiesArchive() {
                       {item.formatLabel}
                       {item.placeholder ? " · Placeholder" : ""}
                     </p>
-                    <h2 className="mt-2 font-serif text-2xl tracking-[-0.03em] text-charcoal md:text-3xl">
+                    <h2 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-charcoal md:text-3xl">
                       {item.title}
                     </h2>
                     {item.client ? (
@@ -103,7 +103,7 @@ function CaseStudiesArchive() {
         <Container className="pb-16 md:pb-24">
           <Reveal className="flex flex-col items-start justify-between gap-8 bg-panel p-8 md:flex-row md:items-center md:p-12">
             <div>
-              <h2 className="font-serif text-3xl tracking-[-0.03em] text-charcoal md:text-4xl">
+              <h2 className="text-3xl font-semibold tracking-[-0.03em] text-charcoal md:text-4xl">
                 Have a story worth telling?
               </h2>
               <p className="mt-3 max-w-md text-sm leading-7 text-ink-muted">

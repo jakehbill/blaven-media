@@ -13,7 +13,7 @@ export function Footer() {
           <div className="space-y-5">
             <Link
               href="/"
-              className="font-serif text-xl tracking-[-0.03em] text-charcoal transition-colors hover:text-sage"
+              className="text-lg font-semibold tracking-[-0.03em] text-charcoal transition-colors hover:text-sage"
             >
               {siteConfig.name}
             </Link>

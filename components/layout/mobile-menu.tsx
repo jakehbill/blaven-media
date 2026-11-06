@@ -97,7 +97,7 @@ function MobileMenu({
                         href={item.href}
                         layout="vertical"
                         active={isNavItemActive(item, pathname, activeSection)}
-                        className="font-serif text-2xl tracking-[-0.03em] text-charcoal"
+                        className="text-2xl font-semibold tracking-[-0.03em] text-charcoal"
                         onNavigate={onClose}
                       >
                         {item.label}

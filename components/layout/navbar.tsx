@@ -50,7 +50,7 @@ function Navbar({ className }: NavbarProps) {
           <div className="flex h-16 items-center justify-between gap-4 md:h-[4.5rem]">
             <Link
               href="/"
-              className="font-serif text-[1.35rem] leading-none tracking-[-0.03em] text-charcoal transition-colors hover:text-sage md:text-[1.5rem]"
+              className="text-[1.05rem] font-semibold leading-none tracking-[-0.03em] text-charcoal transition-colors hover:text-sage md:text-[1.15rem]"
             >
               {siteConfig.name}
             </Link>
