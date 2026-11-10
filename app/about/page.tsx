@@ -7,8 +7,9 @@ import { aboutMetadata } from "@/lib/metadata";
 export const metadata: Metadata = aboutMetadata;
 
 /**
- * About lives on the homepage studio section. Keep the route for SEO
- * bookmarks and send visitors to the in-page anchor.
+ * About content lives on the homepage studio section.
+ * Keep this route for old bookmarks/links, redirect to /#about,
+ * and leave it noindex so the homepage is the only About surface.
  */
 export default function AboutPage() {
   return (

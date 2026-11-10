@@ -57,13 +57,23 @@ export const homeMetadata = createPageMetadata({
   openGraphDescription: seoPages.home.openGraphDescription,
 });
 
-export const aboutMetadata = createPageMetadata({
-  path: "/about",
-  title: seoPages.about.title,
-  description: seoPages.about.description,
-  openGraphTitle: seoPages.about.openGraphTitle,
-  openGraphDescription: seoPages.about.openGraphDescription,
-});
+/** /about only redirects to /#about; keep it out of the index. */
+export const aboutMetadata: Metadata = {
+  ...createPageMetadata({
+    path: "/about",
+    title: seoPages.about.title,
+    description: seoPages.about.description,
+    openGraphTitle: seoPages.about.openGraphTitle,
+    openGraphDescription: seoPages.about.openGraphDescription,
+  }),
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export const caseStudiesMetadata = createPageMetadata({
   path: "/case-studies",
