@@ -1,9 +1,6 @@
 "use client";
 
-import { ArrowDownRight } from "lucide-react";
-
 import { Reveal } from "@/components/sections/editorial/reveal";
-import { SectionLink } from "@/components/sections/editorial/section-link";
 import { Container } from "@/components/ui/container";
 import { homeEditorialContent } from "@/data/home-editorial";
 import { cn } from "@/lib/utils";
@@ -58,13 +55,6 @@ function EditorialServices() {
             <p className="mx-auto mt-5 max-w-prose text-[15px] leading-[1.8] text-ink-muted">
               {services.body}
             </p>
-            <SectionLink
-              href={services.cta.href}
-              className="mt-8 inline-flex items-center gap-3 border-b border-charcoal pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-charcoal transition-colors hover:border-sage hover:text-sage"
-            >
-              {services.cta.label}
-              <ArrowDownRight size={16} aria-hidden />
-            </SectionLink>
           </Reveal>
         </Container>
       </div>

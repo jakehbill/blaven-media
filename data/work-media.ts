@@ -157,5 +157,5 @@ export const workMediaContent = {
   heading: "Work that",
   headingEmphasis: "speaks.",
   body: "A short conversation with a leader is all we need. From that, we produce weeks to months of high-quality video, writing, and distribution. The work below shows how that process has built visibility, credibility, and reach for the people we've partnered with.",
-  archiveCta: { label: "Selected work archive", href: "/case-studies" },
+  archiveCta: { label: "View case studies", href: "/case-studies" },
 } as const;

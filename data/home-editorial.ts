@@ -13,10 +13,11 @@ export const homeEditorialContent = {
     eyebrow: "Our core offering",
     heading: "One conversation.",
     headingEmphasis: "A month of thought leadership.",
-    lead: "You have the ideas. We help you share them.",
+    lead: "You have the ideas. We just help you share them.",
     body: [
       "Through thoughtful, interview-led conversations, we uncover the insights, stories, and perspectives that make you worth listening to.",
-      "Then we turn them into a consistent stream of high-quality video and written content, designed to build your visibility, credibility, and connections.",
+      "We then turn them into a consistent stream of high-quality video and written content, designed to build your visibility and credibility.",
+      "Greater reach and authority compound into more inbound demand: warmer leads, shorter sales cycles, and more deals closed.",
     ],
     closer: "One conversation. Multiple formats. A clear, consistent voice.",
     cta: { label: "Explore our approach", href: "#work" },
@@ -25,7 +26,6 @@ export const homeEditorialContent = {
     heading: "More than content.",
     lead: "Great ideas need great places to live.",
     body: "Alongside our signature thought leadership offering, we help organisations build and strengthen their digital presence.",
-    cta: { label: "See what we do", href: "#work" },
     items: [
       {
         title: "Websites & Digital Experiences",

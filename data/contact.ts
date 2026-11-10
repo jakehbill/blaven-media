@@ -40,11 +40,6 @@ export type ContactPageContent = {
     successMessage: string;
     errorMessage: string;
   };
-  directContact: {
-    heading: string;
-    body: string;
-    linkedinLabel: string;
-  };
   emailReveal: {
     revealLabel: string;
     copyLabel: string;
@@ -105,11 +100,6 @@ export const contactPageContent: ContactPageContent = {
       "[Placeholder success: thank you, we'll be in touch soon.]",
     errorMessage:
       "[Placeholder error: something went wrong. Please try again or use email.]",
-  },
-  directContact: {
-    heading: "Prefer email?",
-    body: "For direct enquiries, reveal the email address below or connect with Blaven Media on LinkedIn.",
-    linkedinLabel: "LinkedIn",
   },
   emailReveal: {
     revealLabel: "Reveal email",

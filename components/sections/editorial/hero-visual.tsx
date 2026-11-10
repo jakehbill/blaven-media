@@ -224,33 +224,23 @@ function HeroVisual({ className }: HeroVisualProps) {
               delay: 0.32 + index * 0.06,
             }}
           >
-            <motion.g
-              animate={reduce ? undefined : { y: [0, -3.5, 0] }}
-              transition={{
-                duration: 3.8 + index * 0.45,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: index * 0.35,
+            <circle cx={node.x} cy={node.y} r="26" fill={sand} />
+            <NodeIcon type={node.key} x={node.x} y={node.y} />
+            <text
+              x={node.x}
+              y={node.y + 42}
+              textAnchor="middle"
+              fill={sand}
+              fillOpacity="0.7"
+              style={{
+                fontSize: "9px",
+                fontWeight: 600,
+                letterSpacing: "0.12em",
+                fontFamily: "var(--font-sans), system-ui, sans-serif",
               }}
             >
-              <circle cx={node.x} cy={node.y} r="26" fill={sand} />
-              <NodeIcon type={node.key} x={node.x} y={node.y} />
-              <text
-                x={node.x}
-                y={node.y + 42}
-                textAnchor="middle"
-                fill={sand}
-                fillOpacity="0.7"
-                style={{
-                  fontSize: "9px",
-                  fontWeight: 600,
-                  letterSpacing: "0.12em",
-                  fontFamily: "var(--font-sans), system-ui, sans-serif",
-                }}
-              >
-                {node.label.toUpperCase()}
-              </text>
-            </motion.g>
+              {node.label.toUpperCase()}
+            </text>
           </motion.g>
         ))}
 
@@ -260,41 +250,31 @@ function HeroVisual({ className }: HeroVisualProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1], delay: 0.08 }}
         >
-          <motion.g
-            animate={reduce ? undefined : { scale: [1, 1.04, 1] }}
-            style={{ transformOrigin: `${cx}px ${cy}px` }}
-            transition={{
-              duration: 4.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <circle cx={cx} cy={cy} r="34" fill={sand} />
-            <rect
-              x={cx - 7}
-              y={cy - 16}
-              width="14"
-              height="20"
-              rx="7"
-              fill={olive}
-            />
-            <path
-              d={`M${cx - 12} ${cy + 1} v3 a12 12 0 0 0 24 0 v-3`}
-              stroke={olive}
-              strokeWidth="2"
-              strokeLinecap="round"
-              fill="none"
-            />
-            <line
-              x1={cx}
-              y1={cy + 14}
-              x2={cx}
-              y2={cy + 19}
-              stroke={olive}
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </motion.g>
+          <circle cx={cx} cy={cy} r="34" fill={sand} />
+          <rect
+            x={cx - 7}
+            y={cy - 16}
+            width="14"
+            height="20"
+            rx="7"
+            fill={olive}
+          />
+          <path
+            d={`M${cx - 12} ${cy + 1} v3 a12 12 0 0 0 24 0 v-3`}
+            stroke={olive}
+            strokeWidth="2"
+            strokeLinecap="round"
+            fill="none"
+          />
+          <line
+            x1={cx}
+            y1={cy + 14}
+            x2={cx}
+            y2={cy + 19}
+            stroke={olive}
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
           <text
             x={cx}
             y={cy + 56}

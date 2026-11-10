@@ -1,9 +1,7 @@
-import Link from "next/link";
-
+import { SiteLogo } from "@/components/layout/site-logo";
 import { Container } from "@/components/ui/container";
 import { TextLink } from "@/components/ui/text-link";
 import { primaryNavigation } from "@/data/navigation";
-import { siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
@@ -11,13 +9,7 @@ export function Footer() {
       <Container>
         <div className="flex flex-col gap-8 py-10 md:flex-row md:items-start md:justify-between md:gap-12 md:py-14">
           <div className="space-y-5">
-            <Link
-              href="/"
-              className="text-lg font-semibold tracking-[-0.03em] text-charcoal transition-colors hover:text-sage"
-            >
-              {siteConfig.name}
-            </Link>
-
+            <SiteLogo className="[&_img]:h-[1.575rem] [&_img]:md:h-[1.75rem]" />
             <nav aria-label="Footer">
               <ul className="flex flex-wrap gap-x-5 gap-y-2">
                 {primaryNavigation.map((item) => (

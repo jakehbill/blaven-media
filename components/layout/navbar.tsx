@@ -7,10 +7,10 @@ import { useMemo } from "react";
 
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { NavLink } from "@/components/layout/nav-link";
+import { SiteLogo } from "@/components/layout/site-logo";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { navigationCta, primaryNavigation } from "@/data/navigation";
-import { siteConfig } from "@/data/site";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { useMobileMenu } from "@/hooks/use-mobile-menu";
 import { useScrolled } from "@/hooks/use-scrolled";
@@ -48,12 +48,7 @@ function Navbar({ className }: NavbarProps) {
       >
         <Container>
           <div className="flex h-16 items-center justify-between gap-4 md:h-[4.5rem]">
-            <Link
-              href="/"
-              className="text-[1.05rem] font-semibold leading-none tracking-[-0.03em] text-charcoal transition-colors hover:text-sage md:text-[1.15rem]"
-            >
-              {siteConfig.name}
-            </Link>
+            <SiteLogo priority />
 
             <div className="flex shrink-0 items-center gap-4 md:gap-8">
               <nav aria-label="Primary" className="hidden lg:block">

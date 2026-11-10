@@ -20,12 +20,12 @@ export const seoPages = {
       "Great ideas deserve great communication. Meet the founder-led studio helping meaningful organisations become landmarks in their industries.",
   },
   caseStudies: {
-    title: "Selected Work",
+    title: "Case Studies",
     description:
-      "A short archive of Blaven Media formats: long-form podcasts, LinkedIn shorts, Substack essays, and newsletters, each linking out to where the work lives.",
-    openGraphTitle: "Selected work from Blaven Media",
+      "Selected Blaven Media case studies: thought leadership, video, newsletters, and digital work for organisations with meaningful ideas.",
+    openGraphTitle: "Case studies from Blaven Media",
     openGraphDescription:
-      "Podcasts, LinkedIn shorts, Substack essays, and newsletters from Blaven Media. Open each piece in its own home.",
+      "How Blaven Media helps organisations build authority through thoughtful communications, storytelling, and digital experiences.",
   },
   contact: {
     title: "Contact",
