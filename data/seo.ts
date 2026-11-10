@@ -1,15 +1,15 @@
 /**
  * Per-route SEO copy. Titles and descriptions are written for SERPs
- * and social previews — distinctive, natural, and aligned to positioning.
+ * and social previews: distinctive, natural, and aligned to positioning.
  */
 export const seoPages = {
   home: {
-    title: "Blaven Media | Strategic Communications for Meaningful Ideas",
+    title: "Blaven Media | Good Ideas Deserve to Be Heard",
     description:
-      "AI made content abundant. Trust became scarce. Blaven Media partners with founders and leadership teams to build authority through storytelling, thought leadership, and exceptional digital work.",
-    openGraphTitle: "Strategic communications for meaningful ideas",
+      "Blaven is a boutique creative studio helping founders and ambitious organisations turn expertise into compelling content and digital experiences, from thought leadership and video to websites and digital strategy.",
+    openGraphTitle: "Good ideas deserve to be heard",
     openGraphDescription:
-      "Blaven Media helps organisations become recognised — not louder — through trust, storytelling, and founder-led communications.",
+      "Boutique creative studio helping founders and organisations turn expertise into content, digital experiences, and lasting influence.",
   },
   about: {
     title: "About",
@@ -22,15 +22,15 @@ export const seoPages = {
   caseStudies: {
     title: "Case Studies",
     description:
-      "Selected partnerships with organisations building recognition — from climate and technology to culture and policy. See how thoughtful communications help meaningful ideas reach the right people.",
-    openGraphTitle: "Work that builds recognition",
+      "Selected Blaven Media case studies: thought leadership, video, newsletters, and digital work for organisations with meaningful ideas.",
+    openGraphTitle: "Case studies from Blaven Media",
     openGraphDescription:
-      "Case studies from Blaven Media: helping meaningful organisations become recognised through strategy, storytelling, and carefully executed digital experiences.",
+      "How Blaven Media helps organisations build authority through thoughtful communications, storytelling, and digital experiences.",
   },
   contact: {
     title: "Contact",
     description:
-      "Whether you're launching something new, repositioning an established organisation, or looking for a long-term communications partner — tell us what you're working on.",
+      "Whether you're launching something new, repositioning an established organisation, or looking for a long-term communications partner, tell us what you're working on.",
     openGraphTitle: "Let's build something people remember",
     openGraphDescription:
       "Start a conversation with Blaven Media. Based in London, working with founders and organisations who care deeply about how they communicate.",

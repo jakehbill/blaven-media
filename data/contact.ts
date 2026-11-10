@@ -1,4 +1,4 @@
-/** Contact email parts — never store the assembled address as a single string. */
+/** Contact email parts: never store the assembled address as a single string. */
 export const contactEmailParts = {
   user: "jake",
   domain: "blavenmedia.com",
@@ -40,11 +40,6 @@ export type ContactPageContent = {
     successMessage: string;
     errorMessage: string;
   };
-  directContact: {
-    heading: string;
-    body: string;
-    linkedinLabel: string;
-  };
   emailReveal: {
     revealLabel: string;
     copyLabel: string;
@@ -52,7 +47,7 @@ export type ContactPageContent = {
   };
 };
 
-/** Homepage Contact CTA — kept separate from the Contact page hero. */
+/** Homepage Contact CTA: kept separate from the Contact page hero. */
 export const contactCtaContent = {
   label: "Contact",
   heading: "Ready to build something people remember?",
@@ -105,11 +100,6 @@ export const contactPageContent: ContactPageContent = {
       "[Placeholder success: thank you, we'll be in touch soon.]",
     errorMessage:
       "[Placeholder error: something went wrong. Please try again or use email.]",
-  },
-  directContact: {
-    heading: "Prefer email?",
-    body: "For direct enquiries, reveal the email address below or connect with Blaven Media on LinkedIn.",
-    linkedinLabel: "LinkedIn",
   },
   emailReveal: {
     revealLabel: "Reveal email",

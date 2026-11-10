@@ -79,7 +79,7 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
           </MotionReveal>
 
           <div className="mt-6 grid items-start gap-7 sm:mt-8 sm:gap-8 md:mt-10 md:gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
-            {/* Left: evidence rail — one panel, spacing does the rest */}
+            {/* Left: evidence rail, one panel, spacing does the rest */}
             <MotionReveal className="min-w-0 lg:col-span-5" delay={0.04}>
               <div
                 className={cn(
@@ -128,7 +128,7 @@ function CaseStudyFeature({ study, index, surface }: CaseStudyFeatureProps) {
               </div>
             </MotionReveal>
 
-            {/* Right: narrative — rhythm via spacing, not rules */}
+            {/* Right: narrative: rhythm via spacing, not rules */}
             <MotionReveal className="min-w-0 space-y-6 sm:space-y-8 lg:col-span-7" delay={0.06}>
               <Field label="Challenge">
                 <Text

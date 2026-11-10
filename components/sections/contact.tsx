@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/ui/contact-form";
 import { Container } from "@/components/ui/container";
 import { EmailReveal } from "@/components/ui/email-reveal";
@@ -9,7 +8,6 @@ import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { SurfaceTexture } from "@/components/ui/surface-texture";
 import { TextLink } from "@/components/ui/text-link";
-import { Heading, Text } from "@/components/ui/typography";
 import { contactPageContent } from "@/data/contact";
 
 function ContactHero() {
@@ -105,63 +103,11 @@ function ContactMain() {
   );
 }
 
-function ContactDirect() {
-  const { directContact, details } = contactPageContent;
-
-  return (
-    <Section
-      id="prefer-email"
-      spacing="sm"
-      surface="grey"
-      className="relative overflow-hidden"
-      aria-labelledby="prefer-email-heading"
-    >
-      <SurfaceTexture variant="mesh" tone="light" />
-
-      <Container className="relative z-10">
-        <MotionReveal className="max-w-4xl">
-          <Heading id="prefer-email-heading" level="h2">
-            {directContact.heading}
-          </Heading>
-
-          <Text
-            variant="body-lg"
-            className="mt-4 max-w-prose text-foreground/85"
-          >
-            {directContact.body}
-          </Text>
-
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <EmailReveal variant="button" revealLabel="Reveal Email" />
-
-            <Button
-              variant="secondary"
-              size="default"
-              className="w-full sm:w-auto"
-              render={
-                <a
-                  href={details.linkedin.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-              }
-            >
-              {directContact.linkedinLabel}
-              <span className="sr-only"> (opens in a new tab)</span>
-            </Button>
-          </div>
-        </MotionReveal>
-      </Container>
-    </Section>
-  );
-}
-
 function Contact() {
   return (
     <>
       <ContactHero />
       <ContactMain />
-      <ContactDirect />
     </>
   );
 }

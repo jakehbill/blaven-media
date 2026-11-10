@@ -59,7 +59,7 @@ export type AboutPageContent = {
   };
 };
 
-/** Homepage About Preview — kept separate from the full About page. */
+/** Homepage About Preview: kept separate from the full About page. */
 export const aboutPreviewContent: AboutPreviewContent = {
   label: "About",
   heading: "Built to help meaningful organisations become impossible to ignore.",

@@ -9,9 +9,9 @@ const textLinkVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-foreground/75 hover:text-foreground hover:underline",
-        stone: "text-stone hover:text-foreground hover:underline",
-        muted: "text-muted-foreground hover:text-foreground hover:underline",
+        default: "text-ink-muted hover:text-charcoal hover:underline",
+        stone: "text-olive hover:text-charcoal hover:underline",
+        muted: "text-ink-subtle hover:text-charcoal hover:underline",
       },
     },
     defaultVariants: {

@@ -50,7 +50,7 @@ function HeroBackground() {
         />
       </div>
 
-      {/* Radial dissolve into black — keeps headline clean */}
+      {/* Radial dissolve into black: keeps headline clean */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_42%,transparent_28%,var(--background)_78%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/65" />
     </div>

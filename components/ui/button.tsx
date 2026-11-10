@@ -4,22 +4,24 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 rounded-sm text-sm font-medium whitespace-nowrap transition-colors duration-300 outline-none select-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 items-center justify-center gap-2 rounded-sm text-xs font-semibold tracking-[0.08em] uppercase whitespace-nowrap transition-colors duration-300 outline-none select-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
-        /* Surface-aware: white on dark, black on light via --primary tokens */
         primary:
-          "bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/85",
-        /* Outlined for secondary actions — stronger border for contrast on both surfaces */
+          "bg-charcoal text-ivory hover:bg-olive active:bg-olive/95",
         secondary:
-          "border border-foreground/35 bg-transparent text-foreground hover:border-foreground/55 hover:bg-foreground/[0.04] active:bg-foreground/[0.06]",
-        link: "h-auto rounded-none p-0 text-foreground/75 underline-offset-[0.2em] hover:text-foreground hover:underline",
+          "border border-charcoal/45 bg-transparent text-charcoal hover:border-charcoal hover:bg-charcoal/[0.05]",
+        outline:
+          "border border-charcoal/45 bg-transparent text-charcoal hover:bg-charcoal/[0.05]",
+        inverse:
+          "bg-ivory text-olive hover:bg-sand hover:text-charcoal active:bg-sand/90",
+        link: "h-auto rounded-none border-b border-charcoal/50 px-0 pb-1 text-[0.7rem] normal-case tracking-[0.14em] text-charcoal hover:border-charcoal",
       },
       size: {
         default: "h-11 px-6",
-        sm: "h-9 px-4 text-[0.8125rem]",
-        lg: "h-12 px-8 text-[0.9375rem]",
+        sm: "h-9 px-4 text-[0.6875rem]",
+        lg: "h-12 px-8",
         icon: "size-11",
       },
     },
@@ -32,12 +34,12 @@ const buttonVariants = cva(
       {
         variant: "link",
         size: "sm",
-        className: "h-auto px-0 text-[0.8125rem]",
+        className: "h-auto px-0",
       },
       {
         variant: "link",
         size: "lg",
-        className: "h-auto px-0 text-[0.9375rem]",
+        className: "h-auto px-0",
       },
     ],
     defaultVariants: {
@@ -60,7 +62,6 @@ function Button({
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       render={render}
-      // Links/custom elements must opt out of native button semantics.
       nativeButton={nativeButton ?? render == null}
       {...props}
     />

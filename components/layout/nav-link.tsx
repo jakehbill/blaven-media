@@ -12,16 +12,16 @@ import {
 import { cn } from "@/lib/utils";
 
 const navLinkVariants = cva(
-  "font-medium transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+  "transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-ivory",
   {
     variants: {
       active: {
-        true: "text-foreground",
-        false: "text-muted-foreground hover:text-foreground",
+        true: "text-charcoal",
+        false: "text-ink-muted hover:text-charcoal",
       },
       layout: {
-        horizontal: "relative text-sm py-1",
-        vertical: "text-base tracking-tight py-3 sm:text-lg sm:py-2.5",
+        horizontal: "relative py-1",
+        vertical: "block py-3 tracking-tight",
       },
     },
     defaultVariants: {
@@ -83,7 +83,7 @@ function NavLink({
       {children}
       {active && layout === "horizontal" ? (
         <span
-          className="absolute -bottom-px left-0 h-px w-full bg-stone"
+          className="absolute -bottom-px left-0 h-px w-full bg-sage"
           aria-hidden
         />
       ) : null}

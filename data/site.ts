@@ -1,8 +1,10 @@
 export const siteConfig = {
   name: "Blaven Media",
   logo: {
-    src: "/images/logo.svg",
+    src: "/images/logos/blaven-logo.png",
     alt: "Blaven Media",
+    width: 720,
+    height: 110,
   },
   tagline: "Strategic communications for organisations with meaningful ideas.",
   description:

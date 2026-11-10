@@ -76,7 +76,7 @@ function JsonLd() {
   return <JsonLdScript data={data} />;
 }
 
-/** FAQPage schema — homepage only, mirrors visible FAQ content. */
+/** FAQPage schema: homepage only, mirrors visible FAQ content. */
 function FaqJsonLd() {
   const data = {
     "@context": "https://schema.org",
