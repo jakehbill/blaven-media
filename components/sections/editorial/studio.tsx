@@ -1,55 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Reveal } from "@/components/sections/editorial/reveal";
 import { Container } from "@/components/ui/container";
 import { homeEditorialContent } from "@/data/home-editorial";
-
-function MountainClipArt({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 240 160"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden
-    >
-      {/* Back mountain */}
-      <path
-        d="M18 148 L78 58 L118 108 L148 72 L222 148 Z"
-        fill="currentColor"
-        fillOpacity="0.12"
-        stroke="currentColor"
-        strokeOpacity="0.35"
-        strokeWidth="2.5"
-        strokeLinejoin="round"
-      />
-      {/* Front mountain */}
-      <path
-        d="M0 148 L70 42 L100 78 L132 28 L200 148 Z"
-        fill="currentColor"
-        fillOpacity="0.16"
-        stroke="currentColor"
-        strokeOpacity="0.45"
-        strokeWidth="2.5"
-        strokeLinejoin="round"
-      />
-      {/* Simple snow caps */}
-      <path
-        d="M70 42 L58 62 L70 54 L82 64 Z"
-        fill="currentColor"
-        fillOpacity="0.28"
-      />
-      <path
-        d="M132 28 L116 52 L132 42 L148 54 Z"
-        fill="currentColor"
-        fillOpacity="0.28"
-      />
-    </svg>
-  );
-}
 
 function EditorialStudio() {
   const { studio } = homeEditorialContent;
@@ -92,8 +49,17 @@ function EditorialStudio() {
           </div>
 
           <div className="relative z-10 flex w-full flex-col items-start gap-6 lg:items-end">
-            <div className="pointer-events-none w-full max-w-xs -translate-y-3 text-sand md:-translate-y-5 lg:max-w-sm lg:-translate-y-6">
-              <MountainClipArt className="h-auto w-full" />
+            <div
+              className="pointer-events-none relative aspect-[480/248] w-full max-w-xs -translate-y-3 opacity-70 md:-translate-y-5 lg:max-w-sm lg:-translate-y-6"
+              aria-hidden
+            >
+              <Image
+                src="/images/mountain-clipart.png"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 20rem, 24rem"
+                className="object-contain object-bottom"
+              />
             </div>
 
             <Link
